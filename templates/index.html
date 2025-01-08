@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 文档类型声明，指定文档类型为HTML5 -->
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置视口，确保页面在移动设备上正确显示 -->
+    <title>申请绑定页面</title>
+    <!-- 设置页面的标题 -->
+    <style>
+        /* 设置页面的基本样式 */
+        body {
+            font-family: Arial, sans-serif;
+            /* 设置字体为Arial或无衬线字体 */
+            background-color: #000000;
+            /* 设置背景颜色为淡灰色 */
+            display: flex;
+            /* 使用Flex布局 */
+            justify-content: center;
+            /* 水平居中对齐内容 */
+            align-items: center;
+            /* 垂直居中对齐内容 */
+            height: 100vh;
+            /* 设置页面高度为视口高度的100% */
+            margin: 0;
+            /* 去除页面的默认外边距 */
+        }
+        .container {
+            background-color: #000000;
+            /* 设置容器的背景颜色为黑色 */
+            padding: 20px;
+            /* 设置容器的内边距为20px */
+            border-radius: 8px;
+            /* 设置容器的边框半径为8px，使其具有圆角效果 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* 添加一个阴影效果，使其看起来更立体 */
+            width: 100%;
+            /* 设置容器的宽度为300px */
+        }
+        .input-group {
+            margin-bottom: 15px;
+            /* 设置输入组的底部外边距为15px，用于分隔不同的输入项 */
+            background-color: #000000; /* 设置背景颜色为黑色 */
+        }
+        label {
+            display: block;
+            /* 将标签设置为块级元素，使其独占一行 */
+            margin-bottom: 5px;
+            /* 设置标签的底部外边距为5px，用于与输入框分隔 */
+            color: white;
+        }
+        input[type="text"], select {
+            width: 100%;
+            /* 设置输入框和选择框的宽度为100%，使其占满父容器的宽度 */
+            padding: 8px;
+            /* 设置输入框和选择框的内边距为8px，增加输入区域的大小 */
+            border: 1px solid #ccc;
+            /* 设置输入框和选择框的边框为1px的灰色实线 */
+            border-radius: 4px;
+            /* 设置输入框和选择框的边框半径为4px，使其具有圆角效果 */
+        }
+        button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
+
+        button:hover {
+            background-color: #2a7eb6;
+
+            /* 当鼠标悬停在按钮上时，将背景颜色更改为深蓝色 */
+
+        }
+
+        button:enabled {
+            opacity: 1;
+            /* 当按钮可用时，将透明度设置为1，使其完全不透明 */
+        }
+        button:disabled {
+            cursor: not-allowed;
+            /* 当按钮不可用时，将鼠标指针样式设置为禁止，提示用户不能点击 */
+        }
+        #status-message {
+            opacity: 0; /* 初始状态为透明 */
+            transition: opacity 0.5s ease-in-out; /* 添加过渡效果 */
+            position: fixed; /* 固定位置 */
+            top: 50%;
+            left: 50%; /* 水平居中 */
+            transform: translate(-50%, -50%);
+            background-color: #4CAF50; /* 背景颜色 */
+            color: white; /* 文字颜色 */
+            padding: 10px 20px; /* 内边距 */
+            border-radius: 5px; /* 圆角 */
+            z-index: 9999; /* 确保在其他元素之上 */
+        }
+
+        /* 显示状态消息时的样式 */
+        #status-message.show {
+            opacity: 1; /* 显示时不透明 */
+        }
+        img {
+            display: block;
+            /* 将图片设置为块级元素，使其独占一行 */
+            margin: 20px auto;
+            /* 设置图片的上下外边距为20px，左右外边距为auto，使其水平居中 */
+            max-width: 100%;
+            /* 设置图片的最大宽度为100%，使其适应父容器的宽度 */
+            height: auto;
+            /* 设置图片的高度为自动，保持图片的宽高比 */
+            }
+    /* 基本弹窗样式 */
+    .modal {
+        display: none; /* 默认隐藏弹窗 */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* 如果内容过长，允许滚动 */
+        background-color: rgba(0,0,0,0.4); /* 半透明背景 */
+    }
+
+    /* 基本弹窗样式 */
+    .modal-content {
+        background-color: #000000;
+        margin: 0 auto; /* 将上下外边距设置为0，使弹窗垂直居中 */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 100%; /* 将宽度设置为100%，使其占满父容器的宽度 */
+        max-width: none; /* 移除最大宽度限制 */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        animation-name: animatetop;
+        animation-duration: 0.3s;
+        position: relative;
+        overflow-y: auto;
+        max-height: 80vh;
+        border-radius: 20px; /* 设置圆角半径为10px */
+    }
+
+
+    /* 关闭按钮样式 */
+    .close {
+        color: #1659d4;
+        position: sticky;/* 固定定位 */
+        top: 0; /* 距离顶部0px */
+        right: 0; /* 距离右侧0px */
+        font-size: 48px;
+        font-weight: bold;
+        padding: 10px; /* 增加一些内边距，使其看起来更美观 */
+
+        z-index: 3; /* 确保按钮在其他内容之上 */
+    }
+
+    .close:hover,
+    .close:focus {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 动画效果 */
+    @keyframes animatetop {
+        from {top: -300px; opacity: 0}
+        to {top: 0; opacity: 1}
+    }
+    /* 基本表格样式 */
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    }
+    th {
+    display: none; /* 隐藏表头 */
+    background-color: #000000;/* Add background color to header cells */
+    }
+    td {
+    display: block;
+    text-align: left;
+    }
+    td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    }
+
+    /* 响应式表格样式 */
+    @media screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    th {
+        display: none; /* 隐藏表头 */
+    }
+    td {
+        display: block;
+        text-align: left;
+    }
+    td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+    }
+
+    /* 基本分页样式 */
+    .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    }
+    .pagination a {
+    color: rgb(250, 250, 250);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    }
+    .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    }
+    .pagination a:hover:not(.active) {
+    background-color: #ddd;
+    }
+    /* 响应式分页样式 */
+    @media screen and (max-width: 600px) {
+    .pagination a {
+        padding: 8px;
+    }
+    }
+    </style>
+</head>
+<style>
+    /* Optimized table styles for PC */
+    .modal-content table {
+        font-size: 14px; /* Increase font size for better readability */
+        table-layout: fixed; /* Enable fixed table layout for consistent column widths */
+        white-space: nowrap; /* Prevent text from wrapping, show ellipsis instead */
+        overflow-x: auto; /* Add horizontal scrollbar if content overflows */
+    }
+    .modal-content th, .modal-content td {
+        padding: 12px 8px; /* Increase padding for better cell spacing */
+        text-align: left; /* Align text to the left */
+    }
+    .modal-content th {
+        background-color: #000000; /* Add background color to header cells */
+        position: sticky;
+        top: 0; /* Keep header row at the top when scrolling */
+        z-index: 2; /* Ensure header is above other content */
+    }
+    /* Responsive design adjustments */
+    @media (min-width: 768px) {
+        .modal-content {
+            width: 70%; /* Reduce width on larger screens */
+        }
+    }
+    @media (min-width: 1024px) {
+       .modal-content {
+            width: 60%; /* Further reduce width on larger screens */
+        }
+    }
+
+
+</style>
+</head>
+<body>
+    <!-- 页面主体部分，包含一个容器，用于包裹所有内容 -->
+    <div class="container">
+        <!-- 页面大标题 -->
+        <h1 style="text-align: center; margin-top: 20px; color: white;">魔灵全自动兑换码领取</h1>
+        <h2 style="color: white;">申请绑定</h2>
+        <!-- 标题，显示“申请绑定” -->
+        <form id="bindForm">
+            <!-- 表单，用于收集用户输入的数据 -->
+            <div class="input-group">
+                <label for="hiveid" style="color: white;">HiveID</label>
+                <!-- 标签，用于提示用户输入HiveID -->
+                <input type="text" id="hiveid" placeholder="游戏头像设置页id" required style="width: 200px;background-color: #000000;color: white;">
+                <!-- 输入框，用于用户输入HiveID，设置了占位符和必填属性 -->
+            </div>
+            <div class="input-group">
+                <label for="server" style="color: white;">Server</label>
+                <!-- 标签，用于提示用户选择服务器 -->
+                <select id="server" required style="width: 220px;background-color: #000000;color: white;">
+                    <!-- 选择框，用于用户选择服务器，设置了必填属性 -->
+                    <option value="" style="color: white;">请选择服务器</option>
+                    <!-- 默认选项，提示用户选择服务器 -->
+                    <option value="global" style="color: white;">全球服务器</option>
+                    <!-- 选项，代表全球服务器 -->
+                    <option value="korea" style="color: white;">韩国服务器</option>
+                    <!-- 选项，代表韩国服务器 -->
+                    <option value="japan" style="color: white;">日本服务器</option>
+                    <!-- 选项，代表日本服务器 -->
+                    <option value="china" style="color: white;">中国服务器</option>
+                    <!-- 选项，代表中国服务器 -->
+                    <option value="asia" style="color: white;">亚洲服务器</option>
+                    <!-- 选项，代表亚洲服务器 -->
+                    <option value="europe" style="color: white;">欧洲服务器</option>
+                    <!-- 选项，代表欧洲服务器 -->
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="vipcode" style="color: white;">VIP Code:请页面底部联系UP</label>
+                <!-- 标签，用于提示用户输入VIP Code -->
+                <input type="text" id="vipcode" placeholder="请输入VIP Code" required style="width: 200px;background-color: #000000;color: white;">
+                <!-- 输入框，用于用户输入VIP Code，设置了占位符和必填属性 -->
+            </div>
+            <div>
+                <button type="submit" id="submitButton" disabled>申请</button>
+            </div>
+
+            <!-- 提交按钮，用于提交表单数据，初始状态为禁用 -->
+        </form>
+        <div id="status-message"></div>
+        <!-- 用于显示提交状态的消息 -->
+        <!-- 新增功能按钮容器 -->
+        <div class="function-buttons">
+            <h3 style="color: white;">其他功能</h3>
+            <button id="historyButton">历史领取</button>
+            <button id="rewardButton">最新兑换码</button>
+            <button id="addCodeButton">增加兑换码</button>
+            <button id="otherButton">其他资源</button>
+        </div>
+        <!-- 历史弹窗内容 -->
+        <div id="historyModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 style="color: white;">历史领取数据</h2>
+                <div id="csvData"></div>
+    
+            </div>
+        </div>
+        <!-- 最新兑换码弹窗内容 -->
+        <div id="rewardModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                    <h2 style="color: white;">最新兑换码</h2>
+                    <div id="rewardData"></div>
+            </div>
+        </div>
+        <!-- 增加兑换码弹窗内容 -->
+        <div id="addCodeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 style="color: white;">增加兑换码</h2>
+                <form id="addCodeForm">
+                    <div class="input-group">       
+                        <label for="code" style="color: white;">兑换码</label>
+                        <input type="text" id="code" placeholder="请输入兑换码" required style="width: 200px;background-color: #000000;color: white;">
+                        <button type="submit" id="addCodeSubmitButton">增加</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- 页面底部部分，用于显示页面的版权信息 -->
+        <div class="footer">
+                        <p>&copy;<a href="https://space.bilibili.com/33819950">啊啊啊黑猫警长</a></p>
+            <!-- 版权信息，显示当前年份和页面名称 -->
+        </div>
+    </div>
+    <!-- 页面主体部分的结束标签 -->
+    <script>
+        //点击otherButton跳转到https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AC%E5%94%A4/
+
+        // 点击按钮时，跳转到指定的URL
+        document.getElementById('otherButton').addEventListener('click', function() {       
+            window.location.href = 'https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AC%E5%94%A4/';
+        });
+        // 获取关闭按钮
+        const closeBtn = document.getElementsByClassName('close');
+        // 当用户点击关闭按钮时，关闭弹窗
+        for (let i = 0; i < closeBtn.length; i++) {
+            closeBtn[i].onclick = function() {
+                historyModal.style.display = 'none';
+                rewardModal.style.display = 'none';
+                addCodeModal.style.display = 'none';
+            }
+        }
+        // 获取页面中的各个元素
+        const hiveidInput = document.getElementById('hiveid');
+        const serverSelect = document.getElementById('server');
+        const vipcodeInput = document.getElementById('vipcode');
+        const submitButton = document.getElementById('submitButton');
+        const statusMessage = document.getElementById('status-message');
+            // 设置状态消息内容并显示
+        function setStatusMessage(message) {
+            statusMessage.textContent = message;
+            statusMessage.classList.add('show'); // 添加显示类
+
+            // 一段时间后隐藏状态消息
+            setTimeout(() => {
+                statusMessage.classList.remove('show'); // 移除显示类
+            }, 3000); // 3秒后隐藏
+        }
+        let isSubmitting = false;
+        // 监听输入框和选择框的变化事件
+        hiveidInput.addEventListener('input', validateInputs);
+        serverSelect.addEventListener('change', validateInputs);
+        vipcodeInput.addEventListener('input', validateInputs);
+
+
+        // 验证输入框中的内容是否有效
+        function validateInputs() {
+            const hiveid = hiveidInput.value.trim();
+            const server = serverSelect.value;
+            const vipcode = vipcodeInput.value.trim();
+            
+            const isHiveidValid = /^[a-zA-Z0-9]+$/.test(hiveid);
+            const isVipcodeValid = /^[a-zA-Z0-9]+$/.test(vipcode);
+
+            if (!isHiveidValid) {
+                hiveidInput.setCustomValidity('HiveID不能包含中文，请重新输入');
+            } else {
+                hiveidInput.setCustomValidity('');
+            }
+
+            if (!isVipcodeValid) {
+                vipcodeInput.setCustomValidity('VIP Code不能包含中文，请重新输入');
+            } else {
+                vipcodeInput.setCustomValidity('');
+            }
+            submitButton.disabled = !(isHiveidValid && server && isVipcodeValid);
+            return isHiveidValid && server && isVipcodeValid;        }
+        
+        // 处理绑定表单提交事件
+        function handleSubmit(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+
+            if (isSubmitting) return; // 如果正在提交，忽略重复提交
+
+            if (!validateInputs()) return; // 如果输入无效，不提交表单
+
+            isSubmitting = true;
+            submitButton.disabled = true; // 禁用提交按钮
+            
+            // 去除hiveid中的空格
+            const hiveid = hiveidInput.value.replace(/\s/g, '');
+            // 构造表单数据
+            const formData = {
+                wxid: 'player_wxid', // 假设wxid固定为'player_wxid'
+                hiveid: hiveid,
+                autonum: '10', // 假设autonum固定为'10'
+                server: serverSelect.value,
+                email: 'player_email', // 假设email固定为'player_email'
+                vip: '0', // 假设vip固定为'0'
+                vipcode: vipcodeInput.value
+            };
+            // 使用Fetch API发送数据到bind.py
+            fetch('/bind', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                // 检查响应是否成功
+                if (!response.ok) {
+                    throw new Error('Network response was not ok'+ response.statusText);
+                }
+                // 服务器返回的是字符串，直接读取文本内容，转为JSON对象
+                // 然后获取message属性的值
+                // 然后使用服务器返回的来设置状态消息
+                return response.text();
+            })
+           .then(text => {
+                // 使用服务器返回的字符串转码后来设置状态消息
+                const jsonData = JSON.parse(text);
+                setStatusMessage(jsonData.message);
+            })
+           .catch(error => {
+                console.error('Error:', error);
+                setStatusMessage('发生错误，请重试。');
+            })
+           .finally(() => {
+                isSubmitting = false;
+                submitButton.disabled = false; // 恢复提交按钮状态
+                //重置表单hiveid
+                hiveidInput.value = '';
+            });
+        }
+            // 监听表单提交事件
+            const bindForm = document.getElementById('bindForm');
+            bindForm.addEventListener('submit', handleSubmit);
+                // 表单提交后重新计算并设置弹窗大小
+            bindForm.addEventListener('submit', function() {
+                const modalContent = document.querySelector('.modal-content');
+                modalContent.style.width = '80%';
+                modalContent.style.maxWidth = '700px';
+            });
+        ;
+            //历史领取数据
+            // 获取历史领取按钮
+            const historyButton = document.getElementById('historyButton');
+            // 获取历史领取弹窗
+            const historyModal = document.getElementById('historyModal');
+            // 为按钮添加点击事件监听器
+            historyButton.addEventListener('click', fetchHistory);
+            // 绑定点击事件到历史领取按钮
+            document.getElementById('historyButton').addEventListener('click', fetchHistory);
+            // 当用户点击历史领取按钮时，显示弹窗
+            historyButton.onclick = function() {
+                historyModal.style.display = "block";
+            }
+
+            // 当用户点击任何地方时，关闭弹窗
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    historyModal.style.display = "none";
+                }
+            }
+        // 获取历史领取数据并显示在弹窗中
+        function fetchHistory() {
+            fetch('/history')
+                .then(response => response.text())  // 获取CSV文件内容
+                .then(csvText => {
+                    const csvData = parseCSV(csvText);  // 解析CSV
+                    displayCSV(csvData);  // 显示CSV数据
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        // 解析CSV文本
+        function parseCSV(csvText) {
+            const rows = csvText.split('\n');
+            return rows.map(row => {
+                return row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+            });
+        }
+        // 显示CSV数据
+        function displayCSV(csvData) {
+        // 获取用于显示 CSV 数据的元素
+        const csvTableContainer = document.getElementById('csvData');
+        // 清除之前的内容
+        csvTableContainer.innerHTML = '';
+        const csvTable = document.createElement('table');
+        csvData.forEach((row, index) => {
+            const tr = document.createElement(index === 0 ? 'th' : 'td');
+            row.forEach(cell => {
+                const td = document.createElement('td');
+                td.textContent = cell;
+                tr.appendChild(td);
+            });
+            csvTable.appendChild(tr);
+        });
+        csvTableContainer.appendChild(csvTable);
+        historyModal.style.display = "block";  // 显示弹窗
+        }
+        // 最新兑换码
+        // 获取最新兑换码按钮
+        const rewardButton = document.getElementById('rewardButton');
+        // 获取最新兑换码弹窗
+        const rewardModal = document.getElementById('rewardModal');
+        // 为按钮添加点击事件监听器
+        rewardButton.addEventListener('click', fetchReward);
+        // 绑定点击事件到最新兑换码按钮
+        document.getElementById('rewardButton').addEventListener('click', fetchReward);
+        // 当用户点击最新兑换码按钮时，显示弹窗
+        rewardButton.onclick = function() {
+            rewardModal.style.display = "block";
+        }
+        // 当用户点击任何地方时，关闭弹窗
+        window.onclick = function(event) {
+            if (event.target == rewardModal) {
+                rewardModal.style.display = "none";
+            }
+        }
+        // 获取最新兑换码数据并显示在弹窗中
+        function fetchReward() {
+           
+            fetch('/reward')
+               .then(response => response.text())  // 获取CSV文件内容
+               .then(csvText => {
+                    const csvData = parseCSV(csvText);  // 解析CSV
+                    displayReward(csvData);  // 显示CSV数据
+                })
+              .catch(error => console.error('Error:', error));
+        }
+        // 解析CSV文本
+        function parseCSV(csvText) {
+            const rows = csvText.split('\n');
+            return rows.map(row => {
+                return row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+            });
+        }
+        // 显示最新兑换码数据
+        function displayReward(csvData) {
+            // 获取用于显示 CSV 数据的元素
+            const csvTableContainer = document.getElementById('rewardData');
+            // 清除之前的内容
+            csvTableContainer.innerHTML = '';
+            const csvTable = document.createElement('table');
+            csvData.forEach((row, index) => {
+                const tr = document.createElement(index === 0? 'th' : 'td');
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                });
+                csvTable.appendChild(tr);
+            });
+            csvTableContainer.appendChild(csvTable); // 显示CSV数据
+            rewardModal.style.display = "block";  // 显示弹窗
+        }
+        // 增加兑换码
+        // 获取增加兑换码提交按钮
+        const addCodeSubmitButton = document.getElementById('addCodeSubmitButton');
+        // 监听增加兑换码表单提交事件
+        addCodeSubmitButton.addEventListener('click', handleAddCodeSubmit);
+
+
+        // 获取增加兑换码按钮
+        const addCodeButton = document.getElementById('addCodeButton');
+        // 获取增加兑换码弹窗
+        const addCodeModal = document.getElementById('addCodeModal');
+        // 为按钮添加点击事件监听器
+        addCodeButton.addEventListener('click', openAddCodeModal);
+        // 绑定点击事件到增加兑换码按钮
+        document.getElementById('addCodeButton').addEventListener('click', openAddCodeModal);
+        // 当用户点击增加兑换码按钮时，显示弹窗
+        addCodeButton.onclick = function() {
+            addCodeModal.style.display = "block";
+        }
+        // 当用户点击任何地方时，关闭弹窗
+        window.onclick = function(event) {
+            if (event.target == addCodeModal) {
+                addCodeModal.style.display = "none";
+            }
+        }
+        // 打开增加兑换码弹窗
+        function openAddCodeModal() {
+            addCodeModal.style.display = "block";
+        }
+        // 监听增加兑换码表单提交事件
+        const addCodeForm = document.getElementById('addCodeForm');
+        addCodeForm.addEventListener('submit', handleAddCodeSubmit);
+        //兑换码需要是英文字符串，不能包含中文
+        function valicodeInputs() {
+            const code = document.getElementById('code').value.trim();
+            const isCodeValid = /^[a-zA-Z0-9]+$/.test(code);
+            if (!isCodeValid) {
+                document.getElementById('code').setCustomValidity('兑换码不能包含中文，请重新输入');
+            } else {
+                document.getElementById('code').setCustomValidity('');
+            }
+            addCodeSubmitButton.disabled = !(isCodeValid);
+            return isCodeValid;
+        }
+
+        // 处理增加兑换码表单提交事件
+        function handleAddCodeSubmit(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+            if (isSubmitting) return; // 如果正在提交，忽略重复提交
+
+            if (!valicodeInputs()) return; // 如果输入无效，兑换码需要是英文字符串，不能包含中文，不提交表单
+
+            isSubmitting = true;
+            addCodeSubmitButton.disabled = true; // 禁用提交按钮
+
+            // 构造表单数据
+            const formData = {
+                code: document.getElementById('code').value
+            };  
+
+            // 使用Fetch API发送数据到add_code
+            fetch('/add_code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                // 检查响应是否成功
+                if (!response.ok) {
+                    throw new Error('Network response was not ok'+ response.statusText);
+                }
+                // 服务器返回的是字符串，直接读取文本内容，转为JSON对象
+                // 然后获取message属性的值
+                // 然后使用服务器返回的来设置状态消息
+                return response.text();
+            })
+           .then(text => {
+                // 使用服务器返回的字符串转码后来设置状态消息
+                const jsonData = JSON.parse(text);
+                setStatusMessage(jsonData.message);
+                addCodeModal.style.display = "none"; // 关闭弹窗
+            })
+           .catch(error => {
+                console.error('Error:', error);
+                setStatusMessage('发生错误，请重试。');
+            })
+           .finally(() => {
+                isSubmitting = false;
+                addCodeSubmitButton.disabled = false; // 重新启用提交按钮
+                addCodeForm.reset(); // 重置表单
+            });
+        }
+    </script>
+</body>
+</html>

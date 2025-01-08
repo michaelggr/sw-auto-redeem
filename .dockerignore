@@ -1,0 +1,6 @@
+# .dockerignore file
+**/.venv
+**/.venv/**
+__pycache__
+.git
+.github
