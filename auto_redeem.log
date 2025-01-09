@@ -393,3 +393,7 @@
 [01-08 14:48:19][INFO] 127.0.0.1 - - [08/Jan/2025 14:48:19] "POST /bind HTTP/1.1" 200 -
 [01-08 14:52:22][INFO]  * Detected change in 'g:\\dev\\sw-auto-redeem\\bind.py', reloading
 [01-08 14:55:11][INFO]  * Restarting with stat
+[01-08 14:55:12][INFO] 这是一条信息日志
+[01-08 14:55:12][WARNING]  * Debugger is active!
+[01-08 14:55:12][INFO]  * Debugger PIN: 661-082-671
+[01-08 14:55:39][INFO] 127.0.0.1 - - [08/Jan/2025 14:55:39] "POST /bind HTTP/1.1" 200 -

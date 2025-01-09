@@ -145,7 +145,7 @@ def web_bind_player_info(wxid, hiveid, autonum, server, email, vip, vipcode):
                 if write_user_csv(user_df):
                     return "绑定信息已成功添加。光暗发货中"
                 else:
-                    return "绑定信息添加失败。联系管理员"
+                    return "绑定信息添加失败。页面底部私信联系"
             else:
                 return "vip code错误，请重新输入"
 
