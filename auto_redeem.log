@@ -2138,3 +2138,67 @@
 [01-11 02:45:42][INFO] 开始抓取兑换码
 [01-11 02:45:42][INFO] 抓取兑换码完成
 [01-11 02:45:43][INFO] 抓取兑换码失败
+[01-11 02:49:09][INFO] 这是一条信息日志
+[01-11 02:49:09][INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[01-11 02:49:09][INFO] swq抓取兑换码任务已添加，时间间隔为3分钟
+[01-11 02:49:09][INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[01-11 02:49:09][INFO] reward更新reward.csv任务已添加，时间间隔为5分钟
+[01-11 02:49:09][INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[01-11 02:49:09][INFO] task更新task.json任务已添加，时间间隔为5分钟
+[01-11 02:49:09][INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[01-11 02:49:09][INFO] history更新history.csv任务已添加，时间间隔为15分钟
+[01-11 02:49:09][INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[01-11 02:49:09][INFO] evt_coupon.py任务已添加，时间间隔为15分钟
+[01-11 02:49:09][INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[01-11 02:49:09][INFO] 每天指定时间执行发邮件任务已添加，时间为08:30
+[01-11 02:49:09][INFO] Added job "swq_task" to job store "default"
+[01-11 02:49:09][INFO] Added job "reward_task" to job store "default"
+[01-11 02:49:09][INFO] Added job "task_task" to job store "default"
+[01-11 02:49:09][INFO] Added job "history_task" to job store "default"
+[01-11 02:49:09][INFO] Added job "check_and_run_evt_coupon" to job store "default"
+[01-11 02:49:09][INFO] Added job "send_email_task" to job store "default"
+[01-11 02:49:09][INFO] Scheduler started
+[01-11 02:49:09][INFO] 现有任务: [<Job (id=c1d061817ffa417581edcc3ee84a50c3 name=swq_task)>, <Job (id=3b188d1e89284c7aae1a86151d5ba15c name=reward_task)>, <Job (id=1cafd3c2d5094a03aa013b41b16d6a33 name=task_task)>, <Job (id=8dc8ff2ef4e7473bad3f97264f654e61 name=history_task)>, <Job (id=def0a38e80264b7fb08d610a911b151f name=check_and_run_evt_coupon)>, <Job (id=236fbfd369ee4c94bbd482274ca8cea9 name=send_email_task)>]
+[01-11 02:52:09][INFO] Running job "swq_task (trigger: interval[0:03:00], next run at: 2025-01-11 02:52:09 CST)" (scheduled at 2025-01-11 02:52:09.714038+08:00)
+[01-11 02:52:09][INFO] 开始抓取兑换码
+[01-11 02:52:13][INFO] 抓取兑换码完成
+[01-11 02:52:14][INFO] 兑换码未更新
+[01-11 02:52:14][INFO] swq抓取兑换码任务执行完毕
+[01-11 02:52:14][INFO] swq抓取兑换码任务执行完毕
+[01-11 02:52:14][INFO] Job "swq_task (trigger: interval[0:03:00], next run at: 2025-01-11 02:55:09 CST)" executed successfully
+[01-11 02:54:09][INFO] Running job "reward_task (trigger: interval[0:05:00], next run at: 2025-01-11 02:59:09 CST)" (scheduled at 2025-01-11 02:54:09.714038+08:00)
+[01-11 02:54:09][INFO] Running job "task_task (trigger: interval[0:05:00], next run at: 2025-01-11 02:59:09 CST)" (scheduled at 2025-01-11 02:54:09.715038+08:00)
+[01-11 02:54:09][INFO] 开始生成任务数据
+[01-11 02:54:09][INFO] 开始更新奖励表
+[01-11 02:54:09][INFO] reward更新reward.csv任务执行完毕
+[01-11 02:54:09][INFO] reward更新reward.csv任务执行完毕
+[01-11 02:54:09][INFO] Job "reward_task (trigger: interval[0:05:00], next run at: 2025-01-11 02:59:09 CST)" executed successfully
+[01-11 02:54:09][INFO] 成功保存了 88 条数据到 task.json
+[01-11 02:54:09][INFO] task更新task.json任务执行完毕
+[01-11 02:54:09][INFO] task更新task.json任务执行完毕
+[01-11 02:54:09][INFO] Job "task_task (trigger: interval[0:05:00], next run at: 2025-01-11 02:59:09 CST)" executed successfully
+[01-11 02:55:09][INFO] Running job "swq_task (trigger: interval[0:03:00], next run at: 2025-01-11 02:58:09 CST)" (scheduled at 2025-01-11 02:55:09.714038+08:00)
+[01-11 02:55:09][INFO] 开始抓取兑换码
+[01-11 02:55:10][INFO] 抓取兑换码完成
+[01-11 02:55:11][INFO] 兑换码未更新
+[01-11 02:55:11][INFO] swq抓取兑换码任务执行完毕
+[01-11 02:55:11][INFO] swq抓取兑换码任务执行完毕
+[01-11 02:55:11][INFO] Job "swq_task (trigger: interval[0:03:00], next run at: 2025-01-11 02:58:09 CST)" executed successfully
+[01-11 02:58:09][INFO] Running job "swq_task (trigger: interval[0:03:00], next run at: 2025-01-11 03:01:09 CST)" (scheduled at 2025-01-11 02:58:09.714038+08:00)
+[01-11 02:58:09][INFO] 开始抓取兑换码
+[01-11 02:58:10][INFO] 抓取兑换码完成
+[01-11 02:58:11][INFO] 兑换码未更新
+[01-11 02:58:11][INFO] swq抓取兑换码任务执行完毕
+[01-11 02:58:11][INFO] swq抓取兑换码任务执行完毕
+[01-11 02:58:11][INFO] Job "swq_task (trigger: interval[0:03:00], next run at: 2025-01-11 03:01:09 CST)" executed successfully
+[01-11 02:59:09][INFO] Running job "reward_task (trigger: interval[0:05:00], next run at: 2025-01-11 03:04:09 CST)" (scheduled at 2025-01-11 02:59:09.714038+08:00)
+[01-11 02:59:09][INFO] Running job "task_task (trigger: interval[0:05:00], next run at: 2025-01-11 03:04:09 CST)" (scheduled at 2025-01-11 02:59:09.715038+08:00)
+[01-11 02:59:09][INFO] 开始生成任务数据
+[01-11 02:59:09][INFO] 开始更新奖励表
+[01-11 02:59:09][INFO] reward更新reward.csv任务执行完毕
+[01-11 02:59:09][INFO] reward更新reward.csv任务执行完毕
+[01-11 02:59:09][INFO] Job "reward_task (trigger: interval[0:05:00], next run at: 2025-01-11 03:04:09 CST)" executed successfully
+[01-11 02:59:09][INFO] 成功保存了 88 条数据到 task.json
+[01-11 02:59:09][INFO] task更新task.json任务执行完毕
+[01-11 02:59:09][INFO] task更新task.json任务执行完毕
+[01-11 02:59:09][INFO] Job "task_task (trigger: interval[0:05:00], next run at: 2025-01-11 03:04:09 CST)" executed successfully
