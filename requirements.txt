@@ -1,0 +1,6 @@
+schedule
+beautifulsoup4
+requests
+pandas
+portalocker
+flask
