@@ -397,3 +397,149 @@
 [01-08 14:55:12][WARNING]  * Debugger is active!
 [01-08 14:55:12][INFO]  * Debugger PIN: 661-082-671
 [01-08 14:55:39][INFO] 127.0.0.1 - - [08/Jan/2025 14:55:39] "POST /bind HTTP/1.1" 200 -
+[01-09 01:45:57][ERROR] File not found: vipcode.json
+[01-09 01:46:54][ERROR] File not found: vipcode.json
+[01-09 02:48:54][ERROR] Error writing JSON file: 'str' object has no attribute 'update'
+[01-09 02:48:54][ERROR] Error writing JSON file: 'str' object has no attribute 'update'
+[01-09 02:49:06][ERROR] Error writing JSON file: 'str' object has no attribute 'update'
+[01-09 02:49:06][ERROR] Error writing JSON file: 'str' object has no attribute 'update'
+[01-09 02:51:52][ERROR] Error writing JSON file: 'str' object has no attribute 'update'
+[01-09 02:51:52][ERROR] Error writing JSON file: 'str' object has no attribute 'update'
+[01-09 02:52:10][ERROR] Error writing JSON file: 'str' object has no attribute 'update'
+[01-09 02:52:10][ERROR] Error writing JSON file: 'str' object has no attribute 'update'
+[01-09 02:57:50][ERROR] File not found: vipcode.csv
+[01-09 02:59:22][ERROR] File not found: vipcode.csv
+[01-09 03:27:43][ERROR] Error reading CSV file: Error tokenizing data. C error: Expected 2 fields in line 3, saw 3
+
+[01-09 03:27:43][ERROR] Error reading CSV file: Error tokenizing data. C error: Expected 2 fields in line 3, saw 3
+
+[01-09 03:57:58][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 03:57:58][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-09 03:57:58][INFO] [33mPress CTRL+C to quit[0m
+[01-09 03:57:58][INFO]  * Restarting with stat
+[01-09 03:57:59][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 03:57:59][WARNING]  * Debugger is active!
+[01-09 03:57:59][INFO]  * Debugger PIN: 661-082-671
+[01-09 03:58:11][INFO] 127.0.0.1 - - [09/Jan/2025 03:58:11] "GET / HTTP/1.1" 200 -
+[01-09 03:58:34][INFO] 127.0.0.1 - - [09/Jan/2025 03:58:34] "POST /bind HTTP/1.1" 200 -
+[01-09 03:58:48][INFO] 127.0.0.1 - - [09/Jan/2025 03:58:48] "POST /bind HTTP/1.1" 200 -
+[01-09 03:59:04][INFO] 127.0.0.1 - - [09/Jan/2025 03:59:04] "POST /bind HTTP/1.1" 200 -
+[01-09 03:59:10][INFO] 127.0.0.1 - - [09/Jan/2025 03:59:10] "GET / HTTP/1.1" 200 -
+[01-09 03:59:11][INFO] 127.0.0.1 - - [09/Jan/2025 03:59:11] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 03:59:26][INFO] 127.0.0.1 - - [09/Jan/2025 03:59:26] "POST /bind HTTP/1.1" 200 -
+[01-09 04:03:52][INFO]  * Detected change in 'g:\\dev\\sw-auto-redeem\\vipcode.py', reloading
+[01-09 04:04:00][INFO]  * Restarting with stat
+[01-09 04:04:01][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 04:04:01][WARNING]  * Debugger is active!
+[01-09 04:04:01][INFO]  * Debugger PIN: 661-082-671
+[01-09 04:04:09][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 04:04:09][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-09 04:04:09][INFO] [33mPress CTRL+C to quit[0m
+[01-09 04:04:09][INFO]  * Restarting with stat
+[01-09 04:04:11][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 04:04:11][WARNING]  * Debugger is active!
+[01-09 04:04:11][INFO]  * Debugger PIN: 661-082-671
+[01-09 04:04:41][INFO] 127.0.0.1 - - [09/Jan/2025 04:04:41] "POST /bind HTTP/1.1" 200 -
+[01-09 04:07:45][INFO]  * Detected change in 'g:\\dev\\sw-auto-redeem\\bind.py', reloading
+[01-09 04:07:50][INFO]  * Restarting with stat
+[01-09 04:07:51][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 04:07:51][WARNING]  * Debugger is active!
+[01-09 04:07:51][INFO]  * Debugger PIN: 661-082-671
+[01-09 04:10:17][INFO]  * Detected change in 'g:\\dev\\sw-auto-redeem\\bind.py', reloading
+[01-09 04:10:20][INFO]  * Restarting with stat
+[01-09 04:10:22][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 04:10:22][WARNING]  * Debugger is active!
+[01-09 04:10:22][INFO]  * Debugger PIN: 661-082-671
+[01-09 04:10:55][INFO] 127.0.0.1 - - [09/Jan/2025 04:10:55] "POST /bind HTTP/1.1" 200 -
+[01-09 04:11:31][INFO]  * Detected change in 'g:\\dev\\sw-auto-redeem\\bind.py', reloading
+[01-09 04:11:35][INFO]  * Restarting with stat
+[01-09 04:11:37][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 04:11:37][WARNING]  * Debugger is active!
+[01-09 04:11:37][INFO]  * Debugger PIN: 661-082-671
+[01-09 04:12:07][INFO]  * Detected change in 'g:\\dev\\sw-auto-redeem\\vipcode.py', reloading
+[01-09 04:15:44][INFO]  * Restarting with stat
+[01-09 04:15:46][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 04:15:46][WARNING]  * Debugger is active!
+[01-09 04:15:46][INFO]  * Debugger PIN: 661-082-671
+[01-09 04:15:46][INFO] 127.0.0.1 - - [09/Jan/2025 04:15:46] "GET / HTTP/1.1" 200 -
+[01-09 04:15:47][INFO] 127.0.0.1 - - [09/Jan/2025 04:15:47] "GET / HTTP/1.1" 200 -
+[01-09 04:15:48][INFO] 127.0.0.1 - - [09/Jan/2025 04:15:48] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-09 04:20:14][INFO] 127.0.0.1 - - [09/Jan/2025 04:20:14] "GET / HTTP/1.1" 200 -
+[01-09 04:20:15][INFO] 127.0.0.1 - - [09/Jan/2025 04:20:15] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-09 04:30:38][INFO] 127.0.0.1 - - [09/Jan/2025 04:30:38] "GET / HTTP/1.1" 200 -
+[01-09 04:47:51][INFO] 127.0.0.1 - - [09/Jan/2025 04:47:51] "GET / HTTP/1.1" 200 -
+[01-09 04:47:53][INFO] 127.0.0.1 - - [09/Jan/2025 04:47:53] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 04:47:54][INFO] 127.0.0.1 - - [09/Jan/2025 04:47:54] "GET /history HTTP/1.1" 200 -
+[01-09 04:48:25][INFO] 127.0.0.1 - - [09/Jan/2025 04:48:25] "GET /history HTTP/1.1" 200 -
+[01-09 04:48:38][INFO] 127.0.0.1 - - [09/Jan/2025 04:48:38] "GET / HTTP/1.1" 200 -
+[01-09 04:48:39][INFO] 127.0.0.1 - - [09/Jan/2025 04:48:39] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 04:48:53][INFO] 127.0.0.1 - - [09/Jan/2025 04:48:53] "POST /bind HTTP/1.1" 200 -
+[01-09 04:49:10][INFO] 127.0.0.1 - - [09/Jan/2025 04:49:10] "POST /bind HTTP/1.1" 200 -
+[01-09 16:49:57][INFO] 127.0.0.1 - - [09/Jan/2025 16:49:57] "GET / HTTP/1.1" 200 -
+[01-09 20:45:27][INFO] 127.0.0.1 - - [09/Jan/2025 20:45:27] "GET / HTTP/1.1" 200 -
+[01-09 20:45:29][INFO] 127.0.0.1 - - [09/Jan/2025 20:45:29] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 20:51:25][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 20:51:25][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-09 20:51:25][INFO] [33mPress CTRL+C to quit[0m
+[01-09 20:51:25][INFO]  * Restarting with stat
+[01-09 20:51:27][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 20:51:27][WARNING]  * Debugger is active!
+[01-09 20:51:27][INFO]  * Debugger PIN: 661-082-671
+[01-09 20:52:50][INFO] 127.0.0.1 - - [09/Jan/2025 20:52:50] "GET / HTTP/1.1" 200 -
+[01-09 20:52:51][INFO] 127.0.0.1 - - [09/Jan/2025 20:52:51] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 20:52:56][INFO] 127.0.0.1 - - [09/Jan/2025 20:52:56] "POST /add_code HTTP/1.1" 200 -
+[01-09 20:53:34][INFO] 127.0.0.1 - - [09/Jan/2025 20:53:34] "POST /bind HTTP/1.1" 200 -
+[01-09 20:53:56][INFO] 127.0.0.1 - - [09/Jan/2025 20:53:56] "POST /bind HTTP/1.1" 200 -
+[01-09 21:07:51][INFO] 127.0.0.1 - - [09/Jan/2025 21:07:51] "GET / HTTP/1.1" 200 -
+[01-09 21:07:53][INFO] 127.0.0.1 - - [09/Jan/2025 21:07:53] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 21:16:32][INFO] 127.0.0.1 - - [09/Jan/2025 21:16:32] "GET / HTTP/1.1" 200 -
+[01-09 21:16:33][INFO] 127.0.0.1 - - [09/Jan/2025 21:16:33] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 21:40:29][INFO] 127.0.0.1 - - [09/Jan/2025 21:40:29] "GET / HTTP/1.1" 200 -
+[01-09 21:40:30][INFO] 127.0.0.1 - - [09/Jan/2025 21:40:30] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 21:41:03][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 21:41:03][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-09 21:41:03][INFO] [33mPress CTRL+C to quit[0m
+[01-09 21:41:03][INFO]  * Restarting with stat
+[01-09 21:41:04][INFO] ’‚ «“ªÃı–≈œ¢»’÷æ
+[01-09 21:41:04][WARNING]  * Debugger is active!
+[01-09 21:41:04][INFO]  * Debugger PIN: 661-082-671
+[01-09 21:41:17][INFO] 127.0.0.1 - - [09/Jan/2025 21:41:17] "GET / HTTP/1.1" 200 -
+[01-09 21:41:18][INFO] 127.0.0.1 - - [09/Jan/2025 21:41:18] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 21:46:57][INFO] 127.0.0.1 - - [09/Jan/2025 21:46:57] "GET / HTTP/1.1" 200 -
+[01-09 21:46:59][INFO] 127.0.0.1 - - [09/Jan/2025 21:46:59] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 21:53:46][INFO] 127.0.0.1 - - [09/Jan/2025 21:53:46] "GET / HTTP/1.1" 200 -
+[01-09 22:17:12][INFO] 127.0.0.1 - - [09/Jan/2025 22:17:12] "GET / HTTP/1.1" 200 -
+[01-09 22:17:13][INFO] 127.0.0.1 - - [09/Jan/2025 22:17:13] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 22:17:29][INFO] 127.0.0.1 - - [09/Jan/2025 22:17:29] "GET / HTTP/1.1" 200 -
+[01-09 22:17:34][INFO] 127.0.0.1 - - [09/Jan/2025 22:17:34] "GET /history HTTP/1.1" 200 -
+[01-09 22:17:38][INFO] 127.0.0.1 - - [09/Jan/2025 22:17:38] "GET /reward HTTP/1.1" 200 -
+[01-09 22:17:46][INFO] 127.0.0.1 - - [09/Jan/2025 22:17:46] "GET / HTTP/1.1" 200 -
+[01-09 22:18:23][INFO] 127.0.0.1 - - [09/Jan/2025 22:18:23] "GET / HTTP/1.1" 200 -
+[01-09 22:18:24][INFO] 127.0.0.1 - - [09/Jan/2025 22:18:24] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 22:21:24][INFO] 127.0.0.1 - - [09/Jan/2025 22:21:24] "GET / HTTP/1.1" 200 -
+[01-09 22:21:25][INFO] 127.0.0.1 - - [09/Jan/2025 22:21:25] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 22:21:40][INFO] 127.0.0.1 - - [09/Jan/2025 22:21:40] "GET / HTTP/1.1" 200 -
+[01-09 22:21:41][INFO] 127.0.0.1 - - [09/Jan/2025 22:21:41] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-09 22:27:41][INFO] 127.0.0.1 - - [09/Jan/2025 22:27:41] "GET / HTTP/1.1" 200 -
+[01-09 22:27:42][INFO] 127.0.0.1 - - [09/Jan/2025 22:27:42] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-09 22:50:34][INFO] 127.0.0.1 - - [09/Jan/2025 22:50:34] "GET / HTTP/1.1" 200 -
+[01-09 22:52:00][INFO] 127.0.0.1 - - [09/Jan/2025 22:52:00] "GET / HTTP/1.1" 200 -
+[01-09 22:52:00][INFO] 127.0.0.1 - - [09/Jan/2025 22:52:00] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-09 22:58:06][INFO] 127.0.0.1 - - [09/Jan/2025 22:58:06] "GET / HTTP/1.1" 200 -
+[01-09 22:58:07][INFO] 127.0.0.1 - - [09/Jan/2025 22:58:07] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 23:24:53][INFO] 127.0.0.1 - - [09/Jan/2025 23:24:53] "GET / HTTP/1.1" 200 -
+[01-09 23:24:54][INFO] 127.0.0.1 - - [09/Jan/2025 23:24:54] "GET /favicon.ico HTTP/1.1" 200 -
+[01-09 23:25:35][INFO] 127.0.0.1 - - [09/Jan/2025 23:25:35] "GET / HTTP/1.1" 200 -
+[01-09 23:25:36][INFO] 127.0.0.1 - - [09/Jan/2025 23:25:36] "GET /favicon.ico HTTP/1.1" 200 -

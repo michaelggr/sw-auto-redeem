@@ -4,7 +4,7 @@ import requests
 import os
 import logging
 import time
-
+from vipcode import validate_vipcode
 # 读取环境变量
 DEBUG = os.environ.get("DEBUG", False)
 
@@ -103,8 +103,8 @@ def checkUser(hiveid,server,redeem):
             logging.debug(f"{'hiveid'}用户不存在")
             return False   
         else:
-            print(f"{'hiveid'}用户存在")
-            logging.debug(f"{'hiveid'}用户存在")
+            print(f"{'hiveid'}合法")
+            logging.debug(f"{'hiveid'}合法")
             return True
     else:
         #打印返回的数据
@@ -135,8 +135,9 @@ def web_bind_player_info(wxid, hiveid, autonum, server, email, vip, vipcode):
             #print("bind_hiveid值已存在，请重新输入")
             return f"{bind_hiveid}已存在，请重新输入"
         else:
-            #检查vipcode是否存在相同的值
-            if vipcode in user_df['vipcode'].values:
+            #validate_vipcode检查vipcode可用性，返回True或文本信息
+            logging.debug(bind_info['vipcode'])
+            if validate_vipcode(bind_info['vipcode'])==True:
                 # 如果存在相同的vipcode，将新的绑定信息添加到DataFrame中
                 # 将新的绑定信息添加到DataFrame中
                 new_row = pd.DataFrame([bind_info])
@@ -147,7 +148,8 @@ def web_bind_player_info(wxid, hiveid, autonum, server, email, vip, vipcode):
                 else:
                     return "绑定信息添加失败。页面底部私信联系"
             else:
-                return "vip code错误，请重新输入"
+                KeyError=validate_vipcode(bind_info['vipcode'])
+                return KeyError
 
     else:
         # 如果user_df加载失败，打印错误信息

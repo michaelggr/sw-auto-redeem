@@ -144,7 +144,7 @@ def bind():
         redeem='sw2025jan6a8'
         if checkUser(hiveid,server,redeem)==False:
             # 终止绑定操作  
-            return jsonify({'message': '无效的Hive ID。<br/>请重新确认。'})
+            return jsonify({'message': '无效的Hive ID。请重新确认或联系黑猫。'})
 
         # 调用函数进行绑定
         result = web_bind_player_info(wxid, hiveid, autonum, server, email, vip, vipcode)

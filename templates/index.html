@@ -62,17 +62,17 @@
             /* 设置输入框和选择框的边框半径为4px，使其具有圆角效果 */
         }
         button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
 
 }
 
@@ -109,6 +109,42 @@
         #status-message.show {
             opacity: 1; /* 显示时不透明 */
         }
+        /* 隐藏状态消息时的样式 */
+        #status-message.hide {
+            opacity: 0; /* 隐藏时透明 */
+        }
+        /* 基本错误消息样式 */
+        .error-message {
+            color: red; /* 使用醒目的红色 */
+            font-size: 16px; /* 增加字体大小 */
+            font-weight: bold; /* 加粗字体 */
+            background-color: #ffcccc; /* 添加一个淡红色的背景颜色 */
+            border: 1px solid red; /* 添加一个红色的边框 */
+            padding: 10px; /* 添加一些内边距 */
+            margin-top: 5px; /* 添加一些上边距 */
+            display: none; /* 初始隐藏错误消息 */
+            animation: shake 0.5s ease-in-out; /* 添加一个抖动的动画效果 */
+        }
+
+        /* 抖动动画效果 */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* 基本成功消息样式 */
+        .success-message {
+            color: green;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        /* 基本警告消息样式 */
+
+
         img {
             display: block;
             /* 将图片设置为块级元素，使其独占一行 */
@@ -119,128 +155,151 @@
             height: auto;
             /* 设置图片的高度为自动，保持图片的宽高比 */
             }
-    /* 基本弹窗样式 */
-    .modal {
-        display: none; /* 默认隐藏弹窗 */
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
+        /* 基本弹窗样式 */
+        .modal {
+            display: none; /* 默认隐藏弹窗 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* 如果内容过长，允许滚动 */
+            background-color: rgba(0,0,0,0.4); /* 半透明背景 */
+        }
+
+        /* 基本弹窗样式 */
+        .modal-content {
+            background-color: #000000;
+            margin: 0 auto; /* 将上下外边距设置为0，使弹窗垂直居中 */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 100%; /* 将宽度设置为100%，使其占满父容器的宽度 */
+            max-width: none; /* 移除最大宽度限制 */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            animation-name: animatetop;
+            animation-duration: 0.3s;
+            position: relative;
+            overflow-y: auto;
+            max-height: 80vh;
+            border-radius: 20px; /* 设置圆角半径为10px */
+        }
+
+
+        /* 关闭按钮样式 */
+        .close {
+            color: #1659d4;
+            position: sticky;/* 固定定位 */
+            top: 0; /* 距离顶部0px */
+            right: 0; /* 距离右侧0px */
+            font-size: 48px;
+            font-weight: bold;
+            padding: 10px; /* 增加一些内边距，使其看起来更美观 */
+
+            z-index: 3; /* 确保按钮在其他内容之上 */
+        }
+
+        .close:hover,
+        .close:focus {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 动画效果 */
+        @keyframes animatetop {
+            from {top: -300px; opacity: 0}
+            to {top: 0; opacity: 1}
+        }
+        /* 基本表格样式 */
+        table {
         width: 100%;
-        height: 100%;
-        overflow: auto; /* 如果内容过长，允许滚动 */
-        background-color: rgba(0,0,0,0.4); /* 半透明背景 */
-    }
-
-    /* 基本弹窗样式 */
-    .modal-content {
-        background-color: #000000;
-        margin: 0 auto; /* 将上下外边距设置为0，使弹窗垂直居中 */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 100%; /* 将宽度设置为100%，使其占满父容器的宽度 */
-        max-width: none; /* 移除最大宽度限制 */
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-        animation-name: animatetop;
-        animation-duration: 0.3s;
-        position: relative;
-        overflow-y: auto;
-        max-height: 80vh;
-        border-radius: 20px; /* 设置圆角半径为10px */
-    }
-
-
-    /* 关闭按钮样式 */
-    .close {
-        color: #1659d4;
-        position: sticky;/* 固定定位 */
-        top: 0; /* 距离顶部0px */
-        right: 0; /* 距离右侧0px */
-        font-size: 48px;
-        font-weight: bold;
-        padding: 10px; /* 增加一些内边距，使其看起来更美观 */
-
-        z-index: 3; /* 确保按钮在其他内容之上 */
-    }
-
-    .close:hover,
-    .close:focus {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    /* 动画效果 */
-    @keyframes animatetop {
-        from {top: -300px; opacity: 0}
-        to {top: 0; opacity: 1}
-    }
-    /* 基本表格样式 */
-    table {
-    width: 100%;
-    border-collapse: collapse;
-    color: #ffffff;
-    }
-    th {
-    display: none; /* 隐藏表头 */
-    background-color: #000000;/* Add background color to header cells */
-    }
-    td {
-    display: block;
-    text-align: left;
-    }
-    td:before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    }
-
-    /* 响应式表格样式 */
-    @media screen and (max-width: 600px) {
-    table {
-        display: block;
-        overflow-x: auto;
-    }
-    th {
+        border-collapse: collapse;
+        color: #ffffff;
+        }
+        th {
         display: none; /* 隐藏表头 */
-    }
-    td {
+        background-color: #000000;/* Add background color to header cells */
+        }
+        td {
         display: block;
         text-align: left;
-    }
-    td:before {
+        }
+        td:before {
         content: attr(data-label);
         float: left;
         font-weight: bold;
-    }
-    }
+        }
 
-    /* 基本分页样式 */
-    .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    }
-    .pagination a {
-    color: rgb(250, 250, 250);
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    }
-    .pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    }
-    .pagination a:hover:not(.active) {
-    background-color: #ddd;
-    }
-    /* 响应式分页样式 */
-    @media screen and (max-width: 600px) {
-    .pagination a {
-        padding: 8px;
-    }
-    }
+        /* 响应式表格样式 */
+        @media screen and (max-width: 600px) {
+        table {
+            display: block;
+            overflow-x: auto;
+        }
+        th {
+            display: none; /* 隐藏表头 */
+        }
+        td {
+            display: block;
+            text-align: left;
+        }
+        td:before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+        }
+        }
+
+        /* 基本分页样式 */
+        .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        }
+        .pagination a {
+        color: rgb(250, 250, 250);
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+        }
+        .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+        }
+        .pagination a:hover:not(.active) {
+        background-color: #ddd;
+        }
+        /* 响应式分页样式 */
+        @media screen and (max-width: 600px) {
+        .pagination a {
+            padding: 8px;
+        }
+        }
+        /* 加载动画样式 */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+            display: none; /* 初始隐藏加载动画 */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 加载提示信息样式 */
+        .loading-message {
+            text-align: center;
+            color: #3498db;
+            display: none; /* 初始隐藏加载提示信息 */
+        }
     </style>
 </head>
 <style>
@@ -290,6 +349,8 @@
                 <!-- 标签，用于提示用户输入HiveID -->
                 <input type="text" id="hiveid" placeholder="游戏头像设置页id" required style="width: 200px;background-color: #000000;color: white;">
                 <!-- 输入框，用于用户输入HiveID，设置了占位符和必填属性 -->
+                <div class="error-message" id="hiveid-error"></div>
+                <!-- 用于显示HiveID输入错误信息的元素 -->
             </div>
             <div class="input-group">
                 <label for="server" style="color: white;">Server</label>
@@ -311,18 +372,20 @@
                     <option value="europe" style="color: white;">欧洲服务器</option>
                     <!-- 选项，代表欧洲服务器 -->
                 </select>
+                <div class="error-message" id="server-error"></div>
             </div>
             <div class="input-group">
                 <label for="vipcode" style="color: white;">VIP Code:请页面底部联系UP</label>
                 <!-- 标签，用于提示用户输入VIP Code -->
                 <input type="text" id="vipcode" placeholder="请输入VIP Code" required style="width: 200px;background-color: #000000;color: white;">
                 <!-- 输入框，用于用户输入VIP Code，设置了占位符和必填属性 -->
-            </div>
+                <div class="error-message" id="vipcode-error"></div>
+                <!-- 用于显示VIP Code输入错误信息的元素 -->
+            </div>   
             <div>
                 <button type="submit" id="submitButton" disabled>申请</button>
-            </div>
-
-            <!-- 提交按钮，用于提交表单数据，初始状态为禁用 -->
+                <!-- 提交按钮，用于提交表单数据，初始状态为禁用 -->
+            </div> 
         </form>
         <div id="status-message"></div>
         <!-- 用于显示提交状态的消息 -->
@@ -333,6 +396,8 @@
             <button id="rewardButton">最新兑换码</button>
             <button id="addCodeButton">增加兑换码</button>
             <button id="otherButton">其他资源</button>
+            <button id="coaButton">考验之塔</button>
+            <button id="feedbackButton">建议反馈</button>
         </div>
         <!-- 历史弹窗内容 -->
         <div id="historyModal" class="modal">
@@ -367,17 +432,31 @@
         </div>
         <!-- 页面底部部分，用于显示页面的版权信息 -->
         <div class="footer">
-                        <p>&copy;<a href="https://space.bilibili.com/33819950">啊啊啊黑猫警长</a></p>
+                        <p style="color: green;">&copy;<a style="color: green;" href="https://space.bilibili.com/33819950">啊啊啊黑猫警长</a></p>
             <!-- 版权信息，显示当前年份和页面名称 -->
         </div>
+        <!-- 加载动画 -->
+        <div class="loader"></div>
+        <!-- 加载提示信息 -->
+        <div class="loading-message">正在处理请求，请稍等...</div>
+
+
     </div>
     <!-- 页面主体部分的结束标签 -->
     <script>
         //点击otherButton跳转到https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AC%E5%94%A4/
 
-        // 点击按钮时，跳转到指定的URL
+        // 点击其他功能按钮时，跳转到指定的URL
         document.getElementById('otherButton').addEventListener('click', function() {       
             window.location.href = 'https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AC%E5%94%A4/';
+        });
+        // 点击考验之塔按钮时，跳转到指定的URL
+        document.getElementById('coaButton').addEventListener('click', function() {
+            window.location.href = 'https://docs.qq.com/sheet/DSmxCUGpybUZNaVdB?tab=BB08J2';
+        });
+        // 点击建议反馈按钮时，跳转到指定的URL
+        document.getElementById('feedbackButton').addEventListener('click', function() {
+            window.location.href = 'https://docs.qq.com/form/page/DSnJnaVNzdGpndWtv';
         });
         // 获取关闭按钮
         const closeBtn = document.getElementsByClassName('close');
@@ -389,13 +468,22 @@
                 addCodeModal.style.display = 'none';
             }
         }
-        // 获取页面中的各个元素
+        // 获取load弹窗元素
+        const loader = document.querySelector('.loader');
+        const loadingMessage = document.querySelector('.loading-message');
+
+        // 获取绑定页面中的各个元素
         const hiveidInput = document.getElementById('hiveid');
+        const hiveidError = document.getElementById('hiveid-error');
         const serverSelect = document.getElementById('server');
+        const serverError = document.getElementById('server-error');
         const vipcodeInput = document.getElementById('vipcode');
+        const vipcodeError = document.getElementById('vipcode-error');
         const submitButton = document.getElementById('submitButton');
+
+        // 获取状态消息元素
         const statusMessage = document.getElementById('status-message');
-            // 设置状态消息内容并显示
+        // 设置状态消息内容并显示
         function setStatusMessage(message) {
             statusMessage.textContent = message;
             statusMessage.classList.add('show'); // 添加显示类
@@ -405,36 +493,81 @@
                 statusMessage.classList.remove('show'); // 移除显示类
             }, 3000); // 3秒后隐藏
         }
+
+        // 显示加载动画和加载提示信息
+        function showLoading() {
+            loader.style.display = 'block';
+            loadingMessage.style.display = 'block';
+        }
+        // 隐藏加载动画和加载提示信息
+        function hideLoading() {
+            loader.style.display = 'none';
+            loadingMessage.style.display = 'none';
+        }
+
         let isSubmitting = false;
         // 监听输入框和选择框的变化事件
         hiveidInput.addEventListener('input', validateInputs);
         serverSelect.addEventListener('change', validateInputs);
         vipcodeInput.addEventListener('input', validateInputs);
+        // 监听提交按钮的点击事件
+        submitButton.addEventListener('click', handleSubmit);
+        // 设置自定义验证消息
+        hiveidInput.setCustomValidity('');  // 初始时设置为空
+        serverSelect.setCustomValidity('');  // 初始时设置为空
+        vipcodeInput.setCustomValidity('');  // 初始时设置为空
 
+        // 监听表单提交事件
+        document.getElementById('bindForm').addEventListener('submit', handleSubmit);
 
         // 验证输入框中的内容是否有效
         function validateInputs() {
-            const hiveid = hiveidInput.value.trim();
+            const hiveId = hiveidInput.value.trim();
             const server = serverSelect.value;
-            const vipcode = vipcodeInput.value.trim();
-            
-            const isHiveidValid = /^[a-zA-Z0-9]+$/.test(hiveid);
-            const isVipcodeValid = /^[a-zA-Z0-9]+$/.test(vipcode);
+            const vipCode = vipcodeInput.value.trim();
+            const isHiveIdValid = /^\w+$/.test(hiveId);
+            const isVipCodeValid = /^\w+$/.test(vipCode);
 
-            if (!isHiveidValid) {
-                hiveidInput.setCustomValidity('HiveID不能包含中文，请重新输入');
+            if (!isHiveIdValid) {
+                console.log('HiveID验证失败，即将设置自定义错误消息');
+
+                hiveidInput.setCustomValidity('HiveID只能包含字母和数字，请重新输入');
+                hiveidError.style.display = 'block'; // 显示错误消息
+                hiveidError.textContent = 'HiveID只能包含字母和数字，请重新输入';
+                console.log('自定义错误消息已设置');
             } else {
                 hiveidInput.setCustomValidity('');
+                serverError.style.display = 'none'; // 隐藏错误消息
+                hiveidError.textContent = '';
             }
+            if (!server) {
+                serverSelect.setCustomValidity('请选择服务器');
+                serverError.style.display = 'block'; // 显示错误消息
+                serverError.textContent = '请选择服务器';
+            } else {
+                serverSelect.setCustomValidity('');
+                serverError.style.display = 'none'; // 隐藏错误消息
 
-            if (!isVipcodeValid) {
-                vipcodeInput.setCustomValidity('VIP Code不能包含中文，请重新输入');
+                serverError.textContent = '';
+            }
+            if (!isVipCodeValid) {
+                vipcodeInput.setCustomValidity('VIP Code只能包含字母和数字，请重新输入');
+                vipcodeError.style.display = 'block'; // 显示错误消息
+                vipcodeError.textContent = 'VIP Code只能包含字母和数字，请重新输入';
             } else {
                 vipcodeInput.setCustomValidity('');
+                vipcodeError.style.display = 'none'; // 隐藏错误消息
+                vipcodeError.textContent = '';
             }
-            submitButton.disabled = !(isHiveidValid && server && isVipcodeValid);
-            return isHiveidValid && server && isVipcodeValid;        }
-        
+            // 根据验证结果启用或禁用提交按钮
+            submitButton.disabled = !(isHiveIdValid && server && isVipCodeValid);
+            return isHiveIdValid && server && isVipCodeValid;
+        }
+
+
+
+
+
         // 处理绑定表单提交事件
         function handleSubmit(event) {
             event.preventDefault(); // 阻止表单默认提交行为
@@ -444,6 +577,7 @@
             if (!validateInputs()) return; // 如果输入无效，不提交表单
 
             isSubmitting = true;
+            showLoading(); // 显示加载动画和加载提示信息
             submitButton.disabled = true; // 禁用提交按钮
             
             // 去除hiveid中的空格
@@ -487,6 +621,8 @@
             })
            .finally(() => {
                 isSubmitting = false;
+                // 隐藏加载动画和加载提示信息
+                hideLoading();
                 submitButton.disabled = false; // 恢复提交按钮状态
                 //重置表单hiveid
                 hiveidInput.value = '';
@@ -502,26 +638,26 @@
                 modalContent.style.maxWidth = '700px';
             });
         ;
-            //历史领取数据
-            // 获取历史领取按钮
-            const historyButton = document.getElementById('historyButton');
-            // 获取历史领取弹窗
-            const historyModal = document.getElementById('historyModal');
-            // 为按钮添加点击事件监听器
-            historyButton.addEventListener('click', fetchHistory);
-            // 绑定点击事件到历史领取按钮
-            document.getElementById('historyButton').addEventListener('click', fetchHistory);
-            // 当用户点击历史领取按钮时，显示弹窗
-            historyButton.onclick = function() {
-                historyModal.style.display = "block";
-            }
+        //历史领取数据
+        // 获取历史领取按钮
+        const historyButton = document.getElementById('historyButton');
+        // 获取历史领取弹窗
+        const historyModal = document.getElementById('historyModal');
+        // 为按钮添加点击事件监听器
+        historyButton.addEventListener('click', fetchHistory);
+        // 绑定点击事件到历史领取按钮
+        document.getElementById('historyButton').addEventListener('click', fetchHistory);
+        // 当用户点击历史领取按钮时，显示弹窗
+        historyButton.onclick = function() {
+            historyModal.style.display = "block";
+        }
 
-            // 当用户点击任何地方时，关闭弹窗
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    historyModal.style.display = "none";
-                }
+        // 当用户点击任何地方时，关闭弹窗
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                historyModal.style.display = "none";
             }
+        }
         // 获取历史领取数据并显示在弹窗中
         function fetchHistory() {
             fetch('/history')
@@ -667,6 +803,9 @@
             if (!valicodeInputs()) return; // 如果输入无效，兑换码需要是英文字符串，不能包含中文，不提交表单
 
             isSubmitting = true;
+            loader.style.display = 'block';
+            loadingMessage.style.display = 'block';
+
             addCodeSubmitButton.disabled = true; // 禁用提交按钮
 
             // 构造表单数据
@@ -704,6 +843,9 @@
             })
            .finally(() => {
                 isSubmitting = false;
+                 // 请求完成后，隐藏加载动画和提示信息，并启用按钮
+                loader.style.display = 'none';
+                loadingMessage.style.display = 'none';
                 addCodeSubmitButton.disabled = false; // 重新启用提交按钮
                 addCodeForm.reset(); // 重置表单
             });
