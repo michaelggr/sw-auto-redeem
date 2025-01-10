@@ -34,6 +34,9 @@ user_agents = [
 ]
 
 def main():
+    #打印开始执行领取操作
+    logging.info("开始执行领取操作")
+    print("开始执行领取操作")
     # 读取task.json文件
     with open('task.json', 'r') as json_file:
         task_data = json.load(json_file)
@@ -62,12 +65,12 @@ def main():
         if os.path.exists('post.log'):
             with open('post.log', 'r') as log_file:
                 if form_data_str in log_file.read():
-                    print("表单数据已存在于post.log文件中，跳过发送POST请求。")
+                    logging.debug("表单数据已存在于post.log文件中，跳过发送POST请求。")
                     continue
         # 如果表单数据不存在于post.log，则写入日志并提交表单,并将表单数据写入post.log文件中.
         with open('post.log', 'a') as log_file:
             log_file.write(f"{datetime.now()}: {form_data_str}\n")
-        logging.info("表单数据: %s", form_data)
+        logging.debug("表单数据: %s", form_data)
         # 随机等待一段时间，避免被服务器拒绝
         # 等待时间范围为1到3秒
         wait_time = random.uniform(1, 3)
@@ -162,12 +165,18 @@ def main():
                                 # 发送企业微信通知：hiveid已自动领取redeem：reward，领取时间：date
                                 msg = f"{hiveid}已自动领取{coupon}:{reward_value}，领取时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
                                 send_message_to_wecomchan(msg, msg_type='text')
+                                #打印企业微信通知发送完成
+                                print("企业微信通知发送完成")
                             else:
                             # 如果没有找到匹配的字典，打印提示信息
                                 print(f"兑换码 {coupon} 奖励未记录")
                                 reward_value = ''
                                 # 发送企业微信通知：hiveid已自动领取redeem：reward，领取时间：date
                                 msg = f"{hiveid}已自动领取{coupon}，领取时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                                send_message_to_wecomchan(msg, msg_type='text')
+                                #打印企业微信通知发送完成
+                                print("企业微信通知发送完成")
+
                             # 写入数据到history.csv文件
                             current_time = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%fZ')
                             writer.writerow({

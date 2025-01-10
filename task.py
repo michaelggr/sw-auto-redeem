@@ -7,9 +7,26 @@ import json
 import pandas as pd
 # 导入os库，用于操作系统相关的功能
 import os
-# 导入datetime库，用于处理日期和时间
-from datetime import datetime
 
+
+#日志记录器
+import logging
+
+# 读取环境变量
+DEBUG = os.environ.get("DEBUG", False)
+
+# 初始化日志配置
+logging.basicConfig(
+    filename='auto_redeem.log',
+    level=logging.DEBUG if os.getenv("DEBUG", "False").lower() == "true" else logging.INFO,
+    format="[%(asctime)s][%(levelname)s] %(message)s",
+    datefmt="%m-%d %H:%M:%S",
+)
+# 确保日志文件存在
+if not os.path.exists('auto_redeem.log'):
+    open('auto_redeem.log', 'a').close()
+
+# 定义一个函数，用于加载用户数据
 def load_user_data():
     """
     从User.csv文件中加载用户数据
@@ -23,6 +40,7 @@ def load_user_data():
         print(f"读取User.csv文件时发生错误: {e}")
     return user_data
 
+# 定义一个函数，用于加载奖励数据
 def load_reward_data():
     """
     从Reward.csv文件中加载奖励数据
@@ -36,10 +54,14 @@ def load_reward_data():
         print(f"读取Reward.csv文件时发生错误: {e}")
     return reward_data
 
+# 定义一个函数，用于生成任务数据并保存到task.json文件
 def generate_task_data():
     """
     生成任务数据并保存到task.json文件
     """
+    #打印开始生成任务数据
+    logging.info("开始生成任务数据")
+    print("开始生成任务数据")
     # 调用load_user_data函数加载用户数据
     user_data = load_user_data()
     # 调用load_reward_data函数加载奖励数据
@@ -70,11 +92,7 @@ def generate_task_data():
                         # 从任务数据列表中删除该任务数据
                         task_data.remove(task_row)
                         # 打印已排除的任务数据
-                        print(f"已排除任务数据: {task_row}")
-                        # 打开auto_redeem.log文件，如果文件不存在则创建，如果文件存在则追加内容
-                        with open('auto_redeem.log', 'a') as log_file:
-                            # 将已排除的任务数据写入到auto_redeem.log文件中
-                            log_file.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - 已排除任务数据: {task_row}\n")
+                        logging.debug(f"已排除任务数据: {task_row}")
             # 如果任务数据列表为空
             if not task_data:
                 # 打印没有任务数据需要处理
@@ -82,10 +100,8 @@ def generate_task_data():
                 #写入空数据到task.json文件
                 with open('task.json', 'w') as json_file:
                     json.dump([], json_file)
-                # 打开auto_redeem.log文件，如果文件不存在则创建，如果文件存在则追加内容
-                with open('auto_redeem.log', 'a') as log_file:
-                    # 将没有任务数据需要处理的信息写入到auto_redeem.log文件中
-                    log_file.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - 没有任务数据需要处理\n")
+                    # 打印已排除的任务数据
+                    logging.debug("没有任务数据需要处理")
                 # 返回
                 return 
             # 打开task.json文件，如果文件不存在则创建，如果文件存在则清空内容
@@ -94,22 +110,24 @@ def generate_task_data():
                 json.dump(task_data, json_file)
             # 打印成功保存的任务数据条数
             print(f"成功保存了 {len(task_data)} 条数据到 task.json")
-            # 打开auto_redeem.log文件，如果文件不存在则创建，如果文件存在则追加内容
-            with open('auto_redeem.log', 'a') as log_file:
-                # 将成功保存的任务数据条数写入到auto_redeem.log文件中
-                log_file.write(f"成功保存了 {len(task_data)} 条数据到 task.json\n")
+            # 打印成功保存的任务数据条数
+            logging.info(f"成功保存了 {len(task_data)} 条数据到 task.json")
         except Exception as e:
             # 打印保存数据到task.json文件失败的错误信息
             print(f"保存数据到task.json文件失败: {e}")
+            logging.error(f"保存数据到task.json文件失败: {e}")
 
-#如果task.json文件不为空，运行evt_coupon.py
-if os.path.getsize('task.json') > 0:
-    import evt_coupon
-    evt_coupon.main()
-    print("evt_coupon.py运行完毕")
-else:
-    print("task.json文件为空")
+
 def main():
     generate_task_data()
 if __name__ == "__main__":
+    #如果task.json文件不为空，运行evt_coupon函数
+    if os.path.getsize('task.json') > 0:
+        import evt_coupon
+        evt_coupon.main()
+        print("evt_coupon.py运行完毕")
+        logging.info("evt_coupon.py运行完毕")
+    else:
+        print("task.json文件为空")
+        logging.info("无任务数据，task.json文件为空")
     main()

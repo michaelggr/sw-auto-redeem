@@ -173,16 +173,14 @@ def add_code():
     # 处理 POST 请求的数据
     code = data.get('code')
 
-    # 判断兑换码是否存在check_redeem_code(code)=True则兑换码存在,兑换码无效则返回错误信息
+    # 判断兑换码是否存在check_redeem_code(code)
     if check_redeem_code(code)==False:
-        return jsonify({'message': '兑换码不存在，谢谢参与'})
-
+        return jsonify({'message': '兑换码不存在，请检查兑换码是否正确'})
+    # 检查 code 是否已经存在
+    if check_redeem_code(code)== 'exist':
+        return jsonify({'message': '兑换码已记录过,谢谢参与'})
     # 读取 CSV 文件
     df = pd.read_csv('Reward.csv', encoding='utf-8')
-
-    # 检查 code 是否已经存在
-    if code in df['redeem'].values:
-        return jsonify({'message': '兑换码已存在,谢谢参与'})
 
     # 添加新行,包含redeem,reward,from
     new_row = {'redeem': code,'reward': '','from': 'web'}
@@ -192,7 +190,7 @@ def add_code():
     # 保存更新后的 CSV 文件
     df.to_csv('Reward.csv', encoding="utf-8",index=False)
 
-    return jsonify({'message': '兑换码添加成功，恭喜发财'})
+    return jsonify({'message': '兑换码新增成功，恭喜发财'})
 
 # 获取历史记录
 @app.route('/history')

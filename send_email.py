@@ -44,6 +44,7 @@ def send_daily_reward_emails():
     data_list=[]
     email_set_list=[]
 
+    print("准备发送邮件")
     # 读取CSV文件
     try:
         # 使用pandas的read_csv函数读取CSV文件
@@ -152,6 +153,10 @@ def send_daily_reward_emails():
         send_email(sender_email, sender_password, email, subject, message)
 # 使用示例
 #send_daily_reward_emails()
+if __name__ == '__main__':
+    send_daily_reward_emails()
+    print("发送邮件完成")
+
 
 
 

@@ -1,15 +1,13 @@
-import schedule
+from apscheduler.schedulers.background import BackgroundScheduler
 import time
 import logging
 import os
-import app
 import evt_coupon
 import history
 import reward
 from send_email import send_daily_reward_emails
 import swq
 import task
-from concurrent.futures import ThreadPoolExecutor
 from logging.handlers import RotatingFileHandler
 
 # 检查环境变量DEBUG，并设置日志级别
@@ -33,128 +31,97 @@ console_handler = logging.StreamHandler()
 console_handler.setFormatter(log_format)
 logger.addHandler(console_handler)
 
+
 # 使用日志器记录信息
 logger.info('这是一条信息日志')
 logger.debug('这是一条调试日志（仅在DEBUG模式下显示）')
 
-# 启动 Flask 应用
-app.app.run(debug=logging.DEBUG, host="0.0.0.0", port=5006)
+
 # 定义任务函数
 def check_and_run_evt_coupon():
     if os.path.getsize('task.json') > 0:
         evt_coupon.main()
         logging.info("evt_coupon.py运行完毕")
+        logger.info("evt_coupon.py运行完毕")
     else:
         logging.info("task.json文件为空")
+        logger.info("task.json文件为空")
 
 def send_email_task():
     send_daily_reward_emails()
-    logging.info("已安排在每天的指定时间执行发邮件。")
+    logging.info("每天指定时间执行发邮件执行完毕")
+    logger.info("每天指定时间执行发邮件执行完毕")
 
 def swq_task():
     swq.main()
     logging.info("swq抓取兑换码任务执行完毕")
+    logger.info("swq抓取兑换码任务执行完毕")
 
 def reward_task():
     reward.main()
     logging.info("reward更新reward.csv任务执行完毕")
+    logger.info("reward更新reward.csv任务执行完毕")
 
 def task_task():
     task.main()
     logging.info("task更新task.json任务执行完毕")
+    logger.info("task更新task.json任务执行完毕")
 
 def history_task():
     history.main()
     logging.info("history更新history.csv任务执行完毕")
+    logger.info("history更新history.csv任务执行完毕")
+
+def get_env_var(var_name, default_value, var_type=int):
+    value = os.getenv(var_name, default_value)
+    if value is None:
+        print(f"警告：{var_name} 环境变量未设置，使用默认值 {default_value}。")
+        value = default_value
+    return var_type(value)
 
 # 从环境变量中读取时间间隔（以分钟为单位）环境变量叫redeem_time
-redeem_time = os.getenv('REDEEM_TIME', '15')
-if redeem_time is None:
-    print("警告：REDEEM_TIME 环境变量未设置，使用默认值 15。")
-    redeem_time = '15'
-# 转换为整数
-redeem_time = int(redeem_time)
+redeem_time = get_env_var('REDEEM_TIME', '15')
+# 从环境变量中读取发邮件时间（以小时为单位）环境变量叫EMAIL_TIME
+email_time = get_env_var('EMAIL_TIME', '08:30', var_type=str)
+# 从环境变量中读取抓取兑换码时间（以小时为单位）环境变量叫SWQ_TIME
+swq_time = get_env_var('SWQ_TIME', '3')
+# 从环境变量中读取生成reward.csv时间（以小时为单位）环境变量叫REWARD_TIME
+reward_time = get_env_var('REWARD_TIME', '5')
+# 从环境变量中读取生成task.json时间（以小时为单位）环境变量叫TASK_TIME
+task_time = get_env_var('TASK_TIME', '5') 
+# 从环境变量中读取生成history.csv时间（以小时为单位）环境变量叫HISTORY_TIME
+history_time = get_env_var('HISTORY_TIME', '15')
 
-# 从环境变量中读取时间
-email_time = os.getenv('EMAIL_TIME', '08:30')
-if email_time is None:
-    print("警告：EMAIL_TIME 环境变量未设置，使用默认值 08:30。")
-    email_time = '08:30'
+def start_scheduler():
+    scheduler = BackgroundScheduler()
 
-
-# 从环境变量中读取时间
-swq_time = os.getenv('SWQ_TIME', '10')
-if swq_time is None:
-    print("警告：SWQ_TIME 环境变量未设置，使用默认值 10。")
-    swq_time = '10'
-# 转换为整数
-swq_time = int(swq_time)
-
-# 从环境变量中读取时间
-reward_time = os.getenv('REWARD_TIME', '5')
-if reward_time is None:
-    print("警告：REWARD_TIME 环境变量未设置，使用默认值 5。")
-    reward_time = '5'
-# 转换为整数
-reward_time = int(reward_time)
-
-# 从环境变量中读取时间
-task_time = os.getenv('TASK_TIME', '5')
-if task_time is None:
-    print("警告：TASK_TIME 环境变量未设置，使用默认值 5。")
-    task_time = '5' 
-# 转换为整数
-task_time = int(task_time)
-
-# 从环境变量中读取时间
-history_time = os.getenv('HISTORY_TIME', '15')
-if history_time is None:
-    print("警告：HISTORY_TIME 环境变量未设置，使用默认值 15。")
-    history_time = '15'
-# 转换为整数
-history_time = int(history_time)
-
-# 创建线程池
-executor = ThreadPoolExecutor(max_workers=15)
-
-# 每指定分钟数执行一次任务
-executor.submit(schedule.every(swq_time).minutes.do, swq_task)
-logging.info(f"{swq_time}分钟执行一次swq抓取兑换码")
-
-# 每指定分钟数执行一次任务
-executor.submit(schedule.every(reward_time).minutes.do, reward_task)
-logging.info(f"{reward_time}分钟执行一次reward更新reward.csv")
-
-# 每指定分钟数执行一次任务
-executor.submit(schedule.every(task_time).minutes.do, task_task)
-logging.info(f"{task_time}分钟执行一次task更新task.json")
-
-# 每指定分钟数执行一次任务
-executor.submit(schedule.every(history_time).minutes.do, history_task)
-logging.info(f"{history_time}分钟执行一次history更新history.csv")
-
-
-# 每指定分钟数执行一次任务
-executor.submit(schedule.every(redeem_time).minutes.do, check_and_run_evt_coupon)
-logging.info(f"{redeem_time}分钟执行一次领取任务")
-
-# 安排任务在每天的指定时间执行
-executor.submit(schedule.every().day.at(email_time).do, send_email_task)
-logging.info(f"已安排在每天的 {email_time} 执行发邮件。")
-
-
-# 启动定时任务
-logging.info("定时任务已启动")
-
-# 打印任务列表
-logging.info(schedule.jobs)
-
-# 打印正在运行的任务
-logging.info(schedule.get_jobs())
-
-# 无限循环，保持程序运行
-while True:
-    # 运行所有计划的任务
-    schedule.run_pending()
-    # 等待1秒
-    time.sleep(1)
+    # 添加任务
+    scheduler.add_job(swq_task, 'interval', minutes=swq_time)
+    logger.info(f"swq抓取兑换码任务已添加，时间间隔为{swq_time}分钟")
+    scheduler.add_job(reward_task, 'interval', minutes=reward_time)
+    logger.info(f"reward更新reward.csv任务已添加，时间间隔为{reward_time}分钟")
+    scheduler.add_job(task_task, 'interval', minutes=task_time)
+    logger.info(f"task更新task.json任务已添加，时间间隔为{task_time}分钟")
+    scheduler.add_job(history_task, 'interval', minutes=history_time)
+    logger.info(f"history更新history.csv任务已添加，时间间隔为{history_time}分钟")
+    scheduler.add_job(check_and_run_evt_coupon, 'interval', minutes=redeem_time)
+    logger.info(f"evt_coupon.py任务已添加，时间间隔为{redeem_time}分钟")
+    scheduler.add_job(send_email_task, 'cron', hour=email_time.split(':')[0], minute=email_time.split(':')[1])
+    logger.info(f"每天指定时间执行发邮件任务已添加，时间为{email_time}")
+    #每天5点重启app.py任务
+    #scheduler.add_job(app.restart_app, 'cron', hour=5, minute=0)
+    #logger.info(f"每天0点重启app.py任务已添加")
+    # 启动调度器
+    scheduler.start()
+    logger.info(f"现有任务: {scheduler.get_jobs()}")
+    # 保持主线程运行
+    try:
+        while True:
+            time.sleep(1)
+    except (KeyboardInterrupt, SystemExit):
+        # 关闭调度器
+        scheduler.shutdown()
+if __name__ == '__main__':
+    print("主程序开始")
+    start_scheduler()
+    print("程序结束")

@@ -74,6 +74,11 @@ def update_reward_field(reward_data, history_data):
     return updated
 
 def main():
+    """
+    主函数
+    """
+    print("开始执行reward更新操作")
+    logging.info("开始执行reward更新操作")
     reward_data = load_reward_data()
     history_data = load_history_data()
     if not reward_data or not history_data:

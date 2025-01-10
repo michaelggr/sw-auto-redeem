@@ -92,11 +92,6 @@ def is_vipcode_exists(vipcode):
     else:
         return False
 
-
-    
-# 生成激活码
-new_vipcode = generate_vipcode()
-print("生成新的激活码:", new_vipcode)
 #激活码验证器
 def validate_vipcode(vipcode):
     """

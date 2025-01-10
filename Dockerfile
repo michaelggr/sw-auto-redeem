@@ -27,5 +27,6 @@ ENV REDEEM_TIME=21
 ENV REWARD_TIME=11
 ENV SWQ_TIME=6
 ENV TASK_TIME=16
-# 运行应用程序
-CMD ["python", "./run.py"]
+
+# 启动命令，先运行 run.py，然后启动 Flask 应用
+CMD ["sh", "-c", "python run.py & python -m flask run --host=0.0.0.0 --port=5006"]

@@ -56,10 +56,22 @@ def load_existing_rewards(file_path='Reward.csv'):
 #发送请求判断兑换码是否有效
 def check_redeem_code(redeem):
     """
-    检查兑换码是否存在,如果小于8个字母,则直接返回False
+    检查兑换码是否存在
+    如果redeem小于8个字母,则直接返回False
+    如果redeem大于8个字母,则发送请求判断兑换码是否存在
+    如果redeem存在于Reward.csv文件中,则返回exist
     """
+    #打印开始检查兑换码是否有效
+    logging.info(f"开始检查兑换码 {redeem} 是否有效")
+    print(f"开始检查兑换码 {redeem} 是否有效")
+
     if len(redeem) < 8:
+        logging.info(f"兑换码 {redeem} 长度不够")
         return False
+    #    如果redeem存在于Reward.csv文件中,则返回exist
+    if redeem in load_existing_rewards():
+        logging.info(f"兑换码 {redeem} 已存在于 Reward.csv 文件中")
+        return 'exist'
     #redeem = 'sw2024decs9q'
     url = f"https://withhive.me/313/{redeem}"
     #模拟手机请求
@@ -71,14 +83,16 @@ def check_redeem_code(redeem):
     response = requests.get(url, headers=headers)
     #如果返回信息包含Invalid coupon code，则兑换码存在
     if 'Invalid coupon code' in response.text:
+        logging.info(f"兑换码 {redeem} 不存在")
         return False
     else:
-        logging.debug(f"兑换码 {redeem} 存在")
+        logging.info(f"兑换码 {redeem} 存在")
         return True
 def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
     """
     更新Reward.csv文件中的奖励记录
     """
+
     filtered_records = []
     for i, record in enumerate(reward_data):
         #从Reward.csv中删除失效的兑换码
@@ -96,9 +110,16 @@ def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
                 'reward': record['reward'],
                 'from': 'auto'
             })
+            logging.info(f"已添加新的兑换码: {record['code']}")
+            print(f"已添加新的兑换码: {record['code']}")
+            #延迟2s
+            time.sleep(2)
             # 发送企业微信通知：发现新的兑换码redeem，奖励内容为record['reward']
             msg = f"发现新的兑换码{record['code']}，奖励内容为{record['reward']}"
             send_message_to_wecomchan(msg, msg_type='text')
+            #打印企业微信通知发送完成
+            logging.info("企业微信通知发送完成")
+            print("企业微信通知发送完成")
     if not filtered_records:
         logging.debug("没有新的奖励记录需要更新。")
         return
@@ -122,7 +143,7 @@ def updata_from_wechat(redeem, hiveid, file_path='Reward.csv'):
     from_value = hiveid
     try:
         df = pd.read_csv(file_path, encoding='ISO-8859-1')
-        if redeem_value not in df['redeem'].values and check_redeem_code(redeem_value):
+        if redeem_value not in df['redeem'].values and check_redeem_code(redeem_value)==True:
             new_row = pd.DataFrame({
                 'redeem': [redeem_value],
                 'reward': [''],
@@ -169,21 +190,23 @@ def update_user_csv(from_value, user_file_path='User.csv'):
         match_found = False
         for index, row in user_df.iterrows():
             if row['hiveid'] == from_value:
-                logging.info(f"Found matching hiveid: {from_value}")
+                logging.info(f"已找到匹配的hiveid: {from_value}")
                 user_df.at[index, 'autonum'] = row['autonum'] + 10
                 match_found = True
                 break
         if not match_found:
-            logging.info(f"No match found for from_value: {from_value}")
+            logging.info(f"未找到匹配的hiveid: {from_value}")
         user_df.to_csv(user_file_path, index=False)
-        logging.info("User.csv has been updated and saved.")
+        logging.info("User.csv文件已更新")
     except Exception as e:
         logging.error(f"更新 {user_file_path} 文件时发生错误: {e}")
 
 def main():
     reward_data = load_reward_data()
     existing_rewards = load_existing_rewards()
+    #打印开始更新奖励表
+    logging.info("开始更新奖励表")
+    print("开始更新奖励表")
     update_reward_csv(reward_data, existing_rewards)
-
 if __name__ == "__main__":
     main()
