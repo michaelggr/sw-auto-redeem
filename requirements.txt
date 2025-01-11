@@ -1,6 +1,5 @@
-schedule
-beautifulsoup4
-requests
+apscheduler
+Flask
 pandas
 portalocker
-flask
+Requests
