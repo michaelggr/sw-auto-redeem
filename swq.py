@@ -24,8 +24,10 @@ def write_to_json(data, filename='swq.json'):
     try:
         with open(filename, 'w', encoding='utf-8') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
-        print(f"数据已成功写入 {filename}")
+            print(f"数据已成功写入 {filename}")
     except Exception as e:
+        # debug打印信息记录到auto_redeem.log
+        logging.debug(f"写入JSON文件时发生错误: {e}")
         print(f"写入JSON文件时发生错误: {e}")
 def deep_clean(data, fields_to_remove):
     if isinstance(data, dict):
@@ -85,33 +87,27 @@ def filter_and_write_reward_json ():
     # 打开文件并读取内容
     with open(file_name, 'r') as file:
         data_dict = json.load(file)
-
-    # 打印转换后的字典
-    # print(data_dict)
-
-    # 创建一个空列表来存储提取的数据
-    result_list = []
-
-    # 遍历 JSON 数据中的 'data' 部分
-    for entry in data_dict['data']:
-        # 提取 code（Label 的值）
-        code = entry.get('Label', 'N/A')
-        
-        # 提取 reward（Sw_Resource 中 Label 的值拼接 Resources 中 Quantity 的值）
-        reward_values = []
-        if 'Resources' in entry and isinstance(entry['Resources'], list):
-            for resource in entry['Resources']:
-                sw_resource = resource.get('Sw_Resource', {})
-                label = sw_resource.get('Label', 'N/A')
-                quantity = resource.get('Quantity', 'N/A')
-                reward_values.append(f"{label} x{quantity}")
-        reward = ', '.join(reward_values)
-        
-        # 提取 vote（Status 的值）
-        vote = entry.get('Status', 'N/A')
-        
-        # 将提取的数据作为一个字典添加到结果列表中
-        result_list.append({'code': code, 'reward': reward, 'vote': vote})
+        # 打印转换后的字典
+        # print(data_dict)
+        # 创建一个空列表来存储提取的数据
+        result_list = []
+        # 遍历 JSON 数据中的 'data' 部分
+        for entry in data_dict['data']:
+            # 提取 code（Label 的值）
+            code = entry.get('Label', 'N/A')
+            # 提取 reward（Sw_Resource 中 Label 的值拼接 Resources 中 Quantity 的值）
+            reward_values = []
+            if 'Resources' in entry and isinstance(entry['Resources'], list):
+                for resource in entry['Resources']:
+                    sw_resource = resource.get('Sw_Resource', {})
+                    label = sw_resource.get('Label', 'N/A')
+                    quantity = resource.get('Quantity', 'N/A')
+                    reward_values.append(f"{label} x{quantity}")
+            reward = ', '.join(reward_values)
+            # 提取 vote（Status 的值）
+            vote = entry.get('Status', 'N/A')
+            # 将提取的数据作为一个字典添加到结果列表中
+            result_list.append({'code': code, 'reward': reward, 'vote': vote})
 
     # 打印结果列表
     logging.debug(result_list)
@@ -122,15 +118,14 @@ def filter_and_write_reward_json ():
     # 排除掉已经存在于Reward_swq.json中相同的数据
     with open(output_file_name, 'r') as file:
         data_dict = json.load(file)
-
-    # 遍历 result_list 中的每个字典
-    for item in result_list:
-        # 检查当前字典是否已经存在于 data_dict 中
-        if item in data_dict:
-            # 如果存在，则将其删除
-            result_list.remove(item)
-            print(f"已排除存在的兑换码: {item}")
-            logging.debug(f"已排除存在的兑换码: {item}")
+        # 遍历 result_list 中的每个字典
+        for item in result_list:
+            # 检查当前字典是否已经存在于 data_dict 中
+            if item in data_dict:
+                # 如果存在，则将其删除
+                result_list.remove(item)
+                print(f"已排除存在的兑换码: {item}")
+                logging.debug(f"已排除存在的兑换码: {item}")
 
     # 打印结果列表
     logging.debug(result_list)

@@ -6,10 +6,7 @@ WORKDIR /app
 # 复制应用程序源代码 
 COPY . .
 # 安装依赖并清理缓存
-RUN pip install --no-cache-dir -r requirements.txt && \
-    find /usr/local -type f -name '*.pyc' -delete && \
-    find /usr/local -type d -name '__pycache__' -delete && \
-    rm -rf /root/.cache/pip
+RUN pip install --no-cache-dir -r requirements.txt
 
 # 确保Python脚本中的输出能够立即被打印
 ENV PYTHONUNBUFFERED=1

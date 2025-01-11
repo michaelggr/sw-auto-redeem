@@ -537,7 +537,7 @@
                 console.log('自定义错误消息已设置');
             } else {
                 hiveidInput.setCustomValidity('');
-                serverError.style.display = 'none'; // 隐藏错误消息
+                hiveidError.style.display = 'none'; // 隐藏错误消息
                 hiveidError.textContent = '';
             }
             if (!server) {
@@ -677,23 +677,26 @@
         }
         // 显示CSV数据
         function displayCSV(csvData) {
-        // 获取用于显示 CSV 数据的元素
-        const csvTableContainer = document.getElementById('csvData');
-        // 清除之前的内容
-        csvTableContainer.innerHTML = '';
-        const csvTable = document.createElement('table');
-        csvData.forEach((row, index) => {
-            const tr = document.createElement(index === 0 ? 'th' : 'td');
-            row.forEach(cell => {
-                const td = document.createElement('td');
-                td.textContent = cell;
-                tr.appendChild(td);
+            // 获取用于显示 CSV 数据的元素
+            const csvTableContainer = document.getElementById('csvData');
+            // 清除之前的内容
+            csvTableContainer.innerHTML = '';
+            const csvTable = document.createElement('table');
+            // 对CSV数据进行倒序排序
+            csvData.reverse();
+
+            csvData.forEach((row, index) => {
+                const tr = document.createElement(index === 0 ? 'th' : 'td');
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                });
+                csvTable.appendChild(tr);
             });
-            csvTable.appendChild(tr);
-        });
-        csvTableContainer.appendChild(csvTable);
-        historyModal.style.display = "block";  // 显示弹窗
-        }
+            csvTableContainer.appendChild(csvTable);
+            historyModal.style.display = "block";  // 显示弹窗
+            }
         // 最新兑换码
         // 获取最新兑换码按钮
         const rewardButton = document.getElementById('rewardButton');
@@ -738,6 +741,8 @@
             // 清除之前的内容
             csvTableContainer.innerHTML = '';
             const csvTable = document.createElement('table');
+            // 对CSV数据进行倒序排序
+            csvData.reverse();
             csvData.forEach((row, index) => {
                 const tr = document.createElement(index === 0? 'th' : 'td');
                 row.forEach(cell => {

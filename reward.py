@@ -67,10 +67,12 @@ def check_redeem_code(redeem):
 
     if len(redeem) < 8:
         logging.info(f"兑换码 {redeem} 长度不够")
+        print(f"兑换码 {redeem} 长度不够")
         return False
     #    如果redeem存在于Reward.csv文件中,则返回exist
     if redeem in load_existing_rewards():
         logging.info(f"兑换码 {redeem} 已存在于 Reward.csv 文件中")
+        print(f"兑换码 {redeem} 已存在于奖励表中")
         return 'exist'
     #redeem = 'sw2024decs9q'
     url = f"https://withhive.me/313/{redeem}"
@@ -84,9 +86,11 @@ def check_redeem_code(redeem):
     #如果返回信息包含Invalid coupon code，则兑换码存在
     if 'Invalid coupon code' in response.text:
         logging.info(f"兑换码 {redeem} 不存在")
+        print(f"兑换码 {redeem} 不存在")
         return False
     else:
-        logging.info(f"兑换码 {redeem} 存在")
+        logging.info(f"兑换码 {redeem} 格式有效")
+        print(f"兑换码 {redeem} 格式有效")
         return True
 def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
     """
@@ -94,7 +98,7 @@ def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
     """
 
     filtered_records = []
-    for i, record in enumerate(reward_data):
+    for record in reward_data:
         #从Reward.csv中删除失效的兑换码
         if record['vote'] == 'expired' and record['code'] in existing_rewards:
             #从Reward.csv中删除对应的兑换码行
@@ -102,7 +106,7 @@ def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
             df = df[df['redeem'] != record['code']]
             df.to_csv('Reward.csv', index=False)
             logging.info(f"已删除过期的兑换码: {record['code']}")
-            continue
+            print(f"已删除过期的兑换码: {record['code']}")
         # 使用check_redeem_code检查redeem是否有效,更新有效的兑换码
         if record['vote'] != 'expired' and record['code'] not in existing_rewards and check_redeem_code(record['code'])==True:
             filtered_records.append({
