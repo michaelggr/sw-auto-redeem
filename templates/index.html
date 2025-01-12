@@ -691,9 +691,8 @@
             // 清除之前的内容
             csvTableContainer.innerHTML = '';
             const csvTable = document.createElement('table');
-            // 对CSV数据进行倒序排序
-            csvData.reverse();
 
+            // 遍历CSV数据
             csvData.forEach((row, index) => {
                 const tr = document.createElement(index === 0 ? 'th' : 'td');
                 row.forEach(cell => {
@@ -703,9 +702,19 @@
                 });
                 csvTable.appendChild(tr);
             });
+
+            // 对CSV数据进行倒序排序
+            const rows = csvTableContainer.querySelectorAll('tr');
+            rows.forEach((row, index) => {
+                if (index !== 0) {
+                    csvTableContainer.insertBefore(row, rows[0]);
+                }
+            });
+
             csvTableContainer.appendChild(csvTable);
             historyModal.style.display = "block";  // 显示弹窗
-            }
+        }
+
         // 最新兑换码
         // 获取最新兑换码按钮
         const rewardButton = document.getElementById('rewardButton');
@@ -750,8 +759,8 @@
             // 清除之前的内容
             csvTableContainer.innerHTML = '';
             const csvTable = document.createElement('table');
-            // 对CSV数据进行倒序排序
-            csvData.reverse();
+
+            // 遍历CSV数据
             csvData.forEach((row, index) => {
                 const tr = document.createElement(index === 0? 'th' : 'td');
                 row.forEach(cell => {
@@ -760,6 +769,10 @@
                     tr.appendChild(td);
                 });
                 csvTable.appendChild(tr);
+            });
+            // 对CSV数据进行倒序排序
+            csvTableContainer.querySelectorAll('tr').forEach(row => {
+                csvTableContainer.insertBefore(row, csvTableContainer.firstChild);
             });
             csvTableContainer.appendChild(csvTable); // 显示CSV数据
             rewardModal.style.display = "block";  // 显示弹窗

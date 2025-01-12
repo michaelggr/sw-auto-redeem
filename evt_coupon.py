@@ -111,15 +111,16 @@ def main():
                     if not os.path.exists('response_log.txt'):
                         open('response_log.txt', 'a').close()
                     # 打开文件，准备写入数据
-                    with open('response_log.txt', 'a') as log_file:
+                    with open('response_log.txt', 'a', encoding='utf-8') as log_file:
                         log_file.write(f"{datetime.now()}: {response_json}\n")
                     #创建task_log.csv文件
                     if not os.path.exists('task_log.csv'):
                         open('task_log.csv', 'a').close()
                     # 打开task_log.csv文件，准备写入数据
-                    with open('task_log.csv', 'a', newline='') as csvfile:
+                    with open('task_log.csv', 'a', newline='', encoding='utf-8') as csvfile:
                         fieldnames = ['redeem', 'hiveid', 'server', 'date', 'retcode', 'retmsg']
                         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
                         # 如果文件为空，则写入表头
                         if csvfile.tell() == 0:
                             writer.writeheader()

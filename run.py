@@ -90,7 +90,7 @@ reward_time = get_env_var('REWARD_TIME', '5')
 # 从环境变量中读取生成task.json时间（以小时为单位）环境变量叫TASK_TIME
 task_time = get_env_var('TASK_TIME', '5') 
 # 从环境变量中读取生成history.csv时间（以小时为单位）环境变量叫HISTORY_TIME
-history_time = get_env_var('HISTORY_TIME', '15')
+history_time = get_env_var('HISTORY_TIME', '5')
 
 def start_scheduler():
     scheduler = BackgroundScheduler()
