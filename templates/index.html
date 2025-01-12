@@ -285,9 +285,13 @@
             width: 30px;
             height: 30px;
             animation: spin 1s linear infinite;
-            margin: 0 auto;
             display: none; /* 初始隐藏加载动画 */
+            position: fixed; /* 固定定位 */
+            top: 50%; /* 距离顶部50% */
+            left: 50%; /* 距离左侧50% */
+            transform: translate(-50%, -50%); /* 居中对齐 */
         }
+
 
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -299,7 +303,12 @@
             text-align: center;
             color: #3498db;
             display: none; /* 初始隐藏加载提示信息 */
+            position: fixed; /* 固定定位 */
+            top: 50%; /* 距离顶部50% */
+            left: 50%; /* 距离左侧50% */
+            transform: translate(-50%, -50%); /* 居中对齐 */
         }
+
     </style>
 </head>
 <style>

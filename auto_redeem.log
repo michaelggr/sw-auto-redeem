@@ -1,0 +1,22 @@
+[01-12 09:04:04][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-12 09:04:04][INFO] [33mPress CTRL+C to quit[0m
+[01-12 09:04:34][INFO] 192.168.0.3 - - [12/Jan/2025 09:04:34] "GET / HTTP/1.1" 200 -
+[01-12 09:04:35][INFO] 192.168.0.3 - - [12/Jan/2025 09:04:35] "GET /favicon.ico HTTP/1.1" 200 -
+[01-12 09:04:46][INFO] ¿ªÊ¼¼ì²é¶Ò»»Âë 5634543545 ÊÇ·ñÓÐÐ§
+[01-12 09:04:51][INFO] ¶Ò»»Âë 5634543545 ²»´æÔÚ
+[01-12 09:04:51][INFO] 192.168.0.3 - - [12/Jan/2025 09:04:51] "POST /add_code HTTP/1.1" 200 -
+[01-12 09:05:22][INFO] 192.168.0.3 - - [12/Jan/2025 09:05:22] "POST /bind HTTP/1.1" 200 -
+[01-12 09:05:31][INFO] 192.168.0.3 - - [12/Jan/2025 09:05:31] "GET / HTTP/1.1" 200 -
+[01-12 09:05:32][INFO] 192.168.0.3 - - [12/Jan/2025 09:05:32] "GET /favicon.ico HTTP/1.1" 200 -
+[01-12 09:05:46][INFO] 192.168.0.3 - - [12/Jan/2025 09:05:46] "POST /bind HTTP/1.1" 200 -
+[01-12 09:06:48][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-12 09:06:48][INFO] [33mPress CTRL+C to quit[0m
+[01-12 09:06:48][INFO] 192.168.0.3 - - [12/Jan/2025 09:06:48] "GET / HTTP/1.1" 200 -
+[01-12 09:06:49][INFO] 192.168.0.3 - - [12/Jan/2025 09:06:49] "GET /favicon.ico HTTP/1.1" 200 -
+[01-12 09:07:02][INFO] 192.168.0.3 - - [12/Jan/2025 09:07:02] "POST /bind HTTP/1.1" 200 -
