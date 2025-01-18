@@ -534,7 +534,7 @@
             const hiveId = hiveidInput.value.trim();
             const server = serverSelect.value;
             const vipCode = vipcodeInput.value.trim();
-            const isHiveIdValid = /^\w+$/.test(hiveId);
+            const isHiveIdValid = /^[\w.]+$/.test(hiveId);
             const isVipCodeValid = /^\w+$/.test(vipCode);
 
             if (!isHiveIdValid) {
@@ -673,6 +673,7 @@
                 .then(response => response.text())  // 获取CSV文件内容
                 .then(csvText => {
                     const csvData = parseCSV(csvText);  // 解析CSV
+                    
                     displayCSV(csvData);  // 显示CSV数据
                 })
                 .catch(error => console.error('Error:', error));
@@ -684,7 +685,7 @@
                 return row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             });
         }
-        // 显示CSV数据
+          // 显示CSV数据
         function displayCSV(csvData) {
             // 获取用于显示 CSV 数据的元素
             const csvTableContainer = document.getElementById('csvData');
@@ -692,28 +693,40 @@
             csvTableContainer.innerHTML = '';
             const csvTable = document.createElement('table');
 
-            // 遍历CSV数据
-            csvData.forEach((row, index) => {
-                const tr = document.createElement(index === 0 ? 'th' : 'td');
-                row.forEach(cell => {
+            // 遍历CSV数据，从第二行开始（忽略表头）
+            csvData.slice(1).forEach((row, index) => {
+                const tr = document.createElement('tr');
+            
+                row.forEach((cell, cellIndex) => {
                     const td = document.createElement('td');
-                    td.textContent = cell;
+                    td.textContent = cell;        
                     tr.appendChild(td);
                 });
+
                 csvTable.appendChild(tr);
             });
 
             // 对CSV数据进行倒序排序
-            const rows = csvTableContainer.querySelectorAll('tr');
-            rows.forEach((row, index) => {
-                if (index !== 0) {
-                    csvTableContainer.insertBefore(row, rows[0]);
-                }
+            const rows = Array.from(csvTable.querySelectorAll('tr'));
+
+            rows.reverse();
+
+
+            // 清除表格内容并重新添加排序后的行
+            csvTable.innerHTML = '';
+            rows.forEach(row => {
+                csvTable.appendChild(row);
             });
 
+            // 将排序后的表格添加到容器中
             csvTableContainer.appendChild(csvTable);
-            historyModal.style.display = "block";  // 显示弹窗
+
+            // 显示弹窗
+            historyModal.style.display = "block";  
+
         }
+
+
 
         // 最新兑换码
         // 获取最新兑换码按钮
@@ -752,7 +765,7 @@
                 return row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             });
         }
-        // 显示最新兑换码数据
+           // 显示最新兑换码数据
         function displayReward(csvData) {
             // 获取用于显示 CSV 数据的元素
             const csvTableContainer = document.getElementById('rewardData');
@@ -770,13 +783,21 @@
                 });
                 csvTable.appendChild(tr);
             });
+
             // 对CSV数据进行倒序排序
-            csvTableContainer.querySelectorAll('tr').forEach(row => {
-                csvTableContainer.insertBefore(row, csvTableContainer.firstChild);
+            const rows = Array.from(csvTable.querySelectorAll('tr'));
+            rows.reverse();
+            rows.forEach(row => {
+                csvTable.appendChild(row);
             });
-            csvTableContainer.appendChild(csvTable); // 显示CSV数据
-            rewardModal.style.display = "block";  // 显示弹窗
+
+            // 将排序后的表格添加到容器中
+            csvTableContainer.appendChild(csvTable);
+
+            // 显示CSV数据
+            rewardModal.style.display = "block";  
         }
+
         // 增加兑换码
         // 获取增加兑换码提交按钮
         const addCodeSubmitButton = document.getElementById('addCodeSubmitButton');

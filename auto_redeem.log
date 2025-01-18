@@ -35,3 +35,271 @@
 [01-12 21:08:32][INFO] 192.168.0.3 - - [12/Jan/2025 21:08:32] "GET / HTTP/1.1" 200 -
 [01-12 21:08:33][INFO] 192.168.0.3 - - [12/Jan/2025 21:08:33] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
 [01-12 21:08:34][INFO] 192.168.0.3 - - [12/Jan/2025 21:08:34] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-12 21:09:34][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-12 21:09:34][INFO] [33mPress CTRL+C to quit[0m
+[01-12 21:09:38][INFO] 192.168.0.3 - - [12/Jan/2025 21:09:38] "GET / HTTP/1.1" 200 -
+[01-12 21:09:39][INFO] 192.168.0.3 - - [12/Jan/2025 21:09:39] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-12 21:09:40][INFO] 192.168.0.3 - - [12/Jan/2025 21:09:40] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-12 21:40:26][INFO] 127.0.0.1 - - [12/Jan/2025 21:40:26] "GET / HTTP/1.1" 200 -
+[01-12 22:00:08][INFO] 192.168.0.3 - - [12/Jan/2025 22:00:08] "GET / HTTP/1.1" 200 -
+[01-12 22:02:52][INFO] 127.0.0.1 - - [12/Jan/2025 22:02:52] "GET / HTTP/1.1" 200 -
+[01-12 22:17:57][INFO] 192.168.0.3 - - [12/Jan/2025 22:17:57] "GET / HTTP/1.1" 200 -
+[01-12 22:17:59][INFO] 192.168.0.3 - - [12/Jan/2025 22:17:59] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-12 22:18:01][INFO] 192.168.0.3 - - [12/Jan/2025 22:18:01] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:42:34][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 20:42:34][INFO] [33mPress CTRL+C to quit[0m
+[01-18 20:43:05][INFO] 192.168.0.3 - - [18/Jan/2025 20:43:05] "GET / HTTP/1.1" 200 -
+[01-18 20:43:07][INFO] 192.168.0.3 - - [18/Jan/2025 20:43:07] "GET /reward HTTP/1.1" 200 -
+[01-18 20:46:34][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 20:46:34][INFO] [33mPress CTRL+C to quit[0m
+[01-18 20:46:36][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:36] "GET / HTTP/1.1" 200 -
+[01-18 20:46:36][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:36] "GET /favicon.ico HTTP/1.1" 200 -
+[01-18 20:46:38][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:38] "GET / HTTP/1.1" 200 -
+[01-18 20:46:38][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:38] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:46:41][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:41] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:46:44][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:44] "GET / HTTP/1.1" 200 -
+[01-18 20:46:45][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:45] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:46:46][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:46] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:46:54][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:54] "GET / HTTP/1.1" 200 -
+[01-18 20:46:55][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:55] "GET /favicon.ico HTTP/1.1" 200 -
+[01-18 20:46:57][INFO] 192.168.0.3 - - [18/Jan/2025 20:46:57] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:47:52][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 20:47:52][INFO] [33mPress CTRL+C to quit[0m
+[01-18 20:47:55][INFO] 192.168.0.3 - - [18/Jan/2025 20:47:55] "GET / HTTP/1.1" 200 -
+[01-18 20:47:56][INFO] 192.168.0.3 - - [18/Jan/2025 20:47:56] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:48:03][INFO] 192.168.0.3 - - [18/Jan/2025 20:48:03] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:48:05][INFO] 192.168.0.3 - - [18/Jan/2025 20:48:05] "GET / HTTP/1.1" 200 -
+[01-18 20:48:06][INFO] 192.168.0.3 - - [18/Jan/2025 20:48:06] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:48:07][INFO] 192.168.0.3 - - [18/Jan/2025 20:48:07] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:49:01][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 20:49:01][INFO] [33mPress CTRL+C to quit[0m
+[01-18 20:49:08][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:08] "GET / HTTP/1.1" 200 -
+[01-18 20:49:09][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:09] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:49:11][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:11] "GET / HTTP/1.1" 200 -
+[01-18 20:49:11][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:11] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:49:12][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:12] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:49:27][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:27] "GET / HTTP/1.1" 200 -
+[01-18 20:49:28][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:28] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:49:43][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:43] "GET / HTTP/1.1" 200 -
+[01-18 20:49:44][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:44] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:49:46][INFO] 192.168.0.3 - - [18/Jan/2025 20:49:46] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:50:03][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 20:50:03][INFO] [33mPress CTRL+C to quit[0m
+[01-18 20:50:06][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:06] "GET / HTTP/1.1" 200 -
+[01-18 20:50:06][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:06] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:50:27][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:27] "GET / HTTP/1.1" 200 -
+[01-18 20:50:27][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:27] "GET /favicon.ico HTTP/1.1" 200 -
+[01-18 20:50:29][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:29] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:50:32][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:32] "GET / HTTP/1.1" 200 -
+[01-18 20:50:32][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:32] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:50:33][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:33] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:50:36][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:36] "GET / HTTP/1.1" 200 -
+[01-18 20:50:37][INFO] 192.168.0.3 - - [18/Jan/2025 20:50:37] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:54:26][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 20:54:26][INFO] [33mPress CTRL+C to quit[0m
+[01-18 20:54:33][INFO] 192.168.0.3 - - [18/Jan/2025 20:54:33] "GET / HTTP/1.1" 200 -
+[01-18 20:54:33][INFO] 192.168.0.3 - - [18/Jan/2025 20:54:33] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:54:35][INFO] 192.168.0.3 - - [18/Jan/2025 20:54:35] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:54:38][INFO] 192.168.0.3 - - [18/Jan/2025 20:54:38] "GET / HTTP/1.1" 200 -
+[01-18 20:54:39][INFO] 192.168.0.3 - - [18/Jan/2025 20:54:39] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:54:39][INFO] 192.168.0.3 - - [18/Jan/2025 20:54:39] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 20:56:03][INFO] 192.168.0.3 - - [18/Jan/2025 20:56:03] "GET / HTTP/1.1" 200 -
+[01-18 20:56:04][INFO] 192.168.0.3 - - [18/Jan/2025 20:56:04] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 20:56:05][INFO] 192.168.0.3 - - [18/Jan/2025 20:56:05] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 21:00:02][INFO] 192.168.0.3 - - [18/Jan/2025 21:00:02] "GET /history HTTP/1.1" 200 -
+[01-18 21:00:07][INFO] 192.168.0.3 - - [18/Jan/2025 21:00:07] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:00:10][INFO] 192.168.0.3 - - [18/Jan/2025 21:00:10] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:00:35][INFO] ¿ªÊ¼Ö´ÐÐ¸üÐÂÀúÊ·Êý¾Ý²Ù×÷
+[01-18 21:02:17][INFO] 192.168.0.3 - - [18/Jan/2025 21:02:17] "GET / HTTP/1.1" 200 -
+[01-18 21:02:19][INFO] 192.168.0.3 - - [18/Jan/2025 21:02:19] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:02:19][INFO] 192.168.0.3 - - [18/Jan/2025 21:02:19] "GET /history HTTP/1.1" 200 -
+[01-18 21:03:43][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:03:43][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:03:46][INFO] 192.168.0.3 - - [18/Jan/2025 21:03:46] "GET / HTTP/1.1" 200 -
+[01-18 21:03:47][INFO] 192.168.0.3 - - [18/Jan/2025 21:03:47] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:03:49][INFO] 192.168.0.3 - - [18/Jan/2025 21:03:49] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:03:52][INFO] 192.168.0.3 - - [18/Jan/2025 21:03:52] "GET / HTTP/1.1" 200 -
+[01-18 21:03:53][INFO] 192.168.0.3 - - [18/Jan/2025 21:03:53] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:03:56][INFO] 192.168.0.3 - - [18/Jan/2025 21:03:56] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:04:03][INFO] 192.168.0.3 - - [18/Jan/2025 21:04:03] "GET / HTTP/1.1" 200 -
+[01-18 21:04:04][INFO] 192.168.0.3 - - [18/Jan/2025 21:04:04] "GET /favicon.ico HTTP/1.1" 200 -
+[01-18 21:04:07][INFO] 192.168.0.3 - - [18/Jan/2025 21:04:07] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:04:41][INFO] 192.168.0.3 - - [18/Jan/2025 21:04:41] "GET / HTTP/1.1" 200 -
+[01-18 21:04:42][INFO] 192.168.0.3 - - [18/Jan/2025 21:04:42] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:04:42][INFO] 192.168.0.3 - - [18/Jan/2025 21:04:42] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:04:45][INFO] 192.168.0.3 - - [18/Jan/2025 21:04:45] "GET / HTTP/1.1" 200 -
+[01-18 21:04:46][INFO] 192.168.0.3 - - [18/Jan/2025 21:04:46] "GET /favicon.ico HTTP/1.1" 200 -
+[01-18 21:04:48][INFO] 192.168.0.3 - - [18/Jan/2025 21:04:48] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:05:17][INFO] 192.168.0.3 - - [18/Jan/2025 21:05:17] "GET / HTTP/1.1" 200 -
+[01-18 21:05:18][INFO] 192.168.0.3 - - [18/Jan/2025 21:05:18] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:05:19][INFO] 192.168.0.3 - - [18/Jan/2025 21:05:19] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:07:15][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:07:15][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:07:17][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:17] "GET / HTTP/1.1" 200 -
+[01-18 21:07:19][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:19] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:07:24][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:24] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:07:28][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:28] "GET / HTTP/1.1" 200 -
+[01-18 21:07:29][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:29] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:07:30][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:30] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:07:46][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:46] "GET / HTTP/1.1" 200 -
+[01-18 21:07:47][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:47] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:07:48][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:48] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:07:53][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:53] "GET / HTTP/1.1" 200 -
+[01-18 21:07:54][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:54] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:07:56][INFO] 192.168.0.3 - - [18/Jan/2025 21:07:56] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:09:34][INFO] 192.168.0.3 - - [18/Jan/2025 21:09:34] "GET / HTTP/1.1" 200 -
+[01-18 21:09:35][INFO] 192.168.0.3 - - [18/Jan/2025 21:09:35] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:09:37][INFO] 192.168.0.3 - - [18/Jan/2025 21:09:37] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:09:44][INFO] 192.168.0.3 - - [18/Jan/2025 21:09:44] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:10:02][INFO] 192.168.0.3 - - [18/Jan/2025 21:10:02] "GET / HTTP/1.1" 200 -
+[01-18 21:10:03][INFO] 192.168.0.3 - - [18/Jan/2025 21:10:03] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:10:08][INFO] 192.168.0.3 - - [18/Jan/2025 21:10:08] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:10:19][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:10:19][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:10:23][INFO] 192.168.0.3 - - [18/Jan/2025 21:10:23] "GET / HTTP/1.1" 200 -
+[01-18 21:10:24][INFO] 192.168.0.3 - - [18/Jan/2025 21:10:24] "GET /favicon.ico HTTP/1.1" 200 -
+[01-18 21:10:25][INFO] 192.168.0.3 - - [18/Jan/2025 21:10:25] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:10:37][INFO] 192.168.0.3 - - [18/Jan/2025 21:10:37] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:13:00][INFO] 192.168.0.3 - - [18/Jan/2025 21:13:00] "GET / HTTP/1.1" 200 -
+[01-18 21:13:01][INFO] 192.168.0.3 - - [18/Jan/2025 21:13:01] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:13:05][INFO] 192.168.0.3 - - [18/Jan/2025 21:13:05] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:13:23][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:13:23][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:13:26][INFO] 192.168.0.3 - - [18/Jan/2025 21:13:26] "GET / HTTP/1.1" 200 -
+[01-18 21:13:27][INFO] 192.168.0.3 - - [18/Jan/2025 21:13:27] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:13:29][INFO] 192.168.0.3 - - [18/Jan/2025 21:13:29] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:15:31][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:15:31][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:15:40][INFO] 192.168.0.3 - - [18/Jan/2025 21:15:40] "GET / HTTP/1.1" 200 -
+[01-18 21:15:42][INFO] 192.168.0.3 - - [18/Jan/2025 21:15:42] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:15:43][INFO] 192.168.0.3 - - [18/Jan/2025 21:15:43] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:15:48][INFO] 192.168.0.3 - - [18/Jan/2025 21:15:48] "GET / HTTP/1.1" 200 -
+[01-18 21:15:49][INFO] 192.168.0.3 - - [18/Jan/2025 21:15:49] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:15:56][INFO] 192.168.0.3 - - [18/Jan/2025 21:15:56] "GET / HTTP/1.1" 200 -
+[01-18 21:15:57][INFO] 192.168.0.3 - - [18/Jan/2025 21:15:57] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:16:00][INFO] 192.168.0.3 - - [18/Jan/2025 21:16:00] "GET / HTTP/1.1" 200 -
+[01-18 21:16:01][INFO] 192.168.0.3 - - [18/Jan/2025 21:16:01] "GET /favicon.ico HTTP/1.1" 200 -
+[01-18 21:16:03][INFO] 192.168.0.3 - - [18/Jan/2025 21:16:03] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:16:11][INFO] 192.168.0.3 - - [18/Jan/2025 21:16:11] "GET / HTTP/1.1" 200 -
+[01-18 21:16:12][INFO] 192.168.0.3 - - [18/Jan/2025 21:16:12] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:16:42][INFO] 192.168.0.3 - - [18/Jan/2025 21:16:42] "GET / HTTP/1.1" 200 -
+[01-18 21:16:43][INFO] 192.168.0.3 - - [18/Jan/2025 21:16:43] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:17:06][INFO] 192.168.0.3 - - [18/Jan/2025 21:17:06] "GET / HTTP/1.1" 200 -
+[01-18 21:17:07][INFO] 192.168.0.3 - - [18/Jan/2025 21:17:07] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:17:08][INFO] 192.168.0.3 - - [18/Jan/2025 21:17:08] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:18:25][INFO] 192.168.0.3 - - [18/Jan/2025 21:18:25] "GET / HTTP/1.1" 200 -
+[01-18 21:18:26][INFO] 192.168.0.3 - - [18/Jan/2025 21:18:26] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:18:27][INFO] 192.168.0.3 - - [18/Jan/2025 21:18:27] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:18:59][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:18:59][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:19:30][INFO] 192.168.0.3 - - [18/Jan/2025 21:19:30] "GET / HTTP/1.1" 200 -
+[01-18 21:19:32][INFO] 192.168.0.3 - - [18/Jan/2025 21:19:32] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:19:32][INFO] 192.168.0.3 - - [18/Jan/2025 21:19:32] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:22:03][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:22:03][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:22:14][INFO] 192.168.0.3 - - [18/Jan/2025 21:22:14] "GET / HTTP/1.1" 200 -
+[01-18 21:22:15][INFO] 192.168.0.3 - - [18/Jan/2025 21:22:15] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:22:17][INFO] 192.168.0.3 - - [18/Jan/2025 21:22:17] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:23:46][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:23:46][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:23:55][INFO] 192.168.0.3 - - [18/Jan/2025 21:23:55] "GET / HTTP/1.1" 200 -
+[01-18 21:23:56][INFO] 192.168.0.3 - - [18/Jan/2025 21:23:56] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:23:59][INFO] 192.168.0.3 - - [18/Jan/2025 21:23:59] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:29:04][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:29:04][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:29:05][INFO] 192.168.0.3 - - [18/Jan/2025 21:29:05] "GET / HTTP/1.1" 200 -
+[01-18 21:29:06][INFO] 192.168.0.3 - - [18/Jan/2025 21:29:06] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:29:08][INFO] 192.168.0.3 - - [18/Jan/2025 21:29:08] "GET /history HTTP/1.1" 200 -
+[01-18 21:29:44][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:29:44][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:29:47][INFO] 192.168.0.3 - - [18/Jan/2025 21:29:47] "GET / HTTP/1.1" 200 -
+[01-18 21:29:49][INFO] 192.168.0.3 - - [18/Jan/2025 21:29:49] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:35:11][INFO] 192.168.0.3 - - [18/Jan/2025 21:35:11] "GET /history HTTP/1.1" 200 -
+[01-18 21:35:26][INFO] 192.168.0.3 - - [18/Jan/2025 21:35:26] "GET / HTTP/1.1" 200 -
+[01-18 21:35:27][INFO] 192.168.0.3 - - [18/Jan/2025 21:35:27] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:35:29][INFO] 192.168.0.3 - - [18/Jan/2025 21:35:29] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:36:38][INFO] 192.168.0.3 - - [18/Jan/2025 21:36:38] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 21:37:47][INFO] 192.168.0.3 - - [18/Jan/2025 21:37:47] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:39:31][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:39:31][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:39:31][INFO] 192.168.0.3 - - [18/Jan/2025 21:39:31] "GET / HTTP/1.1" 200 -
+[01-18 21:39:33][INFO] 192.168.0.3 - - [18/Jan/2025 21:39:33] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:39:34][INFO] 192.168.0.3 - - [18/Jan/2025 21:39:34] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:39:38][INFO] 192.168.0.3 - - [18/Jan/2025 21:39:38] "GET / HTTP/1.1" 200 -
+[01-18 21:39:39][INFO] 192.168.0.3 - - [18/Jan/2025 21:39:39] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:39:41][INFO] 192.168.0.3 - - [18/Jan/2025 21:39:41] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:41:16][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:41:16][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:41:17][INFO] 192.168.0.3 - - [18/Jan/2025 21:41:17] "GET / HTTP/1.1" 200 -
+[01-18 21:41:18][INFO] 192.168.0.3 - - [18/Jan/2025 21:41:18] "GET / HTTP/1.1" 200 -
+[01-18 21:41:20][INFO] 192.168.0.3 - - [18/Jan/2025 21:41:20] "GET /favicon.ico HTTP/1.1" 200 -
+[01-18 21:41:21][INFO] 192.168.0.3 - - [18/Jan/2025 21:41:21] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 21:42:35][INFO] 192.168.0.3 - - [18/Jan/2025 21:42:35] "GET / HTTP/1.1" 200 -
+[01-18 21:42:36][INFO] 192.168.0.3 - - [18/Jan/2025 21:42:36] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:42:37][INFO] 192.168.0.3 - - [18/Jan/2025 21:42:37] "[36mGET /reward HTTP/1.1[0m" 304 -
+[01-18 21:42:40][INFO] 192.168.0.3 - - [18/Jan/2025 21:42:40] "[36mGET /history HTTP/1.1[0m" 304 -
+[01-18 21:42:47][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[01-18 21:42:47][INFO] [33mPress CTRL+C to quit[0m
+[01-18 21:42:57][INFO] 192.168.0.3 - - [18/Jan/2025 21:42:57] "GET / HTTP/1.1" 200 -
+[01-18 21:42:58][INFO] 192.168.0.3 - - [18/Jan/2025 21:42:58] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[01-18 21:42:58][INFO] 192.168.0.3 - - [18/Jan/2025 21:42:58] "[36mGET /history HTTP/1.1[0m" 304 -

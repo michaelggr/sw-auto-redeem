@@ -8,6 +8,7 @@ def send_message_to_wecomchan(msg, msg_type='text'):
 
 
 # 使用示例
-#sendkey = 'abcde007'
-#msg = 'test'
-
+sendkey = 'abcde007'
+msg = 'test'
+msg_type = 'text'
+#response = send_message_to_wecomchan(msg, msg_type)
