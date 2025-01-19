@@ -13,6 +13,8 @@ animals = ["cat", "dog", "elephant", "lion", "tiger", "bear", "monkey", "rabbit"
 # 读取环境变量
 DEBUG = os.environ.get("DEBUG", False)
 set_usenum = os.environ.get("USENUM", 10)
+# 输出环境变量USENUM
+print(f"USENUM: {set_usenum}")
 #设置文件地址
 vipcode_file = 'vipcode.csv'
 User_file = 'User.csv'
