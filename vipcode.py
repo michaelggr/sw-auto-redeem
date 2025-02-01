@@ -23,14 +23,14 @@ User_file = 'User.csv'
 
 # 初始化日志配置
 logging.basicConfig(
-    filename='auto_redeem.log',
+    filename='my_log.log',
     level=logging.DEBUG if os.getenv("DEBUG", "False").lower() == "true" else logging.INFO,
     format="[%(asctime)s][%(levelname)s] %(message)s",
     datefmt="%m-%d %H:%M:%S",
 )
 # 确保日志文件存在
-if not os.path.exists('auto_redeem.log'):
-    open('auto_redeem.log', 'a').close()
+if not os.path.exists('my_log.log'):
+    open('my_log.log', 'a').close()
 
 #写入vipcode到CSV文件函数
 def write_to_csv(file_path, new_data):

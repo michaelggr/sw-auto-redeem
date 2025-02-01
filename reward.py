@@ -15,14 +15,14 @@ DEBUG = os.environ.get("DEBUG", False)
 
 # 初始化日志配置
 logging.basicConfig(
-    filename='auto_redeem.log',
+    filename='my_log.log',
     level=logging.DEBUG if os.getenv("DEBUG", "False").lower() == "true" else logging.INFO,
     format="[%(asctime)s][%(levelname)s] %(message)s",
     datefmt="%m-%d %H:%M:%S",
 )
 # 确保日志文件存在
-if not os.path.exists('auto_redeem.log'):
-    open('auto_redeem.log', 'a').close()
+if not os.path.exists('my_log.log'):
+    open('my_log.log', 'a').close()
 
 def load_reward_data(file_path='Reward_swq.json'):
     """

@@ -11,14 +11,14 @@ DEBUG = os.environ.get("DEBUG", False)
 
 # 初始化日志配置
 logging.basicConfig(
-    filename='auto_redeem.log',
+    filename='my_log.log',
     level=logging.DEBUG if os.getenv("DEBUG", "False").lower() == "true" else logging.INFO,
     format="[%(asctime)s][%(levelname)s] %(message)s",
     datefmt="%m-%d %H:%M:%S",
 )
 # 确保日志文件存在
-if not os.path.exists('auto_redeem.log'):
-    open('auto_redeem.log', 'a').close()
+if not os.path.exists('my_log.log'):
+    open('my_log.log', 'a').close()
 
 def write_to_json(data, filename='swq.json'):
     try:
@@ -26,7 +26,7 @@ def write_to_json(data, filename='swq.json'):
             json.dump(data, file, ensure_ascii=False, indent=4)
             print(f"数据已成功写入 {filename}")
     except Exception as e:
-        # debug打印信息记录到auto_redeem.log
+        # debug打印信息记录到my_log.log
         logging.debug(f"写入JSON文件时发生错误: {e}")
         print(f"写入JSON文件时发生错误: {e}")
 def deep_clean(data, fields_to_remove):
@@ -62,13 +62,13 @@ def fetch_and_write_sq_data():
         if current_data != json.load(open('swq.json', 'r')):
             print("数据更新，开始写入swq.json")
             write_to_json(current_data)
-            # debug打印信息记录到auto_redeem.log
+            # debug打印信息记录到my_log.log
             logging.debug(f"数据已成功写入 swq.json")
             return True
         else:
             # 打印数据未更新
             print("数据未更新")
-            # debug打印信息记录到auto_redeem.log
+            # debug打印信息记录到my_log.log
             logging.debug(f"数据未更新，未写入 swq.json")
             #返回false
             return False            

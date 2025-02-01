@@ -14,14 +14,14 @@ DEBUG = os.environ.get("DEBUG", False)
 
 # 初始化日志配置
 logging.basicConfig(
-    filename='auto_redeem.log',
+    filename='my_log.log',
     level=logging.DEBUG if os.getenv("DEBUG", "False").lower() == "true" else logging.INFO,
     format="[%(asctime)s][%(levelname)s] %(message)s",
     datefmt="%m-%d %H:%M:%S",
 )
 # 确保日志文件存在
-if not os.path.exists('auto_redeem.log'):
-    open('auto_redeem.log', 'a').close()
+if not os.path.exists('my_log.log'):
+    open('my_log.log', 'a').close()
 
 # 预定义的User-Agent列表
 user_agents = [
@@ -194,8 +194,8 @@ def main():
             else:
                 # 打印提交表单失败返回的数据
                 print("提交表单失败，状态码:", response.text)
-                #写入auto_redeem.log文件
-                with open('auto_redeem.log', 'a') as log_file:
+                #写入my_log.log文件
+                with open('my_log.log', 'a') as log_file:
                     log_file.write(f"{datetime.now()}: 提交表单失败，状态码: {response.status_code}\n")
             # 随机延迟，避免过于频繁的请求  
             time.sleep(random.uniform(15, 120)) 
