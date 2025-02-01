@@ -114,7 +114,7 @@ def update_histary():
                     # 检查是否已经存在相同的redeem和reward值，如果存在则跳过
                     existing_record = next((r for r in history_data if r['redeem'] == coupon and r['hiveid'] == hiveid), None)
                     if existing_record:
-                        print(f"已存在相同的兑换记录：{coupon} {hiveid}")
+                        #print(f"已存在相同的兑换记录：{coupon} {hiveid}")
                         continue
                     else:
                         if retcode == '100':
