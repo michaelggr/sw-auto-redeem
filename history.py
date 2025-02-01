@@ -72,7 +72,7 @@ def update_reward_field(reward_data, history_data):
     for row in history_data:
         if row['redeem'] in reward_data:
             row['reward'] = reward_data[row['redeem']]
-            print(f"已更新reward字段：{row['redeem']} {row['reward']}")
+            #print(f"已更新reward字段：{row['redeem']} {row['reward']}")
             updated = True
         else:
             print(f"未找到匹配的reward字段：{row['redeem']}")
