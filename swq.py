@@ -4,7 +4,7 @@ import requests
 import json
 import logging
 import os
-
+from wxclub import send_message_to_wecomchan
 from reward import check_redeem_code
 # 读取环境变量
 DEBUG = os.environ.get("DEBUG", False)
@@ -45,10 +45,24 @@ def fetch_and_write_sq_data():
     """
     # 发送 GET 请求
     url = "https://swq.jp/_special/rest/Sw/Coupon"
-    response = requests.get(url)
+    response = None  # 初始化 response 为 None
+    # 设置代理，这里以 HTTP 和 HTTPS 代理为例，需要替换为实际的代理地址和端口
+    proxies = {
+        'http': 'http://192.168.0.14:7890',
+        'https': 'https://192.168.0.14:7890'
+    }
+    try:
+        # 在请求中使用代理
+        response = requests.get(url, verify=False, proxies=proxies) 
+    except requests.exceptions.RequestException as e:
+        logging.debug(f"抓取兑换码网站请求发生错误: {e}")
+        # 企业微信通知
+        msg = "兑换码数据抓取失败"
+        msg_type = 'text'
+        send_message_to_wecomchan(msg, msg_type)
 
     # 确保请求成功
-    if response.status_code == 200:
+    if response is not None and response.status_code == 200:
         # 解析 JSON 数据
         current_data = response.json()
 
@@ -57,25 +71,30 @@ def fetch_and_write_sq_data():
 
         # 清理数据
         deep_clean(current_data, fields_to_remove)
-
-        # 检测数据是否更新
-        if current_data != json.load(open('swq.json', 'r')):
-            print("数据更新，开始写入swq.json")
-            write_to_json(current_data)
-            # debug打印信息记录到my_log.log
-            logging.debug(f"数据已成功写入 swq.json")
-            return True
-        else:
-            # 打印数据未更新
-            print("数据未更新")
-            # debug打印信息记录到my_log.log
-            logging.debug(f"数据未更新，未写入 swq.json")
-            #返回false
-            return False            
     else:
-        print("请求失败，状态码：", response.status_code)
-        logging.debug(f"请求失败", response.text)
-        return response.status_code
+        print("请求失败，可能是网络问题或服务器异常。")
+        logging.debug("请求失败，可能是网络问题或服务器异常。")
+        # 企业微信通知
+        msg = "兑换码数据抓取失败"
+        msg_type = 'text'
+        send_message_to_wecomchan(msg, msg_type)
+        return None
+
+    # 检测数据是否更新
+    if current_data != json.load(open('swq.json', 'r')):
+        print("数据更新，开始写入swq.json")
+        write_to_json(current_data)
+        # debug打印信息记录到my_log.log
+        logging.debug(f"数据已成功写入 swq.json")
+        return True
+    else:
+        # 打印数据未更新
+        print("数据未更新")
+        # debug打印信息记录到my_log.log
+        logging.debug(f"数据未更新，未写入 swq.json")
+        #返回false
+        return False            
+
 
 def filter_and_write_reward_json ():
     """

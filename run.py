@@ -22,7 +22,7 @@ logger = logging.getLogger('my_logger')
 logger.setLevel(log_level)
 
 # 创建一个按大小分割的日志处理器，最多备份5个日志文件，每个日志文件最大10MB
-file_handler = RotatingFileHandler('my_log.log', maxBytes=1*10*10, backupCount=5)
+file_handler = RotatingFileHandler('my_log.log', maxBytes=1*100*100, backupCount=5)
 file_handler.setFormatter(log_format)
 logger.addHandler(file_handler)
 

@@ -75,7 +75,7 @@ def update_reward_field(reward_data, history_data):
             #print(f"已更新reward字段：{row['redeem']} {row['reward']}")
             updated = True
         else:
-            print(f"未找到匹配的reward字段：{row['redeem']}")
+            #print(f"未找到匹配的reward字段：{row['redeem']}")
             logging.debug(f"未找到匹配的reward字段：{row['redeem']}")
     return updated
 def update_histary():
