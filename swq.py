@@ -51,18 +51,20 @@ def fetch_and_write_sq_data():
         'http': 'http://192.168.0.14:7890',
         'https': 'https://192.168.0.14:7890'
     }
+    # 第一次尝试：不使用代理
     try:
-        # 在请求中使用代理
-        response = requests.get(url, verify=False, proxies=proxies)
+        response = requests.get(url, timeout=10)
     except requests.exceptions.RequestException as e:
-        logging.debug(f"抓取兑换码网站请求发生错误: {e}")
-        # 企业微信通知
-        msg = f"兑换码数据抓取失败: {type(e).__name__} - {str(e)}"
-        msg_type = 'text'
-        send_message_to_wecomchan(msg, msg_type)
-        return
-    # 打印response
-    print(response)
+        logging.debug(f"不使用代理抓取兑换码网站请求发生错误: {type(e).__name__} - {str(e)}")
+        # 第二次尝试：使用代理
+        try:
+            response = requests.get(url,proxies=proxies, timeout=10)
+        except requests.exceptions.RequestException as e:
+            logging.debug(f"使用代理抓取兑换码网站请求发生错误: {type(e).__name__} - {str(e)}")
+            msg = f"兑换码数据抓取失败: {type(e).__name__} - {str(e)}"
+            msg_type = 'text'
+            send_message_to_wecomchan(msg, msg_type)
+            return
     # 检查响应状态
     # 确保请求成功
     if response and response.status_code == 200:
