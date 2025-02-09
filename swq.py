@@ -53,16 +53,19 @@ def fetch_and_write_sq_data():
     }
     try:
         # 在请求中使用代理
-        response = requests.get(url, verify=False, proxies=proxies) 
+        response = requests.get(url, verify=False, proxies=proxies)
     except requests.exceptions.RequestException as e:
         logging.debug(f"抓取兑换码网站请求发生错误: {e}")
         # 企业微信通知
-        msg = "兑换码数据抓取失败"
+        msg = f"兑换码数据抓取失败: {type(e).__name__} - {str(e)}"
         msg_type = 'text'
         send_message_to_wecomchan(msg, msg_type)
-
+        return
+    # 打印response
+    print(response)
+    # 检查响应状态
     # 确保请求成功
-    if response is not None and response.status_code == 200:
+    if response and response.status_code == 200:
         # 解析 JSON 数据
         current_data = response.json()
 
@@ -75,11 +78,13 @@ def fetch_and_write_sq_data():
         print("请求失败，可能是网络问题或服务器异常。")
         logging.debug("请求失败，可能是网络问题或服务器异常。")
         # 企业微信通知
-        msg = "兑换码数据抓取失败"
+        if response:
+            msg = response.text
+        else:
+            msg = "兑换码抓取请求未成功，无响应内容"
         msg_type = 'text'
         send_message_to_wecomchan(msg, msg_type)
         return None
-
     # 检测数据是否更新
     if current_data != json.load(open('swq.json', 'r')):
         print("数据更新，开始写入swq.json")

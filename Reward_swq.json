@@ -1,7 +1,7 @@
 [
     {
-        "code": "sw2024decs9q",
-        "reward": "Energy x100, Mana x10, Mystical Scroll x1",
+        "code": "devnote2025dscollab",
+        "reward": "Crystal x1",
         "vote": "verified"
     },
     {
@@ -20,28 +20,33 @@
         "vote": "expired"
     },
     {
-        "code": "tunianzhaohuan",
-        "reward": "Energy x100, Mana x100000, Mystical Scroll x1",
-        "vote": "expired"
-    },
-    {
-        "code": "sw2023fev2u",
+        "code": "happyvalentine23",
         "reward": "Mystical Scroll x1",
         "vote": "expired"
     },
     {
-        "code": "happy2023",
-        "reward": "Mystical Scroll x2",
+        "code": "sw2023mrp4m",
+        "reward": "Energy x100, Water Scroll x1",
         "vote": "expired"
     },
     {
-        "code": "merrysamana",
-        "reward": "Light & Dark Scroll x1",
+        "code": "sw2023jae6s",
+        "reward": "Energy x100, Mystical Scroll x1",
         "vote": "expired"
     },
     {
-        "code": "lastlt23of2022",
-        "reward": "Mana x300000, Mystical Scroll x2",
+        "code": "lucky777",
+        "reward": "Light & Dark Scroll x1000, Mana x1000000, Summoning Stone x5000, Water Scroll x1000, Fire Scroll x1000, Air Scroll x1000, Mystical Scroll x1000",
+        "vote": "expired"
+    },
+    {
+        "code": "s24cunextyear",
+        "reward": "Energy x100, Water Scroll x1, Fire Scroll x1, Air Scroll x1",
+        "vote": "expired"
+    },
+    {
+        "code": "marionnettiste",
+        "reward": "Light & Dark Scroll x10",
         "vote": "expired"
     }
 ]
