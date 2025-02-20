@@ -1,6 +1,7 @@
 # 导入所需的模块
 import hashlib
 import json
+import subprocess
 from flask import (
     Flask, 
     request, 
@@ -196,6 +197,26 @@ def add_code():
 @app.route('/history')
 def get_history():
     return send_file('history.csv', mimetype='text/csv')
+# 新增接口：接收消息并运行 swq.py 脚本
+@app.route('/trigger_swq', methods=['POST'])
+def trigger_swq():
+    try:
+        data = request.get_json()
+        message = data.get('message')
+        if message == '抓取兑换码':
+            logging.info("收到消息：抓取兑换码，开始运行 swq.py 脚本")
+            result = subprocess.run(['python', 'swq.py'], capture_output=True, text=True)
+            if result.returncode == 0:
+                logging.info("swq.py 脚本执行成功")
+                return jsonify({'message': 'swq.py 脚本执行成功'}), 200
+            else:
+                logging.error(f"swq.py 脚本执行失败: {result.stderr}")
+                return jsonify({'message': f'swq.py 脚本执行失败: {result.stderr}'}), 500
+        else:
+            logging.info("收到的消息不是 '抓取兑换码'")
+            return jsonify({'message': '收到的消息不是 "抓取兑换码"'}), 200
+    except Exception as e:
+        logging.error(f"处理请求时发生错误: {e}")
 
 if __name__ == '__main__':
     # 启动 Flask 应用
