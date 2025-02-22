@@ -51,28 +51,31 @@ def fetch_and_write_sq_data():
         'http': 'http://192.168.0.14:7890',
         'https': 'https://192.168.0.14:7890'
     }
-    # 第一次尝试：使用代理
+    # 第一次尝试：不使用代理
     try:
-        response = requests.get(url, proxies=proxies, timeout=5)
+        print("第一次尝试不使用代理")
+        response = requests.get(url, timeout=5)
     except requests.exceptions.RequestException as e:
-        print(f"第一次使用代理请求失败，可能是网络问题或服务器异常。错误信息：{e}")
-        logging.debug(f"请求失败，可能是网络问题或服务器异常。错误信息：{e}")
+        print(f"第一次不使用代理请求失败，可能是网络问题或服务器异常。错误信息：{e}")
+        logging.debug(f"第一次不使用代理请求失败。错误信息：{e}")
         # 企业微信通知
-        msg = f"请求失败，可能是网络问题或服务器异常。错误信息：{e}"
+        msg = f"第一次不使用代理请求失败。错误信息：{e}"
         msg_type = 'text'
         send_message_to_wecomchan(msg, msg_type)
-    # 第二次尝试：不使用代理
+    # 第二次尝试：使用代理
     if not response:
         try:
-            response = requests.get(url, timeout=5)
+            print("第二次尝试使用代理")
+            response = requests.get(url, proxies=proxies, timeout=5)
         except requests.exceptions.RequestException as e:
-            print(f"第二次不使用代理请求失败，可能是网络问题或服务器异常。错误信息：{e}")
-            logging.debug(f"请求失败，可能是网络问题或服务器异常。错误信息：{e}")    
+            print(f"第二次使用代理请求失败，可能是网络问题或服务器异常。错误信息：{e}")
+            logging.debug(f"第二次使用代理请求失败。错误信息：{e}")    
             # 企业微信通知
-            msg = f"请求失败，可能是网络问题或服务器异常。错误信息：{e}"
+            msg = f"第二次使用代理请求失败。错误信息：{e}"
             msg_type = 'text'
             send_message_to_wecomchan(msg, msg_type)
             return None
+
     # 确保请求成功
     if response and response.status_code == 200:
         # 解析 JSON 数据

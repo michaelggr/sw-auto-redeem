@@ -60,6 +60,9 @@ def check_redeem_code(redeem):
     如果redeem小于8个字母,则直接返回False
     如果redeem大于8个字母,则发送请求判断兑换码是否存在
     如果redeem存在于Reward.csv文件中,则返回exist
+    检查兑换码是否过期
+    如果redeem过期,则返回expired
+    如果redeem有效,则返回True
     """
     #打印开始检查兑换码是否有效
     logging.info(f"开始检查兑换码 {redeem} 是否有效")
@@ -83,15 +86,27 @@ def check_redeem_code(redeem):
     #随机延迟
     time.sleep(random.randint(3, 15))
     response = requests.get(url, headers=headers)
-    #如果返回信息包含Invalid coupon code，则兑换码存在
+    #如果返回信息包含Invalid coupon code，则兑换码不存在
     if 'Invalid coupon code' in response.text:
         logging.info(f"兑换码 {redeem} 不存在")
         print(f"兑换码 {redeem} 不存在")
+        #打印返回信息
+        print(response.text)
         return False
+    #如果返回信息包含expired，则兑换码失效
+    elif 'expired' in response.text:
+        logging.info(f"兑换码 {redeem} 已过期")
+        print(f"兑换码 {redeem} 已过期")
+        #打印返回信息
+        print(response.text)
+        return 'expired'
     else:
         logging.info(f"兑换码 {redeem} 格式有效")
         print(f"兑换码 {redeem} 格式有效")
+                #打印返回信息
+        print(response.text)
         return True
+    
 def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
     """
     更新Reward.csv文件中的奖励记录
@@ -104,6 +119,14 @@ def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
             #从Reward.csv中删除对应的兑换码行
             df = pd.read_csv('Reward.csv')
             df = df[df['redeem'] != record['code']]
+            df.to_csv('Reward.csv', index=False)
+            logging.info(f"已删除过期的兑换码: {record['code']}")
+            print(f"已删除过期的兑换码: {record['code']}")
+        # 使用check_redeem_code检查redeem是否失效,删除失效兑换码
+        if check_redeem_code(record['code'])=='expired':
+            #从Reward.csv中删除对应的兑换码行
+            df = pd.read_csv('Reward.csv')
+            df = df[df['redeem']!= record['code']]
             df.to_csv('Reward.csv', index=False)
             logging.info(f"已删除过期的兑换码: {record['code']}")
             print(f"已删除过期的兑换码: {record['code']}")
@@ -214,3 +237,4 @@ def main():
     update_reward_csv(reward_data, existing_rewards)
 if __name__ == "__main__":
     main()
+    check_redeem_code("c2uday2inv")
