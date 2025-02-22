@@ -150,7 +150,15 @@ def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
     if not filtered_records:
         logging.debug("没有新的奖励记录需要更新。")
         return
-
+    # 使用check_redeem_code检查reward中所有redeem是否失效,删除失效兑换码
+    for record in filtered_records:
+        if check_redeem_code(record['redeem'])=='expired':
+            #从Reward.csv中删除对应的兑换码行
+            df = pd.read_csv('Reward.csv')
+            df = df[df['redeem']!= record['redeem']]
+            df.to_csv('Reward.csv', index=False)
+            logging.info(f"已删除失效的兑换码: {record['redeem']}")
+            print(f"已删除失效的兑换码: {record['redeem']}")
     try:
         with open(file_path, 'a', newline='', encoding='ISO-8859-1') as csvfile:
             fieldnames = ['redeem', 'reward', 'from']
