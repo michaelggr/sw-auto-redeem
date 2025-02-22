@@ -91,20 +91,20 @@ def check_redeem_code(redeem):
         logging.info(f"兑换码 {redeem} 不存在")
         print(f"兑换码 {redeem} 不存在")
         #打印返回信息
-        print(response.text)
+        #print(response.text)
         return False
     #如果返回信息包含expired，则兑换码失效
     elif 'expired' in response.text:
         logging.info(f"兑换码 {redeem} 已过期")
         print(f"兑换码 {redeem} 已过期")
         #打印返回信息
-        print(response.text)
+        #print(response.text)
         return 'expired'
     else:
         logging.info(f"兑换码 {redeem} 格式有效")
         print(f"兑换码 {redeem} 格式有效")
-                #打印返回信息
-        print(response.text)
+        #打印返回信息
+        #print(response.text)
         return True
     
 def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
@@ -128,8 +128,8 @@ def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
             df = pd.read_csv('Reward.csv')
             df = df[df['redeem']!= record['code']]
             df.to_csv('Reward.csv', index=False)
-            logging.info(f"已删除过期的兑换码: {record['code']}")
-            print(f"已删除过期的兑换码: {record['code']}")
+            logging.info(f"已删除失效的兑换码: {record['code']}")
+            print(f"已删除失效的兑换码: {record['code']}")
         # 使用check_redeem_code检查redeem是否有效,更新有效的兑换码
         if record['vote'] != 'expired' and record['code'] not in existing_rewards and check_redeem_code(record['code'])==True:
             filtered_records.append({
@@ -237,4 +237,4 @@ def main():
     update_reward_csv(reward_data, existing_rewards)
 if __name__ == "__main__":
     main()
-    check_redeem_code("c2uday2inv")
+    #check_redeem_code("c2uday2inv")
