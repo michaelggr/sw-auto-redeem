@@ -120,8 +120,8 @@ def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
             df = pd.read_csv('Reward.csv')
             df = df[df['redeem'] != record['code']]
             df.to_csv('Reward.csv', index=False)
-            logging.info(f"已删除过期的兑换码: {record['code']}")
-            print(f"已删除过期的兑换码: {record['code']}")
+            logging.info(f"已删除失效的兑换码: {record['code']}")
+            print(f"已删除失效的兑换码: {record['code']}")
         # 使用check_redeem_code检查redeem是否失效,删除失效兑换码
         if check_redeem_code(record['code'])=='expired':
             #从Reward.csv中删除对应的兑换码行
@@ -150,15 +150,6 @@ def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
     if not filtered_records:
         logging.debug("没有新的奖励记录需要更新。")
         return
-    # 使用check_redeem_code检查reward中所有redeem是否失效,删除失效兑换码
-    for record in filtered_records:
-        if check_redeem_code(record['redeem'])=='expired':
-            #从Reward.csv中删除对应的兑换码行
-            df = pd.read_csv('Reward.csv')
-            df = df[df['redeem']!= record['redeem']]
-            df.to_csv('Reward.csv', index=False)
-            logging.info(f"已删除失效的兑换码: {record['redeem']}")
-            print(f"已删除失效的兑换码: {record['redeem']}")
     try:
         with open(file_path, 'a', newline='', encoding='ISO-8859-1') as csvfile:
             fieldnames = ['redeem', 'reward', 'from']
@@ -169,50 +160,51 @@ def update_reward_csv(reward_data, existing_rewards, file_path='Reward.csv'):
         logging.info(f"已追加 {len(filtered_records)} 条记录到 {file_path}")
     except IOError:
         logging.error("无法写入Reward.csv文件")
- 
-def updata_from_wechat(redeem, hiveid, file_path='Reward.csv'):
+def check_expired_redeem_code(redeem):
     """
-    从微信更新数据到CSV文件
+    检查兑换码是否过期
     """
-    redeem_value = redeem
-    from_value = hiveid
+    url = f"https://withhive.me/313/{redeem}"
+    #模拟手机请求
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1'
+    }
+    #随机延迟
+    time.sleep(random.randint(3, 15))
     try:
-        df = pd.read_csv(file_path, encoding='ISO-8859-1')
-        if redeem_value not in df['redeem'].values and check_redeem_code(redeem_value)==True:
-            new_row = pd.DataFrame({
-                'redeem': [redeem_value],
-                'reward': [''],
-                'from': [from_value]
-            })
-            df = pd.concat([df, new_row], ignore_index=True)
-            df.to_csv(file_path, index=False)
-            logging.info("新增微信来源兑换码")
-
-            # 运行 task.py 生成 task.json 文件
-            import task
-            task.generate_task_data()
-            # 运行 evt_coupon.py 提交表单
-            import evt_coupon
-            evt_coupon.main()
-
-            try:
-                with open('response_log.txt', 'r') as file:
-                    lines = file.readlines()
-                    last_line = lines[-1].strip()
-                    if '优惠券礼物已支付' in last_line:
-                        logging.info("兑换码有效")
-                        # 更新User.csv文件
-                        update_user_csv(from_value)
-                    else:
-                        logging.error("兑换码无效")
-                        sys.exit(1)  # 停止脚本并返回状态码1，表示失败
-            except FileNotFoundError:
-                logging.error("response_log.txt 文件未找到")
-                sys.exit(1)  # 停止脚本并返回状态码1，表示失败
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # 检查请求是否成功
+        logging.info(f"请求 {url} 成功，状态码: {response.status_code}")
+        # 如果返回信息包含expired，则兑换码失效
+        if 'expired' in response.text:
+            logging.info(f"兑换码 {redeem} 已过期，返回信息: {response.text}")
+            print(f"兑换码 {redeem} 已过期")
+            return 'expired'
         else:
-            logging.info("兑换码已存在，无需更新")
+            logging.info(f"兑换码 {redeem} 未过期，返回信息: {response.text}")
+            return None
+    except requests.RequestException as e:
+        logging.error(f"请求 {url} 失败: {e}")
+        return None
+#清楚失效过期兑换码
+def clear_expired_codes(file_path='Reward.csv'):
+    """
+    清除过期的兑换码
+    """
+    try:
+        logging.info(f"开始读取 {file_path} 文件")
+        df = pd.read_csv(file_path, encoding='ISO-8859-1')
+        logging.info(f"成功读取 {file_path} 文件，共 {len(df)} 行")
+        logging.info(f"df['redeem'] 列的数据类型: {df['redeem'].dtype}")
+        df['expired'] = df['redeem'].apply(check_expired_redeem_code)
+        df = df[df['expired'] != 'expired']
+        df.drop(columns=['expired'], inplace=True)
+        logging.info(f"开始写入 {file_path} 文件，共 {len(df)} 行")
+        df.to_csv(file_path, index=False)
+        logging.info("已清除过期的兑换码")
     except Exception as e:
-        logging.error(f"更新 {file_path} 文件时发生错误: {e}")
+        logging.error(f"清除过期兑换码时发生错误: {e}")
+
 
 def update_user_csv(from_value, user_file_path='User.csv'):
     """
@@ -243,6 +235,16 @@ def main():
     logging.info("开始更新奖励表")
     print("开始更新奖励表")
     update_reward_csv(reward_data, existing_rewards)
+    #打印更新奖励表完成
+    logging.info("更新奖励表完成")
+    print("更新奖励表完成")
+    #打印开始清除过期兑换码
+    logging.info("开始清除过期兑换码")
+    print("开始清除过期兑换码")
+    clear_expired_codes(file_path='Reward.csv')
+    #打印清除过期兑换码完成
+    logging.info("清除过期兑换码完成")
+    print("清除过期兑换码完成")
 if __name__ == "__main__":
     main()
     #check_redeem_code("c2uday2inv")
