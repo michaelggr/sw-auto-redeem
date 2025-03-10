@@ -1325,3 +1325,10 @@ location.href = gData.deeplink_url;
 [02-23 10:01:22][INFO] ¿ªÊ¼Ð´Èë Reward.csv ÎÄ¼þ£¬¹² 2 ÐÐ
 [02-23 10:01:22][INFO] ÒÑÇå³ý¹ýÆÚµÄ¶Ò»»Âë
 [02-23 10:01:22][INFO] Çå³ý¹ýÆÚ¶Ò»»ÂëÍê³É
+[03-10 13:29:06][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-10 13:29:06][INFO] [33mPress CTRL+C to quit[0m
+[03-10 13:31:30][INFO] 127.0.0.1 - - [10/Mar/2025 13:31:30] "GET / HTTP/1.1" 200 -
+[03-10 13:31:31][INFO] 127.0.0.1 - - [10/Mar/2025 13:31:31] "GET /favicon.ico HTTP/1.1" 200 -
