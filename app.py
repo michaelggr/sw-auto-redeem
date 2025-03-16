@@ -2,6 +2,7 @@
 import hashlib
 import json
 import subprocess
+import threading
 from flask import (
     Flask, 
     request, 
@@ -26,6 +27,10 @@ parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, parent_dir)
 #文件路径
 CONFIG_PATH = os.environ.get("CONFIG_PATH", "./config.json")
+# 配置常量
+CSV_FILE = 'Reward.csv'
+CSV_ENCODING = 'utf-8'
+LOCK = threading.Lock()  # 文件操作锁
 # 读取环境变量
 DEBUG = os.environ.get("DEBUG", False)
 
@@ -173,25 +178,64 @@ def add_code():
     data = request.get_json()
     # 处理 POST 请求的数据
     code = data.get('code')
+     # 单次状态检查
+    check_result = check_redeem_code(code)
 
     # 判断兑换码是否存在check_redeem_code(code)
-    if check_redeem_code(code)==False:
-        return jsonify({'message': '兑换码不存在，请检查兑换码是否正确'})
+    if check_result==False:
+        return jsonify({'message': '兑换码格式错误或无效'})
     # 检查 code 是否已经存在
-    if check_redeem_code(code)== 'exist':
+    if check_result== 'exist':
         return jsonify({'message': '兑换码已记录过,谢谢参与'})
-    # 读取 CSV 文件
-    df = pd.read_csv('Reward.csv', encoding='utf-8')
+    #检测兑换码是否过期
+    if check_result== 'expired':
+        return jsonify({'message': '兑换码已过期'})
+    # # 读取 CSV 文件
+    # df = pd.read_csv('Reward.csv', encoding='utf-8')
 
-    # 添加新行,包含redeem,reward,from
-    new_row = {'redeem': code,'reward': '','from': 'web'}
-    new_row_df = pd.DataFrame([new_row])  # 将字典转换为 DataFrame
-    df = pd.concat([df, new_row_df], ignore_index=True)  # 现在可以正确地拼接
+    # # 添加新行,包含redeem,reward,from
+    # new_row = {'redeem': code,'reward': '','from': 'web'}
+    # new_row_df = pd.DataFrame([new_row])  # 将字典转换为 DataFrame
+    # df = pd.concat([df, new_row_df], ignore_index=True)  # 现在可以正确地拼接
 
-    # 保存更新后的 CSV 文件
-    df.to_csv('Reward.csv', encoding="utf-8",index=False)
+    # # 保存更新后的 CSV 文件
+    # df.to_csv('Reward.csv', encoding="utf-8",index=False)
 
-    return jsonify({'message': '兑换码新增成功，恭喜发财'})
+    # return jsonify({'message': '兑换码新增成功，恭喜发财'})
+    # 线程安全的文件操作
+    with LOCK:
+        # 自动创建不存在的文件
+        if not os.path.exists(CSV_FILE):
+            pd.DataFrame(columns=['redeem', 'reward', 'from']).to_csv(
+                CSV_FILE, 
+                encoding=CSV_ENCODING, 
+                index=False
+            )
+
+        # 追加新记录
+        new_record = pd.DataFrame([{
+            'redeem': code,
+            'reward': '',
+            'from': 'web'
+        }])
+        
+        # 使用追加模式写入（更高效）
+        new_record.to_csv(
+            CSV_FILE,
+            mode='a',
+            header=False,
+            encoding=CSV_ENCODING,
+            index=False
+        )
+
+    return jsonify({
+        'status': 201,
+        'message': '兑换码添加成功',
+        'data': {
+            'code': code,
+            'source': 'web'
+        }
+    }), 201
 
 # 获取历史记录
 @app.route('/history')
