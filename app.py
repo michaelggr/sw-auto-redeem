@@ -217,7 +217,26 @@ def trigger_swq():
             return jsonify({'message': '收到的消息不是 "抓取兑换码"'}), 200
     except Exception as e:
         logging.error(f"处理请求时发生错误: {e}")
-
+#新增接口：接收消息并运行task.py脚本
+@app.route('/get_code', methods=['POST'])
+def get_code():
+    try:
+        data = request.get_json()
+        message = data.get('message')
+        if message == '领取兑换码':
+            logging.info("收到消息：领取兑换码，开始运行 task.py 脚本")
+            result = subprocess.run(['python', 'task.py'], capture_output=True, text=True)
+            if result.returncode == 0:
+                logging.info("task.py 脚本执行成功")
+                return jsonify({'message': 'task.py 脚本执行成功'}), 200
+            else:
+                logging.error(f"task.py 脚本执行失败: {result.stderr}")
+                return jsonify({'message': f'task.py 脚本执行失败: {result.stderr}'}), 500
+        else:
+            logging.info("收到的消息不是 '领取兑换码'")
+            return jsonify({'message': '收到的消息不是 "领取兑换码"'}), 200
+    except Exception as e:
+        logging.error(f"处理请求时发生错误: {e}")
 if __name__ == '__main__':
     # 启动 Flask 应用
     app.run(debug=DEBUG, host="0.0.0.0", port=5006)
