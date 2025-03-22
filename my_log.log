@@ -1344,3 +1344,283 @@ location.href = gData.deeplink_url;
 [03-10 13:41:25][INFO] 127.0.0.1 - - [10/Mar/2025 13:41:25] "GET / HTTP/1.1" 200 -
 [03-10 13:41:26][INFO] 127.0.0.1 - - [10/Mar/2025 13:41:26] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
 [03-10 13:41:36][INFO] 127.0.0.1 - - [10/Mar/2025 13:41:36] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 17:19:24][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:19:24][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:19:46][INFO] 127.0.0.1 - - [22/Mar/2025 17:19:46] "GET / HTTP/1.1" 200 -
+[03-22 17:19:46][INFO] 127.0.0.1 - - [22/Mar/2025 17:19:46] "[33mGET /pay.png HTTP/1.1[0m" 404 -
+[03-22 17:19:48][INFO] 127.0.0.1 - - [22/Mar/2025 17:19:48] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:19:51][INFO] 127.0.0.1 - - [22/Mar/2025 17:19:51] "GET /history HTTP/1.1" 200 -
+[03-22 17:19:52][INFO] 127.0.0.1 - - [22/Mar/2025 17:19:52] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 17:19:58][INFO] 127.0.0.1 - - [22/Mar/2025 17:19:58] "GET /reward HTTP/1.1" 200 -
+[03-22 17:20:06][INFO] 127.0.0.1 - - [22/Mar/2025 17:20:06] "GET / HTTP/1.1" 200 -
+[03-22 17:20:07][INFO] 127.0.0.1 - - [22/Mar/2025 17:20:07] "[33mGET /pay.png HTTP/1.1[0m" 404 -
+[03-22 17:20:07][INFO] 127.0.0.1 - - [22/Mar/2025 17:20:07] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:22:33][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:22:33][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:22:37][INFO] 127.0.0.1 - - [22/Mar/2025 17:22:37] "GET / HTTP/1.1" 200 -
+[03-22 17:22:37][INFO] 127.0.0.1 - - [22/Mar/2025 17:22:37] "[33mGET /pay.png HTTP/1.1[0m" 404 -
+[03-22 17:22:37][INFO] 127.0.0.1 - - [22/Mar/2025 17:22:37] "GET /static/favicon.ico HTTP/1.1" 200 -
+[03-22 17:22:38][INFO] 127.0.0.1 - - [22/Mar/2025 17:22:38] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:27:49][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:27:49][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:27:55][INFO] 127.0.0.1 - - [22/Mar/2025 17:27:55] "GET / HTTP/1.1" 200 -
+[03-22 17:27:55][INFO] 127.0.0.1 - - [22/Mar/2025 17:27:55] "GET /static/pay.png HTTP/1.1" 200 -
+[03-22 17:27:56][INFO] 127.0.0.1 - - [22/Mar/2025 17:27:56] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:29:43][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:29:43][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:29:47][INFO] 127.0.0.1 - - [22/Mar/2025 17:29:47] "GET / HTTP/1.1" 200 -
+[03-22 17:29:47][INFO] 127.0.0.1 - - [22/Mar/2025 17:29:47] "GET /static/pay.png HTTP/1.1" 200 -
+[03-22 17:29:48][INFO] 127.0.0.1 - - [22/Mar/2025 17:29:48] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:36:03][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:36:03][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:36:06][INFO] 127.0.0.1 - - [22/Mar/2025 17:36:06] "GET / HTTP/1.1" 200 -
+[03-22 17:36:06][INFO] 127.0.0.1 - - [22/Mar/2025 17:36:06] "GET /static/pay.png HTTP/1.1" 200 -
+[03-22 17:36:08][INFO] 127.0.0.1 - - [22/Mar/2025 17:36:08] "GET / HTTP/1.1" 200 -
+[03-22 17:36:08][INFO] 127.0.0.1 - - [22/Mar/2025 17:36:08] "GET /static/pay.png HTTP/1.1" 200 -
+[03-22 17:36:11][INFO] 127.0.0.1 - - [22/Mar/2025 17:36:11] "[36mGET /static/pay.png HTTP/1.1[0m" 304 -
+[03-22 17:36:12][INFO] 127.0.0.1 - - [22/Mar/2025 17:36:12] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 17:36:15][INFO] 127.0.0.1 - - [22/Mar/2025 17:36:15] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:40:28][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:40:28][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:40:32][INFO] 127.0.0.1 - - [22/Mar/2025 17:40:32] "GET / HTTP/1.1" 200 -
+[03-22 17:40:38][INFO] 127.0.0.1 - - [22/Mar/2025 17:40:38] "[36mGET /static/pay.png HTTP/1.1[0m" 304 -
+[03-22 17:40:39][INFO] 127.0.0.1 - - [22/Mar/2025 17:40:39] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 17:40:47][INFO] 127.0.0.1 - - [22/Mar/2025 17:40:47] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:45:27][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:45:27][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:45:32][INFO] 127.0.0.1 - - [22/Mar/2025 17:45:32] "GET / HTTP/1.1" 200 -
+[03-22 17:45:32][INFO] 127.0.0.1 - - [22/Mar/2025 17:45:32] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 17:45:35][INFO] 127.0.0.1 - - [22/Mar/2025 17:45:35] "GET /history HTTP/1.1" 200 -
+[03-22 17:45:39][INFO] 127.0.0.1 - - [22/Mar/2025 17:45:39] "GET /history HTTP/1.1" 200 -
+[03-22 17:45:42][INFO] 127.0.0.1 - - [22/Mar/2025 17:45:42] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:45:50][INFO] 127.0.0.1 - - [22/Mar/2025 17:45:50] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 17:45:57][INFO] 127.0.0.1 - - [22/Mar/2025 17:45:57] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 17:47:50][INFO] ¿ªÊ¼¼ì²é¶Ò»»Âë XIANGCAIZHENHAOCHI ÊÇ·ñÓÐÐ§
+[03-22 17:48:01][INFO] ¶Ò»»Âë XIANGCAIZHENHAOCHI ¸ñÊ½ÓÐÐ§
+[03-22 17:48:01][INFO] 127.0.0.1 - - [22/Mar/2025 17:48:01] "[35m[1mPOST /add_code HTTP/1.1[0m" 201 -
+[03-22 17:51:28][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:51:28][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:51:32][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:32] "GET / HTTP/1.1" 200 -
+[03-22 17:51:32][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:32] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 17:51:32][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:32] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 17:51:33][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:33] "GET / HTTP/1.1" 200 -
+[03-22 17:51:34][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:34] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 17:51:34][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:34] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 17:51:36][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:36] "GET /reward HTTP/1.1" 200 -
+[03-22 17:51:38][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:38] "GET /history HTTP/1.1" 200 -
+[03-22 17:51:43][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:43] "GET /reward HTTP/1.1" 200 -
+[03-22 17:51:43][INFO] 127.0.0.1 - - [22/Mar/2025 17:51:43] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:55:22][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:55:22][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:55:25][INFO] 127.0.0.1 - - [22/Mar/2025 17:55:25] "GET / HTTP/1.1" 200 -
+[03-22 17:55:25][INFO] 127.0.0.1 - - [22/Mar/2025 17:55:25] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 17:55:25][INFO] 127.0.0.1 - - [22/Mar/2025 17:55:25] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 17:55:31][INFO] 127.0.0.1 - - [22/Mar/2025 17:55:31] "GET / HTTP/1.1" 200 -
+[03-22 17:55:31][INFO] 127.0.0.1 - - [22/Mar/2025 17:55:31] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 17:55:31][INFO] 127.0.0.1 - - [22/Mar/2025 17:55:31] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 17:55:39][INFO] 127.0.0.1 - - [22/Mar/2025 17:55:39] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:58:53][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 17:58:53][INFO] [33mPress CTRL+C to quit[0m
+[03-22 17:59:20][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:20] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:59:26][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:26] "GET / HTTP/1.1" 200 -
+[03-22 17:59:26][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:26] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 17:59:26][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:26] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 17:59:28][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:28] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:59:28][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:28] "GET / HTTP/1.1" 200 -
+[03-22 17:59:29][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:29] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 17:59:29][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:29] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 17:59:30][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:30] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 17:59:37][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:37] "GET / HTTP/1.1" 200 -
+[03-22 17:59:37][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[03-22 17:59:38][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:38] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[03-22 17:59:39][INFO] 127.0.0.1 - - [22/Mar/2025 17:59:39] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 18:00:54][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:00:54][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:00:56][INFO] 127.0.0.1 - - [22/Mar/2025 18:00:56] "GET / HTTP/1.1" 200 -
+[03-22 18:00:56][INFO] 127.0.0.1 - - [22/Mar/2025 18:00:56] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:00:56][INFO] 127.0.0.1 - - [22/Mar/2025 18:00:56] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:00:57][INFO] 127.0.0.1 - - [22/Mar/2025 18:00:57] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:00:59][INFO] 127.0.0.1 - - [22/Mar/2025 18:00:59] "GET / HTTP/1.1" 200 -
+[03-22 18:01:00][INFO] 127.0.0.1 - - [22/Mar/2025 18:01:00] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:01:00][INFO] 127.0.0.1 - - [22/Mar/2025 18:01:00] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:01:01][INFO] 127.0.0.1 - - [22/Mar/2025 18:01:01] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:01:53][INFO] 127.0.0.1 - - [22/Mar/2025 18:01:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[03-22 18:04:25][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:04:25][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:04:29][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:29] "GET / HTTP/1.1" 200 -
+[03-22 18:04:29][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:29] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:04:29][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:29] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:04:30][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:30] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:04:34][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:34] "GET / HTTP/1.1" 200 -
+[03-22 18:04:34][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:34] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:04:34][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:34] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:04:35][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:35] "GET / HTTP/1.1" 200 -
+[03-22 18:04:35][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:35] "GET / HTTP/1.1" 200 -
+[03-22 18:04:35][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:35] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:04:35][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:35] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:04:35][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:35] "GET / HTTP/1.1" 200 -
+[03-22 18:04:35][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:35] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:04:36][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:36] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:04:37][INFO] 127.0.0.1 - - [22/Mar/2025 18:04:37] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:05:04][INFO] 127.0.0.1 - - [22/Mar/2025 18:05:04] "POST /bind HTTP/1.1" 200 -
+[03-22 18:05:10][INFO] 127.0.0.1 - - [22/Mar/2025 18:05:10] "[36mGET /static/pay.png HTTP/1.1[0m" 304 -
+[03-22 18:05:13][INFO] 127.0.0.1 - - [22/Mar/2025 18:05:13] "[36mGET /static/pay.png HTTP/1.1[0m" 304 -
+[03-22 18:05:16][INFO] 127.0.0.1 - - [22/Mar/2025 18:05:16] "[36mGET /static/pay.png HTTP/1.1[0m" 304 -
+[03-22 18:05:32][INFO] 127.0.0.1 - - [22/Mar/2025 18:05:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[03-22 18:06:14][INFO] 127.0.0.1 - - [22/Mar/2025 18:06:14] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 18:07:17][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:07:17][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:07:21][INFO] 127.0.0.1 - - [22/Mar/2025 18:07:21] "GET / HTTP/1.1" 200 -
+[03-22 18:07:21][INFO] 127.0.0.1 - - [22/Mar/2025 18:07:21] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:07:21][INFO] 127.0.0.1 - - [22/Mar/2025 18:07:21] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:07:22][INFO] 127.0.0.1 - - [22/Mar/2025 18:07:22] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:07:23][INFO] 127.0.0.1 - - [22/Mar/2025 18:07:23] "GET / HTTP/1.1" 200 -
+[03-22 18:07:23][INFO] 127.0.0.1 - - [22/Mar/2025 18:07:23] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:07:23][INFO] 127.0.0.1 - - [22/Mar/2025 18:07:23] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:07:24][INFO] 127.0.0.1 - - [22/Mar/2025 18:07:24] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:07:37][INFO] 127.0.0.1 - - [22/Mar/2025 18:07:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[03-22 18:08:57][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:08:57][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:09:03][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:03] "GET / HTTP/1.1" 200 -
+[03-22 18:09:03][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:03] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:09:03][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:03] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:09:05][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:05] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:09:14][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:14] "GET / HTTP/1.1" 200 -
+[03-22 18:09:14][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:14] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:09:14][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:14] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:09:15][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:15] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:09:33][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:33] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:09:48][INFO] 127.0.0.1 - - [22/Mar/2025 18:09:48] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 18:10:22][INFO] 127.0.0.1 - - [22/Mar/2025 18:10:22] "[36mGET /static/pay.png HTTP/1.1[0m" 304 -
+[03-22 18:10:25][INFO] 127.0.0.1 - - [22/Mar/2025 18:10:25] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:12:21][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:12:21][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:12:27][INFO] 127.0.0.1 - - [22/Mar/2025 18:12:27] "GET / HTTP/1.1" 200 -
+[03-22 18:12:27][INFO] 127.0.0.1 - - [22/Mar/2025 18:12:27] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:12:27][INFO] 127.0.0.1 - - [22/Mar/2025 18:12:27] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:12:29][INFO] 127.0.0.1 - - [22/Mar/2025 18:12:29] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:12:29][INFO] 127.0.0.1 - - [22/Mar/2025 18:12:29] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:12:38][INFO] 127.0.0.1 - - [22/Mar/2025 18:12:38] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 18:12:52][INFO] 127.0.0.1 - - [22/Mar/2025 18:12:52] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:12:59][INFO] 127.0.0.1 - - [22/Mar/2025 18:12:59] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 18:13:56][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:13:56][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:13:57][INFO] 127.0.0.1 - - [22/Mar/2025 18:13:57] "GET / HTTP/1.1" 200 -
+[03-22 18:13:57][INFO] 127.0.0.1 - - [22/Mar/2025 18:13:57] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:13:57][INFO] 127.0.0.1 - - [22/Mar/2025 18:13:57] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:13:58][INFO] 127.0.0.1 - - [22/Mar/2025 18:13:58] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:14:00][INFO] 127.0.0.1 - - [22/Mar/2025 18:14:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[03-22 18:14:03][INFO] 127.0.0.1 - - [22/Mar/2025 18:14:03] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:14:10][INFO] 127.0.0.1 - - [22/Mar/2025 18:14:10] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 18:16:39][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:16:39][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:16:45][INFO] 127.0.0.1 - - [22/Mar/2025 18:16:45] "GET / HTTP/1.1" 200 -
+[03-22 18:16:46][INFO] 127.0.0.1 - - [22/Mar/2025 18:16:46] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:16:46][INFO] 127.0.0.1 - - [22/Mar/2025 18:16:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[03-22 18:16:47][INFO] 127.0.0.1 - - [22/Mar/2025 18:16:47] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 18:16:51][INFO] 127.0.0.1 - - [22/Mar/2025 18:16:51] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:17:19][INFO] 127.0.0.1 - - [22/Mar/2025 18:17:19] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:17:27][INFO] 127.0.0.1 - - [22/Mar/2025 18:17:27] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 18:17:54][INFO] 127.0.0.1 - - [22/Mar/2025 18:17:54] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:19:00][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:19:00][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:19:03][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:03] "GET / HTTP/1.1" 200 -
+[03-22 18:19:03][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[03-22 18:19:03][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:03] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[03-22 18:19:05][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:05] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 18:19:08][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:08] "GET / HTTP/1.1" 200 -
+[03-22 18:19:09][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[03-22 18:19:09][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:09] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[03-22 18:19:10][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:10] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 18:19:13][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:13] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 18:19:54][INFO] 127.0.0.1 - - [22/Mar/2025 18:19:54] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 18:20:27][INFO] 127.0.0.1 - - [22/Mar/2025 18:20:27] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:41:38][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:41:38][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:41:40][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:40] "GET / HTTP/1.1" 200 -
+[03-22 18:41:41][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:41] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:41:41][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:41] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:41:42][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:42] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:41:43][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:43] "GET / HTTP/1.1" 200 -
+[03-22 18:41:43][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:43] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:41:43][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:43] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:41:44][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:44] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:41:44][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:44] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:41:50][INFO] 127.0.0.1 - - [22/Mar/2025 18:41:50] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 18:42:29][INFO] 127.0.0.1 - - [22/Mar/2025 18:42:29] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 18:42:31][INFO] 127.0.0.1 - - [22/Mar/2025 18:42:31] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:43:12][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 18:43:12][INFO] [33mPress CTRL+C to quit[0m
+[03-22 18:43:16][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:16] "GET / HTTP/1.1" 200 -
+[03-22 18:43:16][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:16] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:43:16][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:16] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:43:17][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:17] "GET / HTTP/1.1" 200 -
+[03-22 18:43:17][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:17] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:43:18][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:18] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 18:43:18][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:18] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 18:43:18][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:18] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 18:43:26][INFO] ¿ªÊ¼¼ì²é¶Ò»»Âë 22  ÊÇ·ñÓÐÐ§
+[03-22 18:43:26][INFO] ¶Ò»»Âë 22  ³¤¶È²»¹»
+[03-22 18:43:26][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:26] "POST /add_code HTTP/1.1" 200 -
+[03-22 18:43:29][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:29] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 18:43:32][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:32] "[36mGET /reward HTTP/1.1[0m" 304 -
