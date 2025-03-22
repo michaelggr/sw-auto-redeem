@@ -293,12 +293,6 @@ function displayCSV(csvData, totalRows) {
             rewardModal.style.display = "block";
         }
 
-        // 当用户点击任何地方时，关闭弹窗
-        window.onclick = function(event) {
-            if (event.target == rewardModal) {
-                rewardModal.style.display = "none";
-            }
-        }
         // 获取最新兑换码数据并显示在弹窗中
         function fetchReward() {
            
@@ -375,12 +369,6 @@ function displayReward(csvData) {
         // 当用户点击增加兑换码按钮时，显示弹窗
         addCodeButton.onclick = function() {
             addCodeModal.style.display = "block";
-        }
-        // 当用户点击任何地方时，关闭弹窗
-        window.onclick = function(event) {
-            if (event.target == addCodeModal) {
-                addCodeModal.style.display = "none";
-            }
         }
         // 打开增加兑换码弹窗
         function openAddCodeModal() {
@@ -464,3 +452,22 @@ function displayReward(csvData) {
         script.setAttribute("key","174158352560");
         script.setAttribute("m","1");
         document.documentElement.appendChild(script);
+
+// 获取RTA分数线数据
+function updateRTARank() {
+    fetch('/get_rta_rank')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('rta-rank').textContent = data.message;
+        })
+        .catch(error => {
+            console.error('获取RTA分数线失败:', error);
+        });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 初始获取RTA分数线数据
+    updateRTARank();
+    // 每60秒更新一次数据
+    setInterval(updateRTARank, 60000);
+});

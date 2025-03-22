@@ -19,6 +19,7 @@ import logging
 import os
 import sys
 import time
+import requests
 
 from bind import checkUser, web_bind_player_info
 from reward import check_redeem_code
@@ -281,6 +282,32 @@ def get_code():
             return jsonify({'message': '收到的消息不是 "领取兑换码"'}), 200
     except Exception as e:
         logging.error(f"处理请求时发生错误: {e}")
+
+@app.route('/get_rta_rank')
+def get_rta_rank():
+    try:
+        # 发送GET请求获取数据
+        response = requests.get('https://m.swranking.com/api/player/nowline')
+        data = response.json()
+        
+        if data['retCode'] == 0 and 'data' in data:
+            rank_data = data['data']
+            
+            # 提取各区域的分数
+            gold_scores = f"{rank_data['c1']['score']},{rank_data['c2']['score']},{rank_data['c3']['score']}"
+            green_scores = f"{rank_data['s1']['score']},{rank_data['s2']['score']},{rank_data['s3']['score']}"
+            red_scores = f"{rank_data['g1']['score']},{rank_data['g2']['score']},{rank_data['g3']['score']}"
+            
+            # 组织返回数据
+            result = f"金区{gold_scores}；绿区{green_scores}；红区{red_scores}"
+            return jsonify({'message': result})
+        else:
+            return jsonify({'message': '获取数据失败'}), 500
+            
+    except Exception as e:
+        logging.error(f"获取RTA分数线数据时发生错误: {e}")
+        return jsonify({'message': '获取数据失败'}), 500
+
 if __name__ == '__main__':
     # 启动 Flask 应用
     app.run(debug=DEBUG, host="0.0.0.0", port=5006)

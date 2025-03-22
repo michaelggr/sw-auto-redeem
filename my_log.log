@@ -1624,3 +1624,75 @@ location.href = gData.deeplink_url;
 [03-22 18:43:26][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:26] "POST /add_code HTTP/1.1" 200 -
 [03-22 18:43:29][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:29] "[36mGET /history HTTP/1.1[0m" 304 -
 [03-22 18:43:32][INFO] 127.0.0.1 - - [22/Mar/2025 18:43:32] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 19:14:05][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 19:14:05][INFO] [33mPress CTRL+C to quit[0m
+[03-22 19:14:11][INFO] 127.0.0.1 - - [22/Mar/2025 19:14:11] "GET / HTTP/1.1" 200 -
+[03-22 19:14:11][INFO] 127.0.0.1 - - [22/Mar/2025 19:14:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[03-22 19:14:11][INFO] 127.0.0.1 - - [22/Mar/2025 19:14:11] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 19:14:11][INFO] 127.0.0.1 - - [22/Mar/2025 19:14:11] "GET /static/ranking.js HTTP/1.1" 200 -
+[03-22 19:14:12][INFO] 127.0.0.1 - - [22/Mar/2025 19:14:12] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 19:14:12][INFO] 127.0.0.1 - - [22/Mar/2025 19:14:12] "GET /static/ranking.js HTTP/1.1" 200 -
+[03-22 19:16:07][INFO] 127.0.0.1 - - [22/Mar/2025 19:16:07] "GET / HTTP/1.1" 200 -
+[03-22 19:16:07][INFO] 127.0.0.1 - - [22/Mar/2025 19:16:07] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 19:16:07][INFO] 127.0.0.1 - - [22/Mar/2025 19:16:07] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 19:16:07][INFO] 127.0.0.1 - - [22/Mar/2025 19:16:07] "GET /static/ranking.js HTTP/1.1" 200 -
+[03-22 19:16:07][INFO] 127.0.0.1 - - [22/Mar/2025 19:16:07] "[36mGET /static/ranking.js HTTP/1.1[0m" 304 -
+[03-22 19:16:09][INFO] 127.0.0.1 - - [22/Mar/2025 19:16:09] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 19:16:17][INFO] 127.0.0.1 - - [22/Mar/2025 19:16:17] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 19:18:12][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 19:18:12][INFO] [33mPress CTRL+C to quit[0m
+[03-22 19:18:15][INFO] 127.0.0.1 - - [22/Mar/2025 19:18:15] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 19:18:23][INFO] 127.0.0.1 - - [22/Mar/2025 19:18:23] "GET / HTTP/1.1" 200 -
+[03-22 19:18:23][INFO] 127.0.0.1 - - [22/Mar/2025 19:18:23] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 19:18:23][INFO] 127.0.0.1 - - [22/Mar/2025 19:18:23] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 19:18:23][INFO] 127.0.0.1 - - [22/Mar/2025 19:18:23] "GET /static/ranking.js HTTP/1.1" 200 -
+[03-22 19:18:23][INFO] 127.0.0.1 - - [22/Mar/2025 19:18:23] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[03-22 19:18:23][INFO] 127.0.0.1 - - [22/Mar/2025 19:18:23] "GET /static/ranking.js HTTP/1.1" 200 -
+[03-22 19:18:24][INFO] 127.0.0.1 - - [22/Mar/2025 19:18:24] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 19:36:10][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 19:36:10][INFO] [33mPress CTRL+C to quit[0m
+[03-22 19:36:12][INFO] 127.0.0.1 - - [22/Mar/2025 19:36:12] "GET / HTTP/1.1" 200 -
+[03-22 19:36:12][INFO] 127.0.0.1 - - [22/Mar/2025 19:36:12] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 19:36:12][INFO] 127.0.0.1 - - [22/Mar/2025 19:36:12] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 19:36:14][INFO] 127.0.0.1 - - [22/Mar/2025 19:36:14] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 19:36:18][INFO] 127.0.0.1 - - [22/Mar/2025 19:36:18] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 19:36:21][INFO] 127.0.0.1 - - [22/Mar/2025 19:36:21] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 19:44:06][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 19:44:06][INFO] [33mPress CTRL+C to quit[0m
+[03-22 19:44:09][INFO] 127.0.0.1 - - [22/Mar/2025 19:44:09] "GET / HTTP/1.1" 200 -
+[03-22 19:44:09][INFO] 127.0.0.1 - - [22/Mar/2025 19:44:09] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 19:44:09][INFO] 127.0.0.1 - - [22/Mar/2025 19:44:09] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 19:44:11][INFO] 127.0.0.1 - - [22/Mar/2025 19:44:11] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 19:44:11][INFO] 127.0.0.1 - - [22/Mar/2025 19:44:11] "[36mGET /history HTTP/1.1[0m" 304 -
+[03-22 19:44:16][INFO] 127.0.0.1 - - [22/Mar/2025 19:44:16] "[36mGET /reward HTTP/1.1[0m" 304 -
+[03-22 19:55:44][INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5006
+ * Running on http://192.168.0.3:5006
+[03-22 19:55:44][INFO] [33mPress CTRL+C to quit[0m
+[03-22 19:55:47][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:47] "GET / HTTP/1.1" 200 -
+[03-22 19:55:47][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:47] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 19:55:47][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:47] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 19:55:48][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:48] "GET /get_rta_rank HTTP/1.1" 200 -
+[03-22 19:55:48][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:48] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 19:55:53][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:53] "GET / HTTP/1.1" 200 -
+[03-22 19:55:53][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:53] "GET /static/style.css HTTP/1.1" 200 -
+[03-22 19:55:53][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:53] "GET /static/script.js HTTP/1.1" 200 -
+[03-22 19:55:54][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:54] "GET /favicon.ico HTTP/1.1" 200 -
+[03-22 19:55:54][INFO] 127.0.0.1 - - [22/Mar/2025 19:55:54] "GET /get_rta_rank HTTP/1.1" 200 -
+[03-22 19:56:07][INFO] 127.0.0.1 - - [22/Mar/2025 19:56:07] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 19:56:42][INFO] 127.0.0.1 - - [22/Mar/2025 19:56:42] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+[03-22 19:56:54][INFO] 127.0.0.1 - - [22/Mar/2025 19:56:54] "GET /get_rta_rank HTTP/1.1" 200 -
+[03-22 19:57:22][INFO] 127.0.0.1 - - [22/Mar/2025 19:57:22] "[36mGET /history HTTP/1.1[0m" 304 -
