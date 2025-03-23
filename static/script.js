@@ -1,8 +1,8 @@
-//点击otherButton跳转到https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AC%E5%94%A4/
+//点击otherButton跳转到https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AB%E5%94%A4/
 
         // 点击其他功能按钮时，跳转到指定的URL
         document.getElementById('otherButton').addEventListener('click', function() {       
-            window.location.href = 'https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AC%E5%94%A4/';
+            window.location.href = 'https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AB%E5%94%A4/';
         });
         // 点击考验之塔按钮时，跳转到指定的URL
         document.getElementById('coaButton').addEventListener('click', function() {
@@ -218,8 +218,7 @@
                 .then(response => response.text())  // 获取CSV文件内容
                 .then(csvText => {
                     const csvData = parseCSV(csvText);  // 解析CSV
-                    const totalRows = csvData.length - 1; // 减去标题行
-                    displayCSV(csvData, totalRows);  // 显示CSV数据
+                    displayCSV(csvData);  // 显示CSV数据
                 })
                 .catch(error => console.error('Error:', error));
         }
@@ -233,7 +232,7 @@ function parseCSV(csvText) {
     return result;
 }
 // 显示CSV数据
-function displayCSV(csvData, totalRows) {
+function displayCSV(csvData) {
     // 获取用于显示 CSV 数据的元素
     const csvTableContainer = document.getElementById('csvData');
     // 清除之前的内容
@@ -241,40 +240,48 @@ function displayCSV(csvData, totalRows) {
     const csvTable = document.createElement('table');
     const fragment = document.createDocumentFragment(); // 创建 DOM Fragment
 
-    const rowsToDisplay = 20; // 每次显示的行数
-    let startRow = 1; // 从第二行开始（忽略表头）
-    let endRow = Math.min(startRow + rowsToDisplay, totalRows + 1);
+    // 排序数据，最新的数据在最上面
+    csvData.sort((a, b) => {
+        const dateA = new Date(a[4]); // 假设日期在第5列
+        const dateB = new Date(b[4]);
+        return dateB - dateA; // 降序
+    });
 
-    // 遍历CSV数据，从第二行开始（忽略表头）
-    for (let i = startRow; i < endRow; i++) {
-        const row = csvData[i];
-        const tr = document.createElement('tr');
+    const pageSize = 20; // 每页显示的行数
+    let currentPage = 1; // 当前页码
 
-        for (let j = 0; j < row.length; j++) {
-            const cell = row[j];
-            const td = document.createElement('td');
-            td.textContent = cell;
-            tr.appendChild(td);
+    function displayPage(page) {
+        const startRow = (page - 1) * pageSize;
+        const endRow = Math.min(startRow + pageSize, csvData.length);
+
+        // 清除表格内容
+        csvTableContainer.innerHTML = '';
+        const csvTable = document.createElement('table');
+        const fragment = document.createDocumentFragment();
+
+        // 遍历CSV数据
+        for (let i = startRow; i < endRow; i++) {
+            const row = csvData[i];
+            const tr = document.createElement('tr');
+
+            for (let j = 0; j < row.length; j++) {
+                const cell = row[j];
+                const td = document.createElement('td');
+                td.textContent = cell;
+                tr.appendChild(td);
+            }
+
+            fragment.appendChild(tr);
         }
 
-        fragment.appendChild(tr); // 将 tr 添加到 fragment
+        csvTable.appendChild(fragment);
+        csvTableContainer.appendChild(csvTable);
+
+        // 显示弹窗
+        historyModal.style.display = "block";
     }
 
-    // 对CSV数据进行倒序排序
-    const rows = Array.from(fragment.childNodes);
-    rows.reverse();
-
-    // 清除表格内容并重新添加排序后的行
-    csvTable.innerHTML = '';
-    for (let i = 0; i < rows.length; i++) {
-        csvTable.appendChild(rows[i]);
-    }
-
-    // 将排序后的表格添加到容器中
-    csvTableContainer.appendChild(csvTable);
-
-    // 显示弹窗
-    historyModal.style.display = "block";
+    displayPage(currentPage);
 }
 
 
