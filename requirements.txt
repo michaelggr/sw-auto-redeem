@@ -1,5 +1,6 @@
-apscheduler
+﻿apscheduler
 Flask
 pandas
 portalocker
 Requests
+playwright

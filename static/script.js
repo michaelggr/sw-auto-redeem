@@ -1,4 +1,4 @@
-//点击otherButton跳转到https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AB%E5%94%A4/
+﻿//点击otherButton跳转到https://ggrmm.top/%E6%B8%B8%E6%88%8F/%E9%AD%94%E7%81%B5%E5%8F%AB%E5%94%A4/
 
         // 点击其他功能按钮时，跳转到指定的URL
         document.getElementById('otherButton').addEventListener('click', function() {       
@@ -452,6 +452,34 @@ function displayReward(csvData) {
                 addCodeForm.reset(); // 重置表单
             });
         }
+        
+        // 网页抓取兑换码
+        const fetchWebButton = document.getElementById('fetchWebButton');
+        fetchWebButton.addEventListener('click', fetchWebCodes);
+        
+        function fetchWebCodes() {
+            showLoading();
+            
+            fetch('/fetch_q_suisuiaa', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                setStatusMessage(data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                setStatusMessage('发生错误，请重试。');
+            })
+            .finally(() => {
+                hideLoading();
+            });
+        }
+        
         var script = document.createElement("script");
         script.setAttribute("type","text/javascript");
         script.setAttribute("id","myhk");

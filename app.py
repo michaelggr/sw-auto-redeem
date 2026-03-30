@@ -1,4 +1,4 @@
-# 导入所需的模块
+﻿# 导入所需的模块
 import hashlib
 import json
 import subprocess
@@ -307,6 +307,27 @@ def get_rta_rank():
     except Exception as e:
         logging.error(f"获取RTA分数线数据时发生错误: {e}")
         return jsonify({'message': '获取数据失败'}), 500
+
+# 新增接口：从q.suisuiaa.fun抓取兑换码
+@app.route('/fetch_q_suisuiaa', methods=['POST'])
+def fetch_q_suisuiaa():
+    try:
+        logging.info("收到请求：从 q.suisuiaa.fun 抓取兑换码")
+        
+        # 导入并运行抓取脚本
+        import fetch_q_suisuiaa
+        codes = fetch_q_suisuiaa.fetch_q_suisuiaa_codes()
+        
+        if codes:
+            logging.info(f"成功从 q.suisuiaa.fun 抓取 {len(codes)} 个兑换码")
+            return jsonify({'message': f'抓取成功，共 {len(codes)} 个兑换码'}), 200
+        else:
+            logging.warning("未抓取到兑换码")
+            return jsonify({'message': '未抓取到兑换码'}), 400
+            
+    except Exception as e:
+        logging.error(f"处理请求时发生错误: {e}")
+        return jsonify({'message': f'处理请求时发生错误: {str(e)}'}), 500
 
 if __name__ == '__main__':
     # 启动 Flask 应用
