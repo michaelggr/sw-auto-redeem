@@ -72,10 +72,19 @@ def fetch_swq_codes():
     
     # 确保请求成功
     if response and response.status_code == 200:
-        current_data = response.json()
-        fields_to_remove = ['request_id', 'time', 'Score', 'Successive_Down_Votes']
-        deep_clean(current_data, fields_to_remove)
-        return current_data
+        try:
+            current_data = response.json()
+            fields_to_remove = ['request_id', 'time', 'Score', 'Successive_Down_Votes']
+            deep_clean(current_data, fields_to_remove)
+            return current_data
+        except json.JSONDecodeError as e:
+            print(f"JSON解析失败：{e}")
+            logging.debug(f"JSON解析失败：{e}")
+            return None
+        except Exception as e:
+            print(f"未知错误：{e}")
+            logging.debug(f"未知错误：{e}")
+            return None
     else:
         print("swq.jp 请求失败，可能是网络问题或服务器异常。")
         logging.debug("swq.jp 请求失败，可能是网络问题或服务器异常。")
@@ -91,7 +100,14 @@ def fetch_q_suisuiaa_codes():
     
     try:
         response = requests.get(url, timeout=10)
-        response.raise_for_status()
+        
+        try:
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            logging.error(f"HTTP错误: {e}")
+            print(f"HTTP请求失败，状态码：{response.status_code}")
+            return []
+        
         data = response.json()
         
         # 提取兑换码
@@ -286,8 +302,13 @@ def filter_and_write_reward_json():
     all_codes = existing_data + all_new_codes
     
     # 将结果列表写入到 JSON 文件
-    with open(output_file_name, 'w') as file:
-        json.dump(all_codes, file, indent=4)
+    try:
+        with open(output_file_name, 'w', encoding='utf-8') as file:
+            json.dump(all_codes, file, indent=4, ensure_ascii=False)
+    except Exception as e:
+        logging.error(f"写入文件失败: {e}")
+        print(f"写入文件失败: {e}")
+        return False
     
     print(f"\n数据已成功写入 {output_file_name}")
     print(f"总共 {len(all_codes)} 个兑换码（包含新旧）")

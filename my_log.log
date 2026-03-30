@@ -2000,3 +2000,81 @@ location.href = gData.deeplink_url;
 [03-30 18:14:49][INFO] 兑换码 26SWXLOTRS2 格式有效
 [03-30 18:14:49][INFO] 数据已成功写入 Reward_swq.json，总共 13 个兑换码
 [03-30 18:14:49][INFO] 过滤兑换码完成
+[03-30 19:27:26][INFO] 开始抓取兑换码
+[03-30 19:27:29][INFO] 开始从 http://q.suisuiaa.fun/api/codes 抓取兑换码
+[03-30 19:27:31][INFO] 成功解析 5 个兑换码
+[03-30 19:27:31][INFO] 已保存 5 个兑换码到 q_suisuiaa_codes.json
+[03-30 19:27:31][INFO] 抓取兑换码完成
+[03-30 19:27:31][INFO] 开始检查兑换码 1stlegendof26 是否有效
+[03-30 19:27:43][INFO] 兑换码 1stlegendof26 已过期
+[03-30 19:27:43][INFO] 开始检查兑换码 lastleagueday26 是否有效
+[03-30 19:27:53][INFO] 兑换码 lastleagueday26 已过期
+[03-30 19:27:53][INFO] 开始检查兑换码 swel2026woche5 是否有效
+[03-30 19:28:04][INFO] 兑换码 swel2026woche5 已过期
+[03-30 19:28:04][INFO] 开始检查兑换码 g0g0fightosaka26 是否有效
+[03-30 19:28:13][INFO] 兑换码 g0g0fightosaka26 已过期
+[03-30 19:28:13][INFO] 开始检查兑换码 sw03dev06note 是否有效
+[03-30 19:28:29][INFO] 兑换码 sw03dev06note 已过期
+[03-30 19:28:29][INFO] 开始检查兑换码 halfwaydone 是否有效
+[03-30 19:28:40][INFO] 兑换码 halfwaydone 已过期
+[03-30 19:28:40][INFO] 开始检查兑换码 ggc2uinv26 是否有效
+[03-30 19:28:56][INFO] 兑换码 ggc2uinv26 已过期
+[03-30 19:28:56][INFO] 开始检查兑换码 swelison 是否有效
+[03-30 19:29:07][INFO] 兑换码 swelison 已过期
+[03-30 19:29:07][INFO] 开始检查兑换码 swelstarts 是否有效
+[03-30 19:29:14][INFO] 兑换码 swelstarts 已过期
+[03-30 19:29:14][INFO] 开始检查兑换码 2026teamjpdare 是否有效
+[03-30 19:29:23][INFO] 兑换码 2026teamjpdare 已过期
+[03-30 19:29:23][INFO] 开始检查兑换码 1STLEGENDOF26 是否有效
+[03-30 19:29:38][INFO] 兑换码 1STLEGENDOF26 已过期
+[03-30 19:29:38][INFO] 开始检查兑换码 LTB3G1NAG4IN 是否有效
+[03-30 19:29:49][INFO] 兑换码 LTB3G1NAG4IN 已过期
+[03-30 19:29:49][INFO] 数据已成功写入 Reward_swq.json，总共 13 个兑换码
+[03-30 19:29:49][INFO] 过滤兑换码完成
+[03-30 19:44:47][INFO] 开始抓取兑换码
+[03-30 19:44:50][INFO] 开始从 http://q.suisuiaa.fun/api/codes 抓取兑换码
+[03-30 19:44:51][INFO] 成功解析 5 个兑换码
+[03-30 19:44:51][INFO] 已保存 5 个兑换码到 q_suisuiaa_codes.json
+[03-30 19:44:51][INFO] 抓取兑换码完成
+[03-30 19:44:51][INFO] 开始检查兑换码 1stlegendof26 是否有效
+[03-30 19:45:01][INFO] 兑换码 1stlegendof26 已过期
+[03-30 19:45:01][INFO] 开始检查兑换码 lastleagueday26 是否有效
+[03-30 19:45:07][INFO] 兑换码 lastleagueday26 已过期
+[03-30 19:45:07][INFO] 开始检查兑换码 swel2026woche5 是否有效
+[03-30 19:45:23][INFO] 兑换码 swel2026woche5 已过期
+[03-30 19:45:23][INFO] 开始检查兑换码 g0g0fightosaka26 是否有效
+[03-30 19:45:28][INFO] 兑换码 g0g0fightosaka26 已过期
+[03-30 19:45:28][INFO] 开始检查兑换码 sw03dev06note 是否有效
+[03-30 19:45:40][INFO] 兑换码 sw03dev06note 已过期
+[03-30 19:45:40][INFO] 开始检查兑换码 halfwaydone 是否有效
+[03-30 19:45:50][INFO] 兑换码 halfwaydone 已过期
+[03-30 19:45:50][INFO] 开始检查兑换码 ggc2uinv26 是否有效
+[03-30 19:46:06][INFO] 兑换码 ggc2uinv26 已过期
+[03-30 19:46:06][INFO] 开始检查兑换码 swelison 是否有效
+[03-30 19:46:18][INFO] 兑换码 swelison 已过期
+[03-30 19:46:18][INFO] 开始检查兑换码 swelstarts 是否有效
+[03-30 19:46:31][INFO] 兑换码 swelstarts 已过期
+[03-30 19:46:31][INFO] 开始检查兑换码 2026teamjpdare 是否有效
+[03-30 19:46:43][INFO] 兑换码 2026teamjpdare 已过期
+[03-30 19:46:43][INFO] 开始检查兑换码 1STLEGENDOF26 是否有效
+[03-30 19:46:56][INFO] 兑换码 1STLEGENDOF26 已过期
+[03-30 19:46:56][INFO] 开始检查兑换码 LTB3G1NAG4IN 是否有效
+[03-30 19:47:08][INFO] 兑换码 LTB3G1NAG4IN 已过期
+[03-30 19:47:08][INFO] 数据已成功写入 Reward_swq.json，总共 13 个兑换码
+[03-30 19:47:08][INFO] 过滤兑换码完成
+[03-30 21:09:42][INFO] 开始抓取兑换码
+[03-30 21:09:44][INFO] 开始从 http://q.suisuiaa.fun/api/codes 抓取兑换码
+[03-30 21:09:47][INFO] 成功解析 3 个兑换码
+[03-30 21:09:47][INFO] 已保存 5 个兑换码到 q_suisuiaa_codes.json
+[03-30 21:09:47][INFO] 抓取兑换码完成
+[03-30 21:09:47][INFO] 开始检查兑换码 1stlegendof26 是否有效
+[03-30 21:09:51][INFO] 兑换码 1stlegendof26 已过期
+[03-30 21:09:51][INFO] 开始检查兑换码 lastleagueday26 是否有效
+[03-30 21:09:58][INFO] 兑换码 lastleagueday26 已过期
+[03-30 21:09:58][INFO] 开始检查兑换码 swel2026woche5 是否有效
+[03-30 21:10:02][INFO] 兑换码 swel2026woche5 已过期
+[03-30 21:10:02][INFO] 开始检查兑换码 g0g0fightosaka26 是否有效
+[03-30 21:10:21][INFO] 兑换码 g0g0fightosaka26 已过期
+[03-30 21:10:21][INFO] 开始检查兑换码 sw03dev06note 是否有效
+[03-30 21:10:31][INFO] 兑换码 sw03dev06note 已过期
+[03-30 21:10:31][INFO] 开始检查兑换码 halfwaydone 是否有效
