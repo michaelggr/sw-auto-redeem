@@ -1,126 +1,99 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- 文档类型声明，指定文档类型为HTML5 -->
     <meta charset="UTF-8">
-    <!-- 设置文档的字符编码为UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 设置视口，确保页面在移动设备上正确显示 -->
     <title>申请绑定页面</title>
-    <!-- 设置页面的标题 -->
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <!-- 页面主体部分，包含一个容器，用于包裹所有内容 -->
     <div class="container">
-        <!-- 页面大标题 -->
-        <h1 style="text-align: center; margin-top: 20px; color: white;">魔灵全自动兑换码领取</h1>
-        <div id="rta-rank" style="text-align: center; color: white; margin-bottom: 15px;"></div>
-        <h2 style="color: white;">申请绑定</h2>
-        <!-- 标题，显示“申请绑定” -->
-        <p style="color: white;">绑定后会定时自动领取数据库中兑换码，数据库会自动抓取可用兑换码，由up维护，也可以手动在本页面新增</p>
+        <h1>魔灵全自动兑换码领取</h1>
+        <div id="rta-rank"><span id="rta-rank-text">正在获取RTA分数线...</span></div>
+        
+        <!-- 跑马灯统计信息 -->
+        <div class="marquee-container">
+            <div class="marquee" id="marquee">
+                <span class="marquee-text">正在加载统计数据...</span>
+            </div>
+        </div>
+        
+        <p>绑定后会定时自动领取数据库中兑换码，数据库会自动抓取可用兑换码，由up维护，也可以手动在本页面新增</p>
         <form id="bindForm">
-            <!-- 表单，用于收集用户输入的数据 -->
             <div class="input-group">
-                <label for="hiveid" style="color: white;">HiveID，如需领取通知，可加wx：blackcatbot，回复暗号：魔灵兑换绑定HiveID。HiveID替换成你自己的</label>
-                <!-- 标签，用于提示用户输入HiveID -->
-                <input type="text" id="hiveid" placeholder="游戏头像设置页id" required style="width: 200px;background-color: #000000;color: white;">
-                <!-- 输入框，用于用户输入HiveID，设置了占位符和必填属性 -->
+                <input type="text" id="hiveid" placeholder="游戏头像设置页id" required>
                 <div class="error-message" id="hiveid-error"></div>
-                <!-- 用于显示HiveID输入错误信息的元素 -->
             </div>
             <div class="input-group">
-                <label for="server" style="color: white;">Server</label>
-                <!-- 标签，用于提示用户选择服务器 -->
-                <select id="server" required style="width: 220px;background-color: #000000;color: white;">
-                    <!-- 选择框，用于用户选择服务器，设置了必填属性 -->
-                    <option value="" style="color: white;">请选择服务器</option>
-                    <!-- 默认选项，提示用户选择服务器 -->
-                    <option value="global" style="color: white;">全球服务器</option>
-                    <!-- 选项，代表全球服务器 -->
-                    <option value="korea" style="color: white;">韩国服务器</option>
-                    <!-- 选项，代表韩国服务器 -->
-                    <option value="japan" style="color: white;">日本服务器</option>
-                    <!-- 选项，代表日本服务器 -->
-                    <option value="china" style="color: white;">中国服务器</option>
-                    <!-- 选项，代表中国服务器 -->
-                    <option value="asia" style="color: white;">亚洲服务器</option>
-                    <!-- 选项，代表亚洲服务器 -->
-                    <option value="europe" style="color: white;">欧洲服务器</option>
-                    <!-- 选项，代表欧洲服务器 -->
+                <select id="server" required>
+                    <option value="">请选择服务器</option>
+                    <option value="global">全球服务器</option>
+                    <option value="korea">韩国服务器</option>
+                    <option value="japan">日本服务器</option>
+                    <option value="china">中国服务器</option>
+                    <option value="asia">亚洲服务器</option>
+                    <option value="europe">欧洲服务器</option>
                 </select>
                 <div class="error-message" id="server-error"></div>
             </div>
             <div class="input-group">
-<label for="vipcode" style="color: white;">VIP Code:<a href="static/pay.png" target="_blank" style="color: #3498db; text-decoration: none;">点我获取，打赏后页面底部联系up获取</a></label>
-                <!-- 标签，用于提示用户输入VIP Code -->
-                <input type="text" id="vipcode" placeholder="请输入VIP Code" required style="width: 200px;background-color: #000000;color: white;">
-                <!-- 输入框，用于用户输入VIP Code，设置了占位符和必填属性 -->
+                <input type="text" id="vipcode" placeholder="请输入VIP Code" required>
+                <div style="margin-top: 6px; font-size: 0.85em;">
+                    <a href="static/pay.png" target="_blank">点我获取，打赏后页面底部联系up获取</a>
+                </div>
                 <div class="error-message" id="vipcode-error"></div>
-                <!-- 用于显示VIP Code输入错误信息的元素 -->
             </div>
             <div>
                 <button type="submit" id="submitButton" disabled>申请</button>
-                <!-- 提交按钮，用于提交表单数据，初始状态为禁用 -->
+                <div style="margin-top: 10px; font-size: 0.8em; color: #64748b;">请勿传播</div>
             </div> 
         </form>
         <div id="status-message"></div>
-        <!-- 用于显示提交状态的消息 -->
-        <!-- 新增功能按钮容器 -->
+        
+        <div class="add-code-section">
+            <h3>增加兑换码</h3>
+            <form id="addCodeForm">
+                <div class="input-group">       
+                    <input type="text" id="code" placeholder="请输入兑换码" required>
+                    <button type="submit" id="addCodeSubmitButton">增加</button>
+                </div>
+            </form>
+        </div>
+        
         <div class="function-buttons">
-            <h3 style="color: white;">其他功能</h3>
             <button id="historyButton">历史领取</button>
-            <button id="rewardButton">最新兑换码</button>
-            <button id="addCodeButton">增加兑换码</button>
-            <button id="fetchWebButton">网页抓取兑换码</button>
+            <button id="rewardButton">可用兑换码</button>
             <button id="otherButton">其他资源</button>
             <button id="coaButton">考验之塔</button>
             <button id="feedbackButton">建议反馈</button>
         </div>
-        <!-- 历史弹窗内容 -->
+        
         <div id="historyModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2 style="color: white;">历史领取数据-有人领过你就领过，除非限量</h2>
+                <h2>历史领取数据-有人领过你就领过，除非限量</h2>
+                <div id="dataAnalysis" class="data-analysis"></div>
                 <div id="csvData"></div>
-    
             </div>
         </div>
-        <!-- 最新兑换码弹窗内容 -->
+        
         <div id="rewardModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                    <h2 style="color: white;">最新兑换码</h2>
+                    <h2>可用兑换码</h2>
                     <div id="rewardData"></div>
             </div>
         </div>
-        <!-- 增加兑换码弹窗内容 -->
-        <div id="addCodeModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 style="color: white;">增加兑换码</h2>
-                <form id="addCodeForm">
-                    <div class="input-group">       
-                        <label for="code" style="color: white;">兑换码</label>
-                        <input type="text" id="code" placeholder="请输入兑换码" required style="width: 200px;background-color: #000000;color: white;">
-                        <button type="submit" id="addCodeSubmitButton">增加</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!-- 页面底部部分，用于显示页面的版权信息 -->
+        
         <div class="footer">
-                        <p style="color: green;">&copy;<a style="color: green;" href="https://space.bilibili.com/33819950">啊啊啊黑猫警长</a></p>
-            <!-- 版权信息，显示当前年份和页面名称 -->
+                        <p>&copy;<a href="https://space.bilibili.com/33819950">啊啊啊黑猫警长</a></p>
         </div>
-        <!-- 加载动画 -->
+        
         <div class="loader"></div>
-        <!-- 加载提示信息 -->
         <div class="loading-message">正在处理请求，请稍等...</div>
 
 
     </div>
-    <!-- 页面主体部分的结束标签 -->
     <script src="static/script.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-#获取网页内容，并写入配置表中    
+﻿#获取网页内容，并写入配置表中    
 
 import requests
 import json
@@ -100,14 +100,7 @@ def fetch_q_suisuiaa_codes():
     
     try:
         response = requests.get(url, timeout=10)
-        
-        try:
-            response.raise_for_status()
-        except requests.exceptions.HTTPError as e:
-            logging.error(f"HTTP错误: {e}")
-            print(f"HTTP请求失败，状态码：{response.status_code}")
-            return []
-        
+        response.raise_for_status()
         data = response.json()
         
         # 提取兑换码

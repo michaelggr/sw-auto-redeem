@@ -5,13 +5,8 @@
         "vote": "expired"
     },
     {
-        "code": "ldnat5inourfuture",
-        "reward": "",
-        "vote": "expired"
-    },
-    {
-        "code": "onemoreweek",
-        "reward": "Mystical Scroll x1",
+        "code": "swel2026woche5",
+        "reward": "Mystical Scroll x10, Energy x50",
         "vote": "expired"
     },
     {
@@ -20,13 +15,8 @@
         "vote": "expired"
     },
     {
-        "code": "drittewocheswel",
-        "reward": "Energy x100, Mystical Scroll x1",
-        "vote": "expired"
-    },
-    {
-        "code": "2026swxinnianhao",
-        "reward": "",
+        "code": "halfwaydone",
+        "reward": "Mana x100000, Mystical Scroll x2",
         "vote": "expired"
     },
     {
@@ -35,33 +25,13 @@
         "vote": "expired"
     },
     {
-        "code": "swelweek1",
-        "reward": "",
+        "code": "swelstarts",
+        "reward": "Energy x100, Mystical Scroll x1",
         "vote": "expired"
     },
     {
-        "code": "osakak1t3ya314",
-        "reward": "",
+        "code": "2026teamjpdare",
+        "reward": "Mystical Scroll x3, Energy x100",
         "vote": "expired"
-    },
-    {
-        "code": "2026ghlsqidong",
-        "reward": "Mystical Scroll x3",
-        "vote": "expired"
-    },
-    {
-        "code": "LOTR4CO11ABON",
-        "reward": "",
-        "vote": "verified"
-    },
-    {
-        "code": "MARSW2026K61",
-        "reward": "",
-        "vote": "verified"
-    },
-    {
-        "code": "26SWXLOTRS2",
-        "reward": "",
-        "vote": "verified"
     }
 ]
